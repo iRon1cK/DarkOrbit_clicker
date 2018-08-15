@@ -49,7 +49,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(17, 231);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(955, 319);
+            this.panel1.Size = new System.Drawing.Size(1137, 425);
             this.panel1.TabIndex = 3;
             // 
             // p_backBarStats
@@ -189,11 +189,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(1166, 660);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.p_backBarStats);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainWindow";
             this.Text = "Название Окна";
             this.p_backBarStats.ResumeLayout(false);

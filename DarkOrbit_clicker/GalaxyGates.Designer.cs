@@ -89,6 +89,7 @@
             this.Controls.Add(this.btn_betta);
             this.Controls.Add(this.btn_alpha);
             this.Controls.Add(this.btn_useGG);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GalaxyGates";
             this.Text = "GalaxyGates";
             this.ResumeLayout(false);

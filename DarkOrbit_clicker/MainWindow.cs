@@ -13,19 +13,22 @@ namespace DarkOrbit_clicker
     public partial class MainWindow : Form
     {
         public static User currentUser = new User("Zhora");
-       
+
+        public static List<Spaceship> spaceshipList = new List<Spaceship>();
+        public static List<Laser> laserList = new List<Laser>();
+        public static List<Shield> shipList = new List<Shield>();
 
         public MainWindow()
         {
-            
-
             InitializeComponent();
+            LoadData();
 
-            Form shop = new Shop();
-            shop.TopLevel = false;
-            panel1.Controls.Add(shop);
-            shop.Show();
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
 
+
+            currentUser.kredits += 5000;
             currentUser.spaceships.Add(new Spaceship());
             currentUser.currentSpaceship = currentUser.spaceships.First();
             RefreshInfo();
@@ -61,6 +64,18 @@ namespace DarkOrbit_clicker
             //    this.Controls.Add(p);
             //    j += 120;
             //}
+        }
+
+        public void LoadData()
+        {
+            Random rnd = new Random();
+            for (int sp = 0; sp < 10; sp++)
+            {
+                Spaceship spaceship = new Spaceship();
+                spaceship.name = "Index: " + sp;
+                spaceship.price = rnd.Next(100, 10000);
+                spaceshipList.Add(spaceship);
+            }
         }
 
         public void InsertFormIntoPanel(Panel pnl, Form frm)

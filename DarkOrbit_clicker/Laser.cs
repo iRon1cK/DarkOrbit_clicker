@@ -11,5 +11,6 @@ namespace DarkOrbit_clicker
         public string name;
         public int damage;
         public int price;
+        public Shop.Currency currency;
     }
 }

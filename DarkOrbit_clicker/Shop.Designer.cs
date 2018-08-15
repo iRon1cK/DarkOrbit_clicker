@@ -38,24 +38,16 @@
             this.btn_pet = new System.Windows.Forms.Button();
             this.btn_ammo = new System.Windows.Forms.Button();
             this.pnl_backShopItems = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnl_shopItem = new System.Windows.Forms.Panel();
             this.pnl_shopItemPrice = new System.Windows.Forms.Panel();
             this.btn_buyItem = new System.Windows.Forms.Button();
             this.lbl_itemPrice = new System.Windows.Forms.Label();
             this.lbl_itemName = new System.Windows.Forms.Label();
             this.pnl_shopItemDescription = new System.Windows.Forms.Panel();
             this.lbl_itemDescription = new System.Windows.Forms.Label();
-            this.lbl_itemImage = new System.Windows.Forms.Label();
-            this.pnl_backShopItems.SuspendLayout();
+            this.pctr_image_item_selected = new System.Windows.Forms.PictureBox();
             this.pnl_shopItemPrice.SuspendLayout();
             this.pnl_shopItemDescription.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_designs
@@ -75,7 +67,6 @@
             this.btn_drones.TabIndex = 2;
             this.btn_drones.Text = "DRONES";
             this.btn_drones.UseVisualStyleBackColor = true;
-            this.btn_drones.Click += new System.EventHandler(this.btn_drones_Click);
             // 
             // btn_ships
             // 
@@ -142,84 +133,12 @@
             // 
             // pnl_backShopItems
             // 
+            this.pnl_backShopItems.AutoScroll = true;
             this.pnl_backShopItems.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
-            this.pnl_backShopItems.Controls.Add(this.panel7);
-            this.pnl_backShopItems.Controls.Add(this.panel6);
-            this.pnl_backShopItems.Controls.Add(this.panel5);
-            this.pnl_backShopItems.Controls.Add(this.panel4);
-            this.pnl_backShopItems.Controls.Add(this.panel3);
-            this.pnl_backShopItems.Controls.Add(this.panel2);
-            this.pnl_backShopItems.Controls.Add(this.panel1);
-            this.pnl_backShopItems.Controls.Add(this.pnl_shopItem);
             this.pnl_backShopItems.Location = new System.Drawing.Point(101, 5);
             this.pnl_backShopItems.Name = "pnl_backShopItems";
             this.pnl_backShopItems.Size = new System.Drawing.Size(275, 427);
             this.pnl_backShopItems.TabIndex = 3;
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel7.Location = new System.Drawing.Point(152, 322);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(107, 85);
-            this.panel7.TabIndex = 5;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel6.Location = new System.Drawing.Point(152, 215);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(107, 85);
-            this.panel6.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel5.Location = new System.Drawing.Point(152, 110);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(107, 85);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel4.Location = new System.Drawing.Point(27, 322);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(107, 85);
-            this.panel4.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel3.Location = new System.Drawing.Point(27, 215);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(107, 85);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel2.Location = new System.Drawing.Point(27, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 85);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.panel1.Location = new System.Drawing.Point(152, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(107, 85);
-            this.panel1.TabIndex = 5;
-            // 
-            // pnl_shopItem
-            // 
-            this.pnl_shopItem.AutoSize = true;
-            this.pnl_shopItem.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_real_100x100;
-            this.pnl_shopItem.Location = new System.Drawing.Point(27, 8);
-            this.pnl_shopItem.Name = "pnl_shopItem";
-            this.pnl_shopItem.Size = new System.Drawing.Size(107, 85);
-            this.pnl_shopItem.TabIndex = 4;
             // 
             // pnl_shopItemPrice
             // 
@@ -240,6 +159,7 @@
             this.btn_buyItem.TabIndex = 1;
             this.btn_buyItem.Text = "BUY";
             this.btn_buyItem.UseVisualStyleBackColor = true;
+            this.btn_buyItem.Click += new System.EventHandler(this.btn_buyItem_Click);
             // 
             // lbl_itemPrice
             // 
@@ -262,8 +182,8 @@
             // pnl_shopItemDescription
             // 
             this.pnl_shopItemDescription.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
+            this.pnl_shopItemDescription.Controls.Add(this.pctr_image_item_selected);
             this.pnl_shopItemDescription.Controls.Add(this.lbl_itemDescription);
-            this.pnl_shopItemDescription.Controls.Add(this.lbl_itemImage);
             this.pnl_shopItemDescription.Location = new System.Drawing.Point(382, 5);
             this.pnl_shopItemDescription.Name = "pnl_shopItemDescription";
             this.pnl_shopItemDescription.Size = new System.Drawing.Size(291, 427);
@@ -272,26 +192,26 @@
             // lbl_itemDescription
             // 
             this.lbl_itemDescription.AutoSize = true;
-            this.lbl_itemDescription.Location = new System.Drawing.Point(80, 353);
+            this.lbl_itemDescription.Location = new System.Drawing.Point(91, 353);
             this.lbl_itemDescription.Name = "lbl_itemDescription";
             this.lbl_itemDescription.Size = new System.Drawing.Size(116, 13);
             this.lbl_itemDescription.TabIndex = 0;
             this.lbl_itemDescription.Text = "ITEMS DESCRIPTION";
-            this.lbl_itemDescription.Click += new System.EventHandler(this.label2_Click);
             // 
-            // lbl_itemImage
+            // pctr_image_item_selected
             // 
-            this.lbl_itemImage.AutoSize = true;
-            this.lbl_itemImage.Location = new System.Drawing.Point(98, 80);
-            this.lbl_itemImage.Name = "lbl_itemImage";
-            this.lbl_itemImage.Size = new System.Drawing.Size(70, 13);
-            this.lbl_itemImage.TabIndex = 0;
-            this.lbl_itemImage.Text = "ITEM IMAGE";
+            this.pctr_image_item_selected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pctr_image_item_selected.Location = new System.Drawing.Point(65, 48);
+            this.pctr_image_item_selected.Name = "pctr_image_item_selected";
+            this.pctr_image_item_selected.Size = new System.Drawing.Size(177, 159);
+            this.pctr_image_item_selected.TabIndex = 1;
+            this.pctr_image_item_selected.TabStop = false;
             // 
             // Shop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.фон;
             this.ClientSize = new System.Drawing.Size(1084, 612);
             this.Controls.Add(this.pnl_shopItemDescription);
@@ -309,13 +229,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Shop";
             this.Text = "Shop";
-            this.Load += new System.EventHandler(this.Shop_Load);
-            this.pnl_backShopItems.ResumeLayout(false);
-            this.pnl_backShopItems.PerformLayout();
             this.pnl_shopItemPrice.ResumeLayout(false);
             this.pnl_shopItemPrice.PerformLayout();
             this.pnl_shopItemDescription.ResumeLayout(false);
             this.pnl_shopItemDescription.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,20 +249,12 @@
         private System.Windows.Forms.Button btn_pet;
         private System.Windows.Forms.Button btn_ammo;
         private System.Windows.Forms.Panel pnl_backShopItems;
-        private System.Windows.Forms.Panel pnl_shopItem;
         private System.Windows.Forms.Panel pnl_shopItemPrice;
         private System.Windows.Forms.Panel pnl_shopItemDescription;
         private System.Windows.Forms.Label lbl_itemDescription;
-        private System.Windows.Forms.Label lbl_itemImage;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_buyItem;
         private System.Windows.Forms.Label lbl_itemPrice;
         private System.Windows.Forms.Label lbl_itemName;
+        private System.Windows.Forms.PictureBox pctr_image_item_selected;
     }
 }
