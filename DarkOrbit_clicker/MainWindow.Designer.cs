@@ -122,6 +122,7 @@
             // lbl_uridium
             // 
             this.lbl_uridium.AutoSize = true;
+            this.lbl_uridium.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_uridium.Location = new System.Drawing.Point(582, 209);
             this.lbl_uridium.Name = "lbl_uridium";
             this.lbl_uridium.Size = new System.Drawing.Size(26, 13);
@@ -235,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1280, 682);
+            this.ClientSize = new System.Drawing.Size(1280, 693);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;

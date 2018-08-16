@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace DarkOrbit_clicker
 {
-    public class Laser
+    public class Ammo
     {
         public string name;
-        public int damage;
+        public int effect;
         public int price;
-        public int reloadTime;
-        public Shop.Currency currency;
     }
 }

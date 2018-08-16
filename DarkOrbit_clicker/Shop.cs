@@ -15,7 +15,14 @@ namespace DarkOrbit_clicker
         public enum Category
         {
             Ships,
-            Designs
+            Designs,
+            Drones,
+            Weapoons,
+            Generators,
+            Boosters,
+            PET,
+            PETprotocols,
+            Ammo
                 //.... TODO
         }
 
@@ -27,6 +34,7 @@ namespace DarkOrbit_clicker
 
         public Category category = Category.Ships;
         public Spaceship selectedShip;
+      
 
         private MainWindow mainWindow;
 
@@ -114,17 +122,19 @@ namespace DarkOrbit_clicker
             selectedShip = (Spaceship)((Panel)sender).Tag;
             updateSpaceshipInfo();
         }
+       
+        
 
         private void btn_buyItem_Click(object sender, EventArgs e)
         {
             User currentUser = MainWindow.currentUser;
-            if (selectedShip.currency == Currency.Kredits && (currentUser.kredits >= selectedShip.price))
+            if (selectedShip.currency == Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
             {
                 currentUser.kredits -= selectedShip.price;
                 currentUser.spaceships.Add(selectedShip);
                 MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
             }
-            else if (selectedShip.currency == Currency.Uridium && (currentUser.uridium >= selectedShip.price))
+            else if (selectedShip.currency == Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
             {
                 currentUser.uridium -= selectedShip.price;
                 currentUser.spaceships.Add(selectedShip);

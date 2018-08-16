@@ -15,6 +15,12 @@ namespace DarkOrbit_clicker
         public static User currentUser = new User("Zhora");
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
+        public static List<Drone> droneList = new List<Drone>();
+        public static List<Booster> boosterList = new List<Booster>();
+        public static List<Pet> petList = new List<Pet>();
+        public static List<Protocol> protocolList = new List<Protocol>();
+        public static List<Ammo> ammolList = new List<Ammo>();
+        public static List<Design> designList = new List<Design>();
         public static List<Laser> laserList = new List<Laser>();
         public static List<Shield> shipList = new List<Shield>();
 
@@ -43,6 +49,14 @@ namespace DarkOrbit_clicker
                 spaceship.name = "Index: " + sp;
                 spaceship.price = rnd.Next(100, 10000);
                 spaceshipList.Add(spaceship);
+            }
+            
+            for (int sp = 0; sp < 10; sp++)
+            {
+                Design design = new Design();
+                design.name = "Index: " + sp;
+                design.price = rnd.Next(10000, 100000);
+                designList.Add(design);
             }
         }
 
