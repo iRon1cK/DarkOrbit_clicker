@@ -28,8 +28,11 @@ namespace DarkOrbit_clicker
         public Category category = Category.Ships;
         public Spaceship selectedShip;
 
-        public Shop()
+        private MainWindow mainWindow;
+
+        public Shop(MainWindow main)
         {
+            mainWindow = main;
             InitializeComponent();
             LoadShips();
         }
