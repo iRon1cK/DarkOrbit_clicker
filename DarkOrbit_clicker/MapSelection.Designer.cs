@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 612);
+            this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.pnl_mapDescription);
             this.Controls.Add(this.btn_map8);
             this.Controls.Add(this.btn_map7);

@@ -125,11 +125,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.Выбор_компании_фон;
-            this.ClientSize = new System.Drawing.Size(1084, 612);
+            this.ClientSize = new System.Drawing.Size(1264, 682);
             this.Controls.Add(this.pnl_companyDescription);
             this.Controls.Add(this.pnl_EIC);
             this.Controls.Add(this.pnl_VRU);
             this.Controls.Add(this.pnl_MMO);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CorpSelect";
             this.RightToLeftLayout = true;
             this.Text = "CorpSelection";

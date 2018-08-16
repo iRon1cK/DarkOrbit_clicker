@@ -134,7 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1084, 612);
+            this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.pnl_equipment);
             this.Controls.Add(this.pnl_shipImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

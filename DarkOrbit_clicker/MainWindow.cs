@@ -46,11 +46,12 @@ namespace DarkOrbit_clicker
             }
         }
 
-        public void InsertFormIntoPanel(Panel pnl, Form frm)
+        public void InsertFormIntoControl(Control control, Form frm)
         {
             frm.TopLevel = false;
-            pnl.Controls.Clear();
-            pnl.Controls.Add(frm);
+            control.Controls.Clear();
+            control.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
             frm.Show();
         }
 
@@ -68,20 +69,44 @@ namespace DarkOrbit_clicker
         {
             Form hangar = new Hangar();
             hangar.TopLevel = false;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(hangar);
+            pnlContent.Controls.Clear();
+            pnlContent.Controls.Add(hangar);
             hangar.Show();
 
         }
 
         private void btn_shop_MouseClick(object sender, MouseEventArgs e)
         {
-            InsertFormIntoPanel(panel1, new Shop(this));
+            InsertFormIntoControl(pnlContent, new Shop(this));
         }
 
         private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e)
         {
-            InsertFormIntoPanel(panel1, new GalaxyGates());
+            InsertFormIntoControl(pnlContent, new GalaxyGates());
+        }
+
+        private void MainWindow_Resize(object sender, EventArgs e)
+        {
+            //if (WindowState == FormWindowState.Maximized)
+            //{
+            //    TopMost = true;
+            //    FormBorderStyle = FormBorderStyle.None;
+            //}
+            //else
+            //{
+            //    TopMost = false;
+            //    FormBorderStyle = FormBorderStyle.Sizable;
+            //}
+        }
+
+        private void MainWindow_Deactivate(object sender, EventArgs e)
+        {
+            //TopMost = false;
+        }
+
+        private void MainWindow_Activated(object sender, EventArgs e)
+        {
+            //TopMost = WindowState == FormWindowState.Maximized;
         }
     }
 }

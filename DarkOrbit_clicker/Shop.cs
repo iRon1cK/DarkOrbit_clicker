@@ -48,12 +48,13 @@ namespace DarkOrbit_clicker
                 pnl.Tag = spaceship;
                 pnl.BackgroundImageLayout = ImageLayout.Zoom;
                 pnl.BackgroundImage = spaceship.image;
-                pnl.Size = new Size(107, 85);
                 
-                x = i % 2 == 1 ? (27 + 10 + pnl.Width) : 27;
-                if (i % 2 == 0 && i > 0)
+                pnl.Width = pnl.Height = pnl_backShopItems.Width / 3 - 12*2;
+                
+                x = 25 + ((i % 3)*(10+pnl.Width));
+                if (i % 3 == 0 && i > 0)
                 {
-                    y += 8 + pnl.Height;
+                    y += 10 + pnl.Height;
                 }
                 pnl.Location = new Point(x, y);
 

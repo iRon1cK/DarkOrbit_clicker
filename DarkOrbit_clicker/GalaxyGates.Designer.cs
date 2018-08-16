@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.фон;
-            this.ClientSize = new System.Drawing.Size(895, 425);
+            this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.pnl_back_barGG);
             this.Controls.Add(this.btn_gamma);
             this.Controls.Add(this.btn_betta);
