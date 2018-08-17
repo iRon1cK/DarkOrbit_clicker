@@ -45,7 +45,8 @@ namespace DarkOrbit_clicker
             LoadShips();
         }
 
-        public void LoadShips() // Метод для отрисовки иконок магазина и их содержимого.
+        public void LoadShips() // Метод используется для автоматического отображения ячеек и предметов в магазине. 
+                               //Предметы он берёт из списков, которые в MainWindow
         {
             int x = 27;
             int y = 8;

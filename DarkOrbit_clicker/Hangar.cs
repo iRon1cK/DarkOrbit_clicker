@@ -18,7 +18,9 @@ namespace DarkOrbit_clicker
             ShowSpaceship(MainWindow.currentUser.currentSpaceship);
         }
 
-        private void ShowSpaceship(Spaceship spaceship) // Метод для отображения информации о вашем корабле.
+        private void ShowSpaceship(Spaceship spaceship) // Метод принимает Spaceship, ничего не возвращает. 
+                                                       // Используется для того, чтобы вывести информацию о отправленном в него корабле.
+                                                      // Вызываться должен только из этой формы - при первом её открытии и при изменении корабля.
         {
             pbx_shipImage.BackgroundImage = spaceship.image;
             lbl_shipStats.Text =
