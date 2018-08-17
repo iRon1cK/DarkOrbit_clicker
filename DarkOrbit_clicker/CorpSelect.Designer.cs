@@ -46,7 +46,7 @@
             // 
             this.pnl_VRU.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_character_vru;
             this.pnl_VRU.Controls.Add(this.btn_acceptVRU);
-            this.pnl_VRU.Location = new System.Drawing.Point(397, 12);
+            this.pnl_VRU.Location = new System.Drawing.Point(463, 12);
             this.pnl_VRU.Name = "pnl_VRU";
             this.pnl_VRU.Size = new System.Drawing.Size(278, 438);
             this.pnl_VRU.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.pnl_EIC.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.Земля;
             this.pnl_EIC.Controls.Add(this.btn_acceptEIC);
-            this.pnl_EIC.Location = new System.Drawing.Point(762, 12);
+            this.pnl_EIC.Location = new System.Drawing.Point(862, 12);
             this.pnl_EIC.Name = "pnl_EIC";
             this.pnl_EIC.Size = new System.Drawing.Size(278, 438);
             this.pnl_EIC.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             this.pnl_MMO.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_character_mmo;
             this.pnl_MMO.Controls.Add(this.btn_acceptMMO);
-            this.pnl_MMO.Location = new System.Drawing.Point(29, 12);
+            this.pnl_MMO.Location = new System.Drawing.Point(74, 12);
             this.pnl_MMO.Name = "pnl_MMO";
             this.pnl_MMO.Size = new System.Drawing.Size(278, 438);
             this.pnl_MMO.TabIndex = 0;

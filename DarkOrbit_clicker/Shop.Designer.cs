@@ -189,7 +189,7 @@
             // 
             // pnl_shopItemDescription
             // 
-            this.pnl_shopItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_shopItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_shopItemDescription.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
             this.pnl_shopItemDescription.Controls.Add(this.btn_buyItem);
             this.pnl_shopItemDescription.Controls.Add(this.pctr_image_item_selected);
@@ -198,7 +198,7 @@
             this.pnl_shopItemDescription.Controls.Add(this.lbl_itemName);
             this.pnl_shopItemDescription.Location = new System.Drawing.Point(798, 12);
             this.pnl_shopItemDescription.Name = "pnl_shopItemDescription";
-            this.pnl_shopItemDescription.Size = new System.Drawing.Size(290, 425);
+            this.pnl_shopItemDescription.Size = new System.Drawing.Size(290, 576);
             this.pnl_shopItemDescription.TabIndex = 5;
             // 
             // pctr_image_item_selected

@@ -46,19 +46,20 @@
             // 
             // pnl_shipImage
             // 
+            this.pnl_shipImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_shipImage.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
             this.pnl_shipImage.Controls.Add(this.pbx_shipImage);
             this.pnl_shipImage.Controls.Add(this.lbl_shipStats);
             this.pnl_shipImage.Location = new System.Drawing.Point(12, 12);
             this.pnl_shipImage.Name = "pnl_shipImage";
-            this.pnl_shipImage.Size = new System.Drawing.Size(195, 427);
+            this.pnl_shipImage.Size = new System.Drawing.Size(195, 576);
             this.pnl_shipImage.TabIndex = 1;
             // 
             // pbx_shipImage
             // 
             this.pbx_shipImage.BackColor = System.Drawing.Color.Transparent;
             this.pbx_shipImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbx_shipImage.Location = new System.Drawing.Point(21, 15);
+            this.pbx_shipImage.Location = new System.Drawing.Point(23, 56);
             this.pbx_shipImage.Name = "pbx_shipImage";
             this.pbx_shipImage.Size = new System.Drawing.Size(150, 150);
             this.pbx_shipImage.TabIndex = 4;
@@ -67,7 +68,7 @@
             // lbl_shipStats
             // 
             this.lbl_shipStats.AutoSize = true;
-            this.lbl_shipStats.Location = new System.Drawing.Point(52, 177);
+            this.lbl_shipStats.Location = new System.Drawing.Point(52, 245);
             this.lbl_shipStats.Name = "lbl_shipStats";
             this.lbl_shipStats.Size = new System.Drawing.Size(73, 13);
             this.lbl_shipStats.TabIndex = 3;
@@ -75,6 +76,7 @@
             // 
             // pnl_equipment
             // 
+            this.pnl_equipment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_equipment.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
             this.pnl_equipment.Controls.Add(this.lbl_generatoSlots);
             this.pnl_equipment.Controls.Add(this.lbl_laserSlots);
@@ -82,13 +84,13 @@
             this.pnl_equipment.Controls.Add(this.pnl_ammunition);
             this.pnl_equipment.Location = new System.Drawing.Point(230, 12);
             this.pnl_equipment.Name = "pnl_equipment";
-            this.pnl_equipment.Size = new System.Drawing.Size(726, 427);
+            this.pnl_equipment.Size = new System.Drawing.Size(858, 576);
             this.pnl_equipment.TabIndex = 2;
             // 
             // lbl_generatoSlots
             // 
             this.lbl_generatoSlots.AutoSize = true;
-            this.lbl_generatoSlots.Location = new System.Drawing.Point(38, 177);
+            this.lbl_generatoSlots.Location = new System.Drawing.Point(29, 271);
             this.lbl_generatoSlots.Name = "lbl_generatoSlots";
             this.lbl_generatoSlots.Size = new System.Drawing.Size(116, 13);
             this.lbl_generatoSlots.TabIndex = 4;
@@ -106,7 +108,7 @@
             // lbl_equipment
             // 
             this.lbl_equipment.AutoSize = true;
-            this.lbl_equipment.Location = new System.Drawing.Point(188, 15);
+            this.lbl_equipment.Location = new System.Drawing.Point(280, 15);
             this.lbl_equipment.Name = "lbl_equipment";
             this.lbl_equipment.Size = new System.Drawing.Size(71, 13);
             this.lbl_equipment.TabIndex = 2;
@@ -114,10 +116,11 @@
             // 
             // pnl_ammunition
             // 
+            this.pnl_ammunition.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnl_ammunition.Controls.Add(this.lbl_shipAmmunition);
-            this.pnl_ammunition.Location = new System.Drawing.Point(500, 3);
+            this.pnl_ammunition.Location = new System.Drawing.Point(618, 15);
             this.pnl_ammunition.Name = "pnl_ammunition";
-            this.pnl_ammunition.Size = new System.Drawing.Size(206, 412);
+            this.pnl_ammunition.Size = new System.Drawing.Size(223, 537);
             this.pnl_ammunition.TabIndex = 1;
             // 
             // lbl_shipAmmunition

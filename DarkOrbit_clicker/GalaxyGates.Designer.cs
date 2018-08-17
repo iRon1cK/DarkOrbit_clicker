@@ -37,7 +37,7 @@
             // 
             // btn_useGG
             // 
-            this.btn_useGG.Location = new System.Drawing.Point(749, 163);
+            this.btn_useGG.Location = new System.Drawing.Point(773, 162);
             this.btn_useGG.Name = "btn_useGG";
             this.btn_useGG.Size = new System.Drawing.Size(75, 23);
             this.btn_useGG.TabIndex = 2;

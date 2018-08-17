@@ -43,7 +43,7 @@
             // 
             // btn_map2
             // 
-            this.btn_map2.Location = new System.Drawing.Point(159, 202);
+            this.btn_map2.Location = new System.Drawing.Point(197, 27);
             this.btn_map2.Name = "btn_map2";
             this.btn_map2.Size = new System.Drawing.Size(87, 70);
             this.btn_map2.TabIndex = 3;
@@ -52,7 +52,7 @@
             // 
             // btn_map4
             // 
-            this.btn_map4.Location = new System.Drawing.Point(407, 202);
+            this.btn_map4.Location = new System.Drawing.Point(441, 27);
             this.btn_map4.Name = "btn_map4";
             this.btn_map4.Size = new System.Drawing.Size(87, 70);
             this.btn_map4.TabIndex = 5;
@@ -61,7 +61,7 @@
             // 
             // btn_map3
             // 
-            this.btn_map3.Location = new System.Drawing.Point(283, 202);
+            this.btn_map3.Location = new System.Drawing.Point(315, 27);
             this.btn_map3.Name = "btn_map3";
             this.btn_map3.Size = new System.Drawing.Size(87, 70);
             this.btn_map3.TabIndex = 4;
@@ -70,7 +70,7 @@
             // 
             // btn_map6
             // 
-            this.btn_map6.Location = new System.Drawing.Point(662, 202);
+            this.btn_map6.Location = new System.Drawing.Point(678, 27);
             this.btn_map6.Name = "btn_map6";
             this.btn_map6.Size = new System.Drawing.Size(87, 70);
             this.btn_map6.TabIndex = 7;
@@ -79,7 +79,7 @@
             // 
             // btn_map5
             // 
-            this.btn_map5.Location = new System.Drawing.Point(538, 202);
+            this.btn_map5.Location = new System.Drawing.Point(554, 27);
             this.btn_map5.Name = "btn_map5";
             this.btn_map5.Size = new System.Drawing.Size(87, 70);
             this.btn_map5.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             // btn_map8
             // 
-            this.btn_map8.Location = new System.Drawing.Point(909, 202);
+            this.btn_map8.Location = new System.Drawing.Point(923, 27);
             this.btn_map8.Name = "btn_map8";
             this.btn_map8.Size = new System.Drawing.Size(87, 70);
             this.btn_map8.TabIndex = 9;
@@ -97,7 +97,7 @@
             // 
             // btn_map7
             // 
-            this.btn_map7.Location = new System.Drawing.Point(785, 202);
+            this.btn_map7.Location = new System.Drawing.Point(801, 27);
             this.btn_map7.Name = "btn_map7";
             this.btn_map7.Size = new System.Drawing.Size(87, 70);
             this.btn_map7.TabIndex = 8;
@@ -106,6 +106,9 @@
             // 
             // pnl_mapDescription
             // 
+            this.pnl_mapDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_mapDescription.Controls.Add(this.lbl_mapDescription);
             this.pnl_mapDescription.Location = new System.Drawing.Point(26, 381);
             this.pnl_mapDescription.Name = "pnl_mapDescription";
@@ -123,7 +126,7 @@
             // 
             // btn_map1
             // 
-            this.btn_map1.Location = new System.Drawing.Point(35, 202);
+            this.btn_map1.Location = new System.Drawing.Point(72, 27);
             this.btn_map1.Name = "btn_map1";
             this.btn_map1.Size = new System.Drawing.Size(87, 70);
             this.btn_map1.TabIndex = 2;
@@ -134,6 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.фон;
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.pnl_mapDescription);
             this.Controls.Add(this.btn_map8);

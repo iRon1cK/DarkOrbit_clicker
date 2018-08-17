@@ -30,6 +30,7 @@
         {
             this.pnlContent = new System.Windows.Forms.Panel();
             this.p_backBarStats = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_level = new System.Windows.Forms.Label();
             this.lbl_hon = new System.Windows.Forms.Label();
             this.lbl_exp = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.btn_start = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.p_backBarStats.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -53,7 +53,6 @@
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.Transparent;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(90, 0);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(0);
             this.pnlContent.Name = "pnlContent";
@@ -84,6 +83,16 @@
             this.p_backBarStats.Name = "p_backBarStats";
             this.p_backBarStats.Size = new System.Drawing.Size(860, 235);
             this.p_backBarStats.TabIndex = 2;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(782, 52);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.TabIndex = 12;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // lbl_level
             // 
@@ -232,16 +241,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 445);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.Location = new System.Drawing.Point(782, 52);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(75, 23);
-            this.btn_exit.TabIndex = 12;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // MainWindow
             // 
