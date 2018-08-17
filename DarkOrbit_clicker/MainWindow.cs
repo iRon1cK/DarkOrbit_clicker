@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
-{
+{    
     public partial class MainWindow : Form
+        
     {
         public static User currentUser = new User("Zhora");
 
@@ -27,7 +28,15 @@ namespace DarkOrbit_clicker
         public static List<Shield> shieldList = new List<Shield>();
 
         public MainWindow()
+
         {
+           // CorpSelect corpSelect = new CorpSelect()
+            //if (currentUser != null)
+           // {
+           //corpSelect.ShowDialog());
+           // }
+
+
             InitializeComponent();
             LoadData();
 
@@ -41,10 +50,10 @@ namespace DarkOrbit_clicker
             RefreshInfo();
         }
 
-        public void LoadData() // Метод загрузки  иконок предметов в магазине , вызывается при переходе в магазин.
+        public void LoadData() // Метод заполняет тестовыми элементами базы данных категорий магазина . 
         {
             Random rnd = new Random();
-            for (int sp = 0; sp < 10; sp++)  // Для кораблей.
+            for (int sp = 0; sp < 10; sp++)  // Заполнение базы данных для кораблей тестовыми элементами.
             {
                 Spaceship spaceship = new Spaceship();
                 spaceship.name = "Index: " + sp;
@@ -52,7 +61,7 @@ namespace DarkOrbit_clicker
                 spaceshipList.Add(spaceship);
             }
 
-            for (int sp = 0; sp < 10; sp++) // Для дизайнов кораблей.
+            for (int sp = 0; sp < 10; sp++) // Заполнение базы данных для дизайнов корабля тестовыми элементами.
             {
                 Design design = new Design();
                 design.name = "Index: " + sp;
@@ -61,7 +70,9 @@ namespace DarkOrbit_clicker
             }
         }
 
-        public void InsertFormIntoControl(Control control, Form frm) // Метод для Control в любой элемент.
+        public void InsertFormIntoControl(Control control, Form frm) // Метод принимает Control и возвращает Form.
+                                                                    // Используется для того , чтобы поместить отправленную форму в отправленный элемент.
+                                                                   // Благодаря DockStyle.Fill помещенная в панель форма полностью  её заполняет.
         {
             frm.TopLevel = false;
             control.Controls.Clear();
@@ -80,7 +91,8 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_hangar_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы ангара.
+        private void btn_hangar_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+                                                                           // Панель заполняет форма ангара и отрисовывается.
         {
             Form hangar = new Hangar();
             hangar.TopLevel = false;
@@ -90,22 +102,24 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_shop_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы магазина.
+        private void btn_shop_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+                                                                         // Панель заполняет форма магазина и отрисовывается.
         {
             InsertFormIntoControl(pnlContent, new Shop(this));
         }
 
-        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы космических врат.
+        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+                                                                                // Панель заполняет форма галактических врат и отрисовывается.
         {
             InsertFormIntoControl(pnlContent, new GalaxyGates());
         }
 
-        private void MainWindow_Deactivate(object sender, EventArgs e)
+        private void MainWindow_Deactivate(object sender, EventArgs e) // Форма не поверх всех элементов.
         {
             TopMost = false;
         }
 
-        private void MainWindow_Activated(object sender, EventArgs e)
+        private void MainWindow_Activated(object sender, EventArgs e) // Метод для присваивания TopMost результата сравнения WindowState с FormWindowState.Maximized .
         {
             TopMost = WindowState == FormWindowState.Maximized;
         }
