@@ -53,9 +53,7 @@ namespace DarkOrbit_clicker
             foreach (Spaceship spaceship in MainWindow.spaceshipList)
             {
                 Panel pnl = new Panel();
-                pnl.Tag = spaceship;
-                pnl.BackgroundImageLayout = ImageLayout.Zoom;
-                pnl.BackgroundImage = spaceship.image;
+                pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
                 
                 pnl.Width = pnl.Height = pnl_backShopItems.Width / 3 - 12*2;
                 
@@ -65,8 +63,6 @@ namespace DarkOrbit_clicker
                     y += 10 + pnl.Height;
                 }
                 pnl.Location = new Point(x, y);
-
-                pnl.Click += pnlSpaceShip_Click;
 
                 Label labName = new Label();
                 labName.Text = spaceship.name;
@@ -91,6 +87,16 @@ namespace DarkOrbit_clicker
                 labPrice.BackColor = Color.FromArgb(175, Color.Black);
                 labPrice.ForeColor = Color.White;
                 pnl.Controls.Add(labPrice);
+
+                Panel pnlImage = new Panel();
+                pnlImage.Tag = spaceship;
+                pnlImage.BackgroundImageLayout = ImageLayout.Zoom;
+                pnlImage.BackgroundImage = spaceship.image;
+                pnlImage.BackColor = Color.Transparent;
+                pnlImage.Click += pnlSpaceShip_Click;
+                pnlImage.Size = pnl.Size;
+                pnlImage.Location = new Point(0, 0);
+                pnl.Controls.Add(pnlImage);
 
                 pnl_backShopItems.Controls.Add(pnl);
                 i++;

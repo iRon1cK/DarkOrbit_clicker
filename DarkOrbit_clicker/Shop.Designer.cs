@@ -154,7 +154,7 @@
             // 
             // btn_buyItem
             // 
-            this.btn_buyItem.Location = new System.Drawing.Point(91, 362);
+            this.btn_buyItem.Location = new System.Drawing.Point(92, 368);
             this.btn_buyItem.Name = "btn_buyItem";
             this.btn_buyItem.Size = new System.Drawing.Size(108, 45);
             this.btn_buyItem.TabIndex = 1;
@@ -164,21 +164,27 @@
             // 
             // lbl_itemPrice
             // 
-            this.lbl_itemPrice.AutoSize = true;
-            this.lbl_itemPrice.Location = new System.Drawing.Point(111, 346);
+            this.lbl_itemPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_itemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_itemPrice.ForeColor = System.Drawing.Color.White;
+            this.lbl_itemPrice.Location = new System.Drawing.Point(45, 346);
             this.lbl_itemPrice.Name = "lbl_itemPrice";
-            this.lbl_itemPrice.Size = new System.Drawing.Size(68, 13);
+            this.lbl_itemPrice.Size = new System.Drawing.Size(200, 13);
             this.lbl_itemPrice.TabIndex = 0;
             this.lbl_itemPrice.Text = "ITEM PRICE";
+            this.lbl_itemPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_itemName
             // 
-            this.lbl_itemName.AutoSize = true;
-            this.lbl_itemName.Location = new System.Drawing.Point(112, 235);
+            this.lbl_itemName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_itemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_itemName.ForeColor = System.Drawing.Color.White;
+            this.lbl_itemName.Location = new System.Drawing.Point(45, 235);
             this.lbl_itemName.Name = "lbl_itemName";
-            this.lbl_itemName.Size = new System.Drawing.Size(67, 13);
+            this.lbl_itemName.Size = new System.Drawing.Size(200, 13);
             this.lbl_itemName.TabIndex = 0;
             this.lbl_itemName.Text = "ITEM NAME";
+            this.lbl_itemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_shopItemDescription
             // 
@@ -205,12 +211,15 @@
             // 
             // lbl_itemDescription
             // 
-            this.lbl_itemDescription.AutoSize = true;
-            this.lbl_itemDescription.Location = new System.Drawing.Point(87, 259);
+            this.lbl_itemDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_itemDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_itemDescription.ForeColor = System.Drawing.Color.White;
+            this.lbl_itemDescription.Location = new System.Drawing.Point(45, 259);
             this.lbl_itemDescription.Name = "lbl_itemDescription";
-            this.lbl_itemDescription.Size = new System.Drawing.Size(116, 13);
+            this.lbl_itemDescription.Size = new System.Drawing.Size(200, 76);
             this.lbl_itemDescription.TabIndex = 0;
             this.lbl_itemDescription.Text = "ITEMS DESCRIPTION";
+            this.lbl_itemDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -255,7 +264,6 @@
             this.Name = "Shop";
             this.Text = "Shop";
             this.pnl_shopItemDescription.ResumeLayout(false);
-            this.pnl_shopItemDescription.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

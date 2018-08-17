@@ -65,7 +65,7 @@ namespace DarkOrbit_clicker.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _1_1 {
             get {
-                object obj = ResourceManager.GetObject("1-1", resourceCulture);
+                object obj = ResourceManager.GetObject("_1_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace DarkOrbit_clicker.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap bg_real_100x100 {
             get {
-                object obj = ResourceManager.GetObject("bg-real_100x100", resourceCulture);
+                object obj = ResourceManager.GetObject("bg_real_100x100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +175,17 @@ namespace DarkOrbit_clicker.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Выбор_компании_фон {
             get {
-                object obj = ResourceManager.GetObject("Выбор компании фон", resourceCulture);
+                object obj = ResourceManager.GetObject("Выбор_компании_фон", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Выбор_компании_фон1 {
+            get {
+                object obj = ResourceManager.GetObject("Выбор_компании_фон1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

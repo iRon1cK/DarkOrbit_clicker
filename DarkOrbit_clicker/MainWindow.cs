@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,20 +21,19 @@ namespace DarkOrbit_clicker
         public static List<Booster> boosterList = new List<Booster>();
         public static List<Pet> petList = new List<Pet>();
         public static List<Protocol> protocolList = new List<Protocol>();
-        public static List<Ammo> ammolList = new List<Ammo>();
+        public static List<Ammo> ammoList = new List<Ammo>();
         public static List<Design> designList = new List<Design>();
         public static List<Laser> laserList = new List<Laser>();
-        public static List<Shield> shipList = new List<Shield>();
+        public static List<Shield> shieldList = new List<Shield>();
 
         public MainWindow()
         {
             InitializeComponent();
             LoadData();
 
-            //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
-
+            TopMost = true;
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
 
             currentUser.kredits += 5000;
             currentUser.spaceships.Add(new Spaceship());
@@ -50,7 +51,7 @@ namespace DarkOrbit_clicker
                 spaceship.price = rnd.Next(100, 10000);
                 spaceshipList.Add(spaceship);
             }
-            
+
             for (int sp = 0; sp < 10; sp++)
             {
                 Design design = new Design();
@@ -71,11 +72,11 @@ namespace DarkOrbit_clicker
 
         public void RefreshInfo()
         {
-            lbl_level.Text = "Level: " + MainWindow.currentUser.level;
-            lbl_exp.Text = "Exp: " + MainWindow.currentUser.expirience;
-            lbl_hon.Text = "Honor: " + MainWindow.currentUser.honor;
-            lbl_uridium.Text = "Uridium: " + MainWindow.currentUser.uridium;
-            lbl_kredits.Text = "Kredits: " + MainWindow.currentUser.kredits;
+            lbl_level.Text = "Level: " + currentUser.level;
+            lbl_exp.Text = "Exp: " + currentUser.expirience;
+            lbl_hon.Text = "Honor: " + currentUser.honor;
+            lbl_uridium.Text = "Uridium: " + currentUser.uridium;
+            lbl_kredits.Text = "Kredits: " + currentUser.kredits;
 
         }
 
@@ -99,28 +100,19 @@ namespace DarkOrbit_clicker
             InsertFormIntoControl(pnlContent, new GalaxyGates());
         }
 
-        private void MainWindow_Resize(object sender, EventArgs e)
-        {
-            //if (WindowState == FormWindowState.Maximized)
-            //{
-            //    TopMost = true;
-            //    FormBorderStyle = FormBorderStyle.None;
-            //}
-            //else
-            //{
-            //    TopMost = false;
-            //    FormBorderStyle = FormBorderStyle.Sizable;
-            //}
-        }
-
         private void MainWindow_Deactivate(object sender, EventArgs e)
         {
-            //TopMost = false;
+            TopMost = false;
         }
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
-            //TopMost = WindowState == FormWindowState.Maximized;
+            TopMost = WindowState == FormWindowState.Maximized;
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
