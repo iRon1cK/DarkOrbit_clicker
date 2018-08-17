@@ -23,7 +23,6 @@ namespace DarkOrbit_clicker
             PET,
             PETprotocols,
             Ammo
-                //.... TODO
         }
 
         public enum Currency

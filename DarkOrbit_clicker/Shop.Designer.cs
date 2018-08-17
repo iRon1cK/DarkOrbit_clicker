@@ -52,26 +52,29 @@
             // 
             // btn_designs
             // 
+            this.btn_designs.BackColor = System.Drawing.SystemColors.Control;
             this.btn_designs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_designs.Location = new System.Drawing.Point(3, 50);
             this.btn_designs.Name = "btn_designs";
             this.btn_designs.Size = new System.Drawing.Size(194, 41);
             this.btn_designs.TabIndex = 2;
             this.btn_designs.Text = "DESIGNS";
-            this.btn_designs.UseVisualStyleBackColor = true;
+            this.btn_designs.UseVisualStyleBackColor = false;
             // 
             // btn_drones
             // 
+            this.btn_drones.BackColor = System.Drawing.SystemColors.Control;
             this.btn_drones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_drones.Location = new System.Drawing.Point(3, 97);
             this.btn_drones.Name = "btn_drones";
             this.btn_drones.Size = new System.Drawing.Size(194, 41);
             this.btn_drones.TabIndex = 2;
             this.btn_drones.Text = "DRONES";
-            this.btn_drones.UseVisualStyleBackColor = true;
+            this.btn_drones.UseVisualStyleBackColor = false;
             // 
             // btn_ships
             // 
+            this.btn_ships.BackColor = System.Drawing.SystemColors.Control;
             this.btn_ships.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_ships.Location = new System.Drawing.Point(3, 3);
             this.btn_ships.Name = "btn_ships";
@@ -79,67 +82,73 @@
             this.btn_ships.TabIndex = 2;
             this.btn_ships.Text = "SHIPS";
             this.btn_ships.UseCompatibleTextRendering = true;
-            this.btn_ships.UseVisualStyleBackColor = true;
+            this.btn_ships.UseVisualStyleBackColor = false;
             // 
             // btn_generators
             // 
+            this.btn_generators.BackColor = System.Drawing.SystemColors.Control;
             this.btn_generators.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_generators.Location = new System.Drawing.Point(3, 191);
             this.btn_generators.Name = "btn_generators";
             this.btn_generators.Size = new System.Drawing.Size(194, 41);
             this.btn_generators.TabIndex = 2;
             this.btn_generators.Text = "GENERATORS";
-            this.btn_generators.UseVisualStyleBackColor = true;
+            this.btn_generators.UseVisualStyleBackColor = false;
             // 
             // btn_weapoons
             // 
+            this.btn_weapoons.BackColor = System.Drawing.SystemColors.Control;
             this.btn_weapoons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_weapoons.Location = new System.Drawing.Point(3, 144);
             this.btn_weapoons.Name = "btn_weapoons";
             this.btn_weapoons.Size = new System.Drawing.Size(194, 41);
             this.btn_weapoons.TabIndex = 2;
             this.btn_weapoons.Text = "WEAPOONS";
-            this.btn_weapoons.UseVisualStyleBackColor = true;
+            this.btn_weapoons.UseVisualStyleBackColor = false;
             // 
             // btn_boosters
             // 
+            this.btn_boosters.BackColor = System.Drawing.SystemColors.Control;
             this.btn_boosters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_boosters.Location = new System.Drawing.Point(3, 238);
             this.btn_boosters.Name = "btn_boosters";
             this.btn_boosters.Size = new System.Drawing.Size(194, 41);
             this.btn_boosters.TabIndex = 2;
             this.btn_boosters.Text = "BOOSTERS";
-            this.btn_boosters.UseVisualStyleBackColor = true;
+            this.btn_boosters.UseVisualStyleBackColor = false;
             // 
             // btn_petProtocols
             // 
+            this.btn_petProtocols.BackColor = System.Drawing.SystemColors.Control;
             this.btn_petProtocols.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_petProtocols.Location = new System.Drawing.Point(3, 332);
             this.btn_petProtocols.Name = "btn_petProtocols";
             this.btn_petProtocols.Size = new System.Drawing.Size(194, 41);
             this.btn_petProtocols.TabIndex = 2;
             this.btn_petProtocols.Text = "P.E.T./Protocols";
-            this.btn_petProtocols.UseVisualStyleBackColor = true;
+            this.btn_petProtocols.UseVisualStyleBackColor = false;
             // 
             // btn_pet
             // 
+            this.btn_pet.BackColor = System.Drawing.SystemColors.Control;
             this.btn_pet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_pet.Location = new System.Drawing.Point(3, 285);
             this.btn_pet.Name = "btn_pet";
             this.btn_pet.Size = new System.Drawing.Size(194, 41);
             this.btn_pet.TabIndex = 2;
             this.btn_pet.Text = "P.E.T.";
-            this.btn_pet.UseVisualStyleBackColor = true;
+            this.btn_pet.UseVisualStyleBackColor = false;
             // 
             // btn_ammo
             // 
+            this.btn_ammo.BackColor = System.Drawing.SystemColors.Control;
             this.btn_ammo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_ammo.Location = new System.Drawing.Point(3, 379);
             this.btn_ammo.Name = "btn_ammo";
             this.btn_ammo.Size = new System.Drawing.Size(194, 43);
             this.btn_ammo.TabIndex = 2;
             this.btn_ammo.Text = "AMMO";
-            this.btn_ammo.UseVisualStyleBackColor = true;
+            this.btn_ammo.UseVisualStyleBackColor = false;
             // 
             // pnl_backShopItems
             // 

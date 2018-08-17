@@ -13,7 +13,5 @@ namespace DarkOrbit_clicker
         public int bonus;
         public int skill;
         public int price;
-       
-
     }
 }
