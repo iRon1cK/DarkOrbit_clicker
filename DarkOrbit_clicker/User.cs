@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DarkOrbit_clicker
 {
     [Serializable]
-    public class User
+    public class User // Основные параметры пользователя.
     {
         public string name;
         public long kredits = 0;

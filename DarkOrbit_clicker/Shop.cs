@@ -45,12 +45,12 @@ namespace DarkOrbit_clicker
             LoadShips();
         }
 
-        public void LoadShips()
+        public void LoadShips() // Метод для отрисовки иконок магазина и их содержимого.
         {
             int x = 27;
             int y = 8;
             int i = 0;
-            foreach (Spaceship spaceship in MainWindow.spaceshipList)
+            foreach (Spaceship spaceship in MainWindow.spaceshipList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
@@ -106,15 +106,16 @@ namespace DarkOrbit_clicker
         }
 
         //TODO
-        private void updateSpaceshipInfo()
+        private void updateSpaceshipInfo() // Метод для отображения информации о выбраном корабле.
         {
             //Тут selectedShip - корабль, по которому нажали
             pctr_image_item_selected.BackgroundImage = selectedShip.image;
             lbl_itemName.Text = selectedShip.name;
+            //lbl_itemPrice.Text = selectedShip.price;
             btn_buyItem.Enabled = enoughMoney();
         }
 
-        private bool enoughMoney()
+        private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
             if (selectedShip.currency == Currency.Kredits && (MainWindow.currentUser.kredits >= selectedShip.price))
                 return true;
@@ -131,7 +132,7 @@ namespace DarkOrbit_clicker
        
         
 
-        private void btn_buyItem_Click(object sender, EventArgs e)
+        private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
             User currentUser = MainWindow.currentUser;
             if (selectedShip.currency == Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))

@@ -41,10 +41,10 @@ namespace DarkOrbit_clicker
             RefreshInfo();
         }
 
-        public void LoadData()
+        public void LoadData() // Метод загрузки  иконок предметов в магазине , вызывается при переходе в магазин.
         {
             Random rnd = new Random();
-            for (int sp = 0; sp < 10; sp++)
+            for (int sp = 0; sp < 10; sp++)  // Для кораблей.
             {
                 Spaceship spaceship = new Spaceship();
                 spaceship.name = "Index: " + sp;
@@ -52,7 +52,7 @@ namespace DarkOrbit_clicker
                 spaceshipList.Add(spaceship);
             }
 
-            for (int sp = 0; sp < 10; sp++)
+            for (int sp = 0; sp < 10; sp++) // Для дизайнов кораблей.
             {
                 Design design = new Design();
                 design.name = "Index: " + sp;
@@ -61,7 +61,7 @@ namespace DarkOrbit_clicker
             }
         }
 
-        public void InsertFormIntoControl(Control control, Form frm)
+        public void InsertFormIntoControl(Control control, Form frm) // Метод для Control в любой элемент.
         {
             frm.TopLevel = false;
             control.Controls.Clear();
@@ -70,7 +70,7 @@ namespace DarkOrbit_clicker
             frm.Show();
         }
 
-        public void RefreshInfo()
+        public void RefreshInfo() // Метод для обновления пользовтельской информации.
         {
             lbl_level.Text = "Level: " + currentUser.level;
             lbl_exp.Text = "Exp: " + currentUser.expirience;
@@ -80,7 +80,7 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_hangar_MouseClick(object sender, MouseEventArgs e)
+        private void btn_hangar_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы ангара.
         {
             Form hangar = new Hangar();
             hangar.TopLevel = false;
@@ -90,12 +90,12 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_shop_MouseClick(object sender, MouseEventArgs e)
+        private void btn_shop_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы магазина.
         {
             InsertFormIntoControl(pnlContent, new Shop(this));
         }
 
-        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e)
+        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) // Метод для отрисовки формы космических врат.
         {
             InsertFormIntoControl(pnlContent, new GalaxyGates());
         }
@@ -110,7 +110,7 @@ namespace DarkOrbit_clicker
             TopMost = WindowState == FormWindowState.Maximized;
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e) // Метод для выхода из игры.
         {
             Application.Exit();
         }

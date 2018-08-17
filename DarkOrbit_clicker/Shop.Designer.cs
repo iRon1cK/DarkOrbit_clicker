@@ -78,6 +78,7 @@
             this.btn_ships.Size = new System.Drawing.Size(194, 41);
             this.btn_ships.TabIndex = 2;
             this.btn_ships.Text = "SHIPS";
+            this.btn_ships.UseCompatibleTextRendering = true;
             this.btn_ships.UseVisualStyleBackColor = true;
             // 
             // btn_generators
