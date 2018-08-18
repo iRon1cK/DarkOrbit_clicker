@@ -15,7 +15,7 @@ namespace DarkOrbit_clicker
     public partial class MainWindow : Form
         
     {
-        public static User currentUser = new User("Zhora");
+        public static User currentUser;
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
         public static List<Drone> droneList = new List<Drone>();
