@@ -9,15 +9,17 @@ namespace DatabaseEditor
 {
     public class ListMap
     {
+        public Type type;
         public string name;
         public List<object> list;
         public FieldInfo[] fields;
 
-        public ListMap(string name, List<object> list, object listObject)
+        public ListMap(List<object> list, object listObject)
         {
-            this.name = name;
             this.list = list;
-            this.fields = listObject.GetType().GetFields();
+            this.type = listObject.GetType();
+            this.name = type.Name;
+            this.fields = type.GetFields();
         }
 
         public override string ToString()

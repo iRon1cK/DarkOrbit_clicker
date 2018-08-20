@@ -36,6 +36,7 @@
             this.pnlItemDetails = new System.Windows.Forms.Panel();
             this.flpItems = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDetails = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSaveToDB = new System.Windows.Forms.Button();
             this.pnlItems.SuspendLayout();
             this.pnlItemDetails.SuspendLayout();
             this.SuspendLayout();
@@ -57,13 +58,13 @@
             this.txbDbPath.Location = new System.Drawing.Point(74, 6);
             this.txbDbPath.Name = "txbDbPath";
             this.txbDbPath.ReadOnly = true;
-            this.txbDbPath.Size = new System.Drawing.Size(917, 20);
+            this.txbDbPath.Size = new System.Drawing.Size(836, 20);
             this.txbDbPath.TabIndex = 1;
             // 
             // btnSelectDb
             // 
             this.btnSelectDb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectDb.Location = new System.Drawing.Point(997, 4);
+            this.btnSelectDb.Location = new System.Drawing.Point(916, 3);
             this.btnSelectDb.Name = "btnSelectDb";
             this.btnSelectDb.Size = new System.Drawing.Size(98, 23);
             this.btnSelectDb.TabIndex = 2;
@@ -126,11 +127,23 @@
             this.flpDetails.Size = new System.Drawing.Size(214, 548);
             this.flpDetails.TabIndex = 6;
             // 
+            // btnSaveToDB
+            // 
+            this.btnSaveToDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveToDB.Location = new System.Drawing.Point(1020, 3);
+            this.btnSaveToDB.Name = "btnSaveToDB";
+            this.btnSaveToDB.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveToDB.TabIndex = 5;
+            this.btnSaveToDB.Text = "Save";
+            this.btnSaveToDB.UseVisualStyleBackColor = true;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 593);
+            this.Controls.Add(this.btnSaveToDB);
             this.Controls.Add(this.pnlItemDetails);
             this.Controls.Add(this.pnlItems);
             this.Controls.Add(this.lbxListTypes);
@@ -157,6 +170,7 @@
         private System.Windows.Forms.Panel pnlItemDetails;
         private System.Windows.Forms.FlowLayoutPanel flpItems;
         private System.Windows.Forms.FlowLayoutPanel flpDetails;
+        private System.Windows.Forms.Button btnSaveToDB;
     }
 }
 
