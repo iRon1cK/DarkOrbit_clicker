@@ -15,7 +15,7 @@ namespace DarkOrbit_clicker
     public partial class MainWindow : Form
         
     {
-        public static User currentUser;
+        public static User currentUser = new User("Name");
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
         public static List<Drone> droneList = new List<Drone>();
@@ -44,9 +44,9 @@ namespace DarkOrbit_clicker
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
-            currentUser.kredits += 5000;
-            currentUser.spaceships.Add(new Spaceship());
-            currentUser.currentSpaceship = currentUser.spaceships.First();
+            //currentUser.kredits += 5000;
+            //currentUser.spaceships.Add(new Spaceship());
+            //currentUser.currentSpaceship = currentUser.spaceships.First();
             RefreshInfo();
         }
 

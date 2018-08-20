@@ -37,7 +37,6 @@
             this.btn_petProtocols = new System.Windows.Forms.Button();
             this.btn_pet = new System.Windows.Forms.Button();
             this.btn_ammo = new System.Windows.Forms.Button();
-            this.pnl_backShopItems = new System.Windows.Forms.Panel();
             this.btn_buyItem = new System.Windows.Forms.Button();
             this.lbl_itemPrice = new System.Windows.Forms.Label();
             this.lbl_itemName = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.pctr_image_item_selected = new System.Windows.Forms.PictureBox();
             this.lbl_itemDescription = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flp_backShopItems = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_shopItemDescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -81,7 +81,6 @@
             this.btn_ships.Size = new System.Drawing.Size(194, 41);
             this.btn_ships.TabIndex = 2;
             this.btn_ships.Text = "SHIPS";
-            this.btn_ships.UseCompatibleTextRendering = true;
             this.btn_ships.UseVisualStyleBackColor = false;
             // 
             // btn_generators
@@ -150,18 +149,6 @@
             this.btn_ammo.Text = "AMMO";
             this.btn_ammo.UseVisualStyleBackColor = false;
             // 
-            // pnl_backShopItems
-            // 
-            this.pnl_backShopItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_backShopItems.AutoScroll = true;
-            this.pnl_backShopItems.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
-            this.pnl_backShopItems.Location = new System.Drawing.Point(218, 12);
-            this.pnl_backShopItems.Name = "pnl_backShopItems";
-            this.pnl_backShopItems.Size = new System.Drawing.Size(574, 576);
-            this.pnl_backShopItems.TabIndex = 3;
-            // 
             // btn_buyItem
             // 
             this.btn_buyItem.Location = new System.Drawing.Point(92, 368);
@@ -198,7 +185,7 @@
             // 
             // pnl_shopItemDescription
             // 
-            this.pnl_shopItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_shopItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_shopItemDescription.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
             this.pnl_shopItemDescription.Controls.Add(this.btn_buyItem);
             this.pnl_shopItemDescription.Controls.Add(this.pctr_image_item_selected);
@@ -260,6 +247,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 425);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // flp_backShopItems
+            // 
+            this.flp_backShopItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp_backShopItems.AutoScroll = true;
+            this.flp_backShopItems.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
+            this.flp_backShopItems.Location = new System.Drawing.Point(218, 12);
+            this.flp_backShopItems.Name = "flp_backShopItems";
+            this.flp_backShopItems.Padding = new System.Windows.Forms.Padding(15);
+            this.flp_backShopItems.Size = new System.Drawing.Size(574, 576);
+            this.flp_backShopItems.TabIndex = 0;
+            // 
             // Shop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,9 +267,9 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.фон;
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.flp_backShopItems);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_shopItemDescription);
-            this.Controls.Add(this.pnl_backShopItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Shop";
             this.Text = "Shop";
@@ -290,7 +290,6 @@
         private System.Windows.Forms.Button btn_petProtocols;
         private System.Windows.Forms.Button btn_pet;
         private System.Windows.Forms.Button btn_ammo;
-        private System.Windows.Forms.Panel pnl_backShopItems;
         private System.Windows.Forms.Panel pnl_shopItemDescription;
         private System.Windows.Forms.Label lbl_itemDescription;
         private System.Windows.Forms.Button btn_buyItem;
@@ -298,5 +297,6 @@
         private System.Windows.Forms.Label lbl_itemName;
         private System.Windows.Forms.PictureBox pctr_image_item_selected;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flp_backShopItems;
     }
 }

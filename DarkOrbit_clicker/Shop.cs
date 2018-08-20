@@ -47,31 +47,23 @@ namespace DarkOrbit_clicker
         public void LoadShips() // Метод используется для автоматического отображения ячеек и предметов в магазине. 
                                //Предметы он берёт из списков, которые в MainWindow
         {
-            int x = 27;
-            int y = 8;
             int i = 0;
             foreach (Spaceship spaceship in MainWindow.spaceshipList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
                 
-                pnl.Width = pnl.Height = pnl_backShopItems.Width / 3 - 12*2;
+                pnl.Width = pnl.Height = 155;
+                pnl.Margin = new Padding(10);
                 
-                x = 25 + ((i % 3)*(10+pnl.Width));
-                if (i % 3 == 0 && i > 0)
-                {
-                    y += 10 + pnl.Height;
-                }
-                pnl.Location = new Point(x, y);
 
                 Label labName = new Label();
                 labName.Text = spaceship.name;
                 labName.TextAlign = ContentAlignment.MiddleCenter;
                 labName.AutoSize = false;
-                labName.Top = 1;
-                labName.Left = 1;
                 labName.Width = pnl.Width-2;
                 labName.Height = 20;
+                labName.Location = new Point(1, 1);
                 labName.BackColor = Color.FromArgb(175, Color.Black);
                 labName.ForeColor = Color.White;
                 pnl.Controls.Add(labName);
@@ -82,23 +74,26 @@ namespace DarkOrbit_clicker
                 labPrice.AutoSize = false;
                 labPrice.Width = pnl.Width - 2;
                 labPrice.Height = 20;
-                labPrice.Top = pnl.Height - labPrice.Height - 1;
-                labPrice.Left = 1;
+                labPrice.Location = new Point(1, pnl.Height-labPrice.Height-1);
                 labPrice.BackColor = Color.FromArgb(175, Color.Black);
                 labPrice.ForeColor = Color.White;
                 pnl.Controls.Add(labPrice);
 
                 Panel pnlImage = new Panel();
-                pnlImage.Tag = spaceship;
                 pnlImage.BackgroundImageLayout = ImageLayout.Zoom;
                 pnlImage.BackgroundImage = spaceship.image;
                 pnlImage.BackColor = Color.Transparent;
-                pnlImage.Click += pnlSpaceShip_Click;
                 pnlImage.Size = pnl.Size;
                 pnlImage.Location = new Point(0, 0);
                 pnl.Controls.Add(pnlImage);
 
-                pnl_backShopItems.Controls.Add(pnl);
+                foreach (Control c in pnl.Controls)
+                {
+                    c.Click += pnlSpaceShip_Click;
+                    c.Tag = spaceship;
+                }
+
+                flp_backShopItems.Controls.Add(pnl);
                 i++;
             }
             selectedShip = MainWindow.spaceshipList.First();
@@ -126,7 +121,7 @@ namespace DarkOrbit_clicker
 
         private void pnlSpaceShip_Click(object sender, EventArgs e)
         {
-            selectedShip = (Spaceship)((Panel)sender).Tag;
+            selectedShip = (Spaceship)((Control)sender).Tag;
             updateSpaceshipInfo();
         }
        

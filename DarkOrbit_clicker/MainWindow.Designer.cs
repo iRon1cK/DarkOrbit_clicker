@@ -53,6 +53,7 @@
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.Transparent;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(90, 0);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(0);
             this.pnlContent.Name = "pnlContent";

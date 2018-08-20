@@ -34,6 +34,10 @@
             this.lbxListTypes = new System.Windows.Forms.ListBox();
             this.pnlItems = new System.Windows.Forms.Panel();
             this.pnlItemDetails = new System.Windows.Forms.Panel();
+            this.flpItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpDetails = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlItems.SuspendLayout();
+            this.pnlItemDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbDb
@@ -76,6 +80,7 @@
             this.lbxListTypes.Name = "lbxListTypes";
             this.lbxListTypes.Size = new System.Drawing.Size(164, 550);
             this.lbxListTypes.TabIndex = 3;
+            this.lbxListTypes.SelectedIndexChanged += new System.EventHandler(this.lbxListTypes_SelectedIndexChanged);
             // 
             // pnlItems
             // 
@@ -84,6 +89,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlItems.AutoScroll = true;
             this.pnlItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlItems.Controls.Add(this.flpItems);
             this.pnlItems.Location = new System.Drawing.Point(185, 32);
             this.pnlItems.Name = "pnlItems";
             this.pnlItems.Size = new System.Drawing.Size(688, 550);
@@ -95,10 +101,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlItemDetails.AutoScroll = true;
             this.pnlItemDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlItemDetails.Controls.Add(this.flpDetails);
             this.pnlItemDetails.Location = new System.Drawing.Point(879, 32);
             this.pnlItemDetails.Name = "pnlItemDetails";
             this.pnlItemDetails.Size = new System.Drawing.Size(216, 550);
             this.pnlItemDetails.TabIndex = 0;
+            // 
+            // flpItems
+            // 
+            this.flpItems.AutoScroll = true;
+            this.flpItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpItems.Location = new System.Drawing.Point(0, 0);
+            this.flpItems.Name = "flpItems";
+            this.flpItems.Size = new System.Drawing.Size(686, 548);
+            this.flpItems.TabIndex = 5;
+            // 
+            // flpDetails
+            // 
+            this.flpDetails.AutoScroll = true;
+            this.flpDetails.BackColor = System.Drawing.SystemColors.Control;
+            this.flpDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpDetails.Location = new System.Drawing.Point(0, 0);
+            this.flpDetails.Name = "flpDetails";
+            this.flpDetails.Size = new System.Drawing.Size(214, 548);
+            this.flpDetails.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -114,6 +140,8 @@
             this.MinimumSize = new System.Drawing.Size(600, 254);
             this.Name = "MainForm";
             this.Text = "DatabaseEditor";
+            this.pnlItems.ResumeLayout(false);
+            this.pnlItemDetails.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +155,8 @@
         private System.Windows.Forms.ListBox lbxListTypes;
         private System.Windows.Forms.Panel pnlItems;
         private System.Windows.Forms.Panel pnlItemDetails;
+        private System.Windows.Forms.FlowLayoutPanel flpItems;
+        private System.Windows.Forms.FlowLayoutPanel flpDetails;
     }
 }
 
