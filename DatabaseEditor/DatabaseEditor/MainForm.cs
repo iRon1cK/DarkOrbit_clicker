@@ -21,6 +21,17 @@ namespace DatabaseEditor
         String dbPath = "";
 
         List<ListMap> listMap = new List<ListMap>();
+        List<object> typeList = new List<object>() {
+            new Ammo(),
+            new Booster(),
+            new Drone(),
+            new Design(),
+            new Laser(),
+            new Pet(),
+            new Protocol(),
+            new Shield(),
+            new Spaceship()
+        };
 
         public MainForm()
         {
@@ -70,17 +81,7 @@ namespace DatabaseEditor
                 }
                 if (dbPath.EndsWith(".dodb"))
                 {
-                    List<object> objs = new List<object>();
-                    objs.Add(new Ammo());
-                    objs.Add(new Booster());
-                    objs.Add(new Drone());
-                    objs.Add(new Design());
-                    objs.Add(new Laser());
-                    objs.Add(new Pet());
-                    objs.Add(new Protocol());
-                    objs.Add(new Shield());
-                    objs.Add(new Spaceship());
-                    foreach (object o in objs)
+                    foreach (object o in typeList)
                     {
                         ListMap map = listMap.Find(s => s.type == o.GetType());
                         if (map == null)
@@ -119,7 +120,8 @@ namespace DatabaseEditor
                 {
                     dbPath = saveFileDialog.FileName;
                     txbDbPath.Text = dbPath;
-                } else
+                }
+                else
                 {
                     return;
                 }
@@ -239,7 +241,7 @@ namespace DatabaseEditor
 
         private void Item_Click(object sender, EventArgs e)
         {
-            foreach(Control cntrl in flpItems.Controls)
+            foreach (Control cntrl in flpItems.Controls)
             {
                 if (cntrl is Panel)
                 {
@@ -433,7 +435,7 @@ namespace DatabaseEditor
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            foreach(Control c in flpDetails.Controls)
+            foreach (Control c in flpDetails.Controls)
             {
                 if (c is Panel)
                 {
@@ -471,15 +473,10 @@ namespace DatabaseEditor
                     {
                         txbDbPath.Text = dbPath = "";
                     }
-                    listMap.Add(new ListMap(new Ammo()));
-                    listMap.Add(new ListMap(new Booster()));
-                    listMap.Add(new ListMap(new Drone()));
-                    listMap.Add(new ListMap(new Design()));
-                    listMap.Add(new ListMap(new Laser()));
-                    listMap.Add(new ListMap(new Pet()));
-                    listMap.Add(new ListMap(new Protocol()));
-                    listMap.Add(new ListMap(new Shield()));
-                    listMap.Add(new ListMap(new Spaceship()));
+                    foreach (object o in typeList)
+                    {
+                        listMap.Add(new ListMap(o));
+                    }
                     break;
                 case "User save file":
                     listMap.Clear();
