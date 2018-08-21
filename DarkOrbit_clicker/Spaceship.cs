@@ -10,14 +10,14 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class Spaceship
     {
-        public string name = "Phoenix";
-        public int hp = 100;
-        public List<Laser> lasers = new List<Laser>() { new Laser() };
-        public List<Shield> shields = new List<Shield>() { new Shield() };
-        public int shieldsMax = 100;
-        public int lasersMax = 100;
-        public int price = 100;
-        public Shop.Currency currency = Shop.Currency.Kredits;
-        public Image image = Properties.Resources.phoenix_100x100;
+        public string name;
+        public int hp;
+        public List<Laser> lasers = new List<Laser>();
+        public List<Shield> shields = new List<Shield>();
+        public int shieldsMax;
+        public int lasersMax;
+        public int price;
+        public Shop.Currency currency;
+        public Image image;
     }
 }

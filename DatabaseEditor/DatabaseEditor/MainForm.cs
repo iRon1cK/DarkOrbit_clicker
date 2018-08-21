@@ -1,9 +1,11 @@
 ﻿using DarkOrbit_clicker;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -16,13 +18,14 @@ namespace DatabaseEditor
 {
     public partial class MainForm : Form
     {
-        String dbPath = "data.dodb";
+        String dbPath = "";
 
         List<ListMap> listMap = new List<ListMap>();
 
         public MainForm()
         {
             InitializeComponent();
+            cbxCreateTypeSelection.SelectedIndex = 0;
             LoadData();
         }
 
@@ -47,40 +50,80 @@ namespace DatabaseEditor
                     {
                         foreach (object o in (List<object>)obj)
                         {
-                            if (listMap.Find(s => s.list.Contains(o)) == null)
+                            ListMap map = listMap.Find(s => s.type == o.GetType());
+                            if (map != null)
                             {
-                                ListMap map = listMap.Find(s => s.type == o.GetType());
-                                if (map != null)
-                                {
-                                    map.list.Add(o);
-                                }
-                                else
-                                {
-                                    map = new ListMap(new List<object>(), o);
-                                    listMap.Add(map);
-                                }
+                                map.list.Add(o);
+                            }
+                            else
+                            {
+                                map = new ListMap(new List<object>(), o);
+                                map.list.Add(o);
+                                listMap.Add(map);
                             }
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("An error has occured" + e.Message);
+                    MessageBox.Show("An error has occured: " + e.Message, "Error");
+                }
+                if (dbPath.EndsWith(".dodb"))
+                {
+                    List<object> objs = new List<object>();
+                    objs.Add(new Ammo());
+                    objs.Add(new Booster());
+                    objs.Add(new Drone());
+                    objs.Add(new Design());
+                    objs.Add(new Laser());
+                    objs.Add(new Pet());
+                    objs.Add(new Protocol());
+                    objs.Add(new Shield());
+                    objs.Add(new Spaceship());
+                    foreach (object o in objs)
+                    {
+                        ListMap map = listMap.Find(s => s.type == o.GetType());
+                        if (map == null)
+                        {
+                            map = new ListMap(new List<object>(), o);
+                            listMap.Add(map);
+                        }
+                    }
                 }
             }
-            lbxListTypes.DataSource = listMap;
+            refreshDataSource();
         }
 
         public void SaveData()
         {
-            List<object> toSave = new List<object>();
-            foreach (ListMap pair in listMap)
+            if (lbxListTypes.Items.Count < 1)
             {
-                toSave.Add(pair.list);
+                MessageBox.Show("You have nothing to save!", "Error");
+                return;
+            }
+            List<object> toSave = new List<object>();
+            foreach (ListMap map in listMap)
+            {
+                toSave.Add(map.list);
             }
 
             BinaryFormatter bf = new BinaryFormatter();
 
+            if (dbPath == "")
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Select where to save file";
+                saveFileDialog.Filter = lbxListTypes.Items.Count > 1 ? "DarkOrbit Database (*.dodb)|*.dodb" : "DarkOrbit SaveFile (*.dosv)|*.dosv";
+                saveFileDialog.CheckPathExists = true;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    dbPath = saveFileDialog.FileName;
+                    txbDbPath.Text = dbPath;
+                } else
+                {
+                    return;
+                }
+            }
             FileStream fsout = new FileStream(dbPath, FileMode.Create, FileAccess.Write, FileShare.None);
             try
             {
@@ -88,6 +131,7 @@ namespace DatabaseEditor
                 {
                     bf.Serialize(fsout, toSave);
                 }
+                btnSaveToDB.BackColor = btnSelectDb.BackColor;
             }
             catch (Exception e)
             {
@@ -99,7 +143,7 @@ namespace DatabaseEditor
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Title = "Select DB file";
-            fileDialog.Filter = "DarkOrbit Database (*.dodb)|*.dodb";
+            fileDialog.Filter = "DarkOrbit Database (*.dodb, *.dosv)|*.dodb;*.dosv";
             fileDialog.CheckPathExists = true;
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -111,6 +155,14 @@ namespace DatabaseEditor
 
         private void lbxListTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (sender is ListBox)
+            {
+                ListBox lbx = (ListBox)sender;
+                if (lbx.Items.Count < 1 || lbx.SelectedItem == null || lbx.SelectedItem.ToString() == "")
+                {
+                    return;
+                }
+            }
             int size = 160;
             flpItems.Controls.Clear();
             ListMap mappedList = ((ListMap)lbxListTypes.SelectedItem);
@@ -144,13 +196,13 @@ namespace DatabaseEditor
                             case "Image":
                                 pnl.BackgroundImage = (Image)field.GetValue(obj);
                                 pnl.BackgroundImageLayout = ImageLayout.Zoom;
-                                Console.WriteLine(field.FieldType.Name);
                                 break;
                             default:
                                 Console.WriteLine(field.FieldType.Name + " type is not supported in flpItems!");
                                 break;
                         }
-                    } catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                     }
@@ -169,8 +221,8 @@ namespace DatabaseEditor
             btnAddItem.Font = new Font(btnAddItem.Font.FontFamily, 30);
             btnAddItem.TextAlign = ContentAlignment.MiddleCenter;
             btnAddItem.Anchor = AnchorStyles.None;
-            btnAddItem.Size = new Size(size/2, size/2);
-            btnAddItem.Margin = new Padding(size/4);
+            btnAddItem.Size = new Size(size / 2, size / 2);
+            btnAddItem.Margin = new Padding(size / 4);
             btnAddItem.Click += BtnAddItem_Click;
             btnAddItem.Tag = mappedList;
 
@@ -180,14 +232,23 @@ namespace DatabaseEditor
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
             ListMap listMap = (ListMap)((Control)sender).Tag;
-            Control s = new Control();
+            Panel s = new Panel();
             s.Tag = new object[] { Activator.CreateInstance(listMap.type), listMap };
             Item_Click(s, new EventArgs());
         }
 
         private void Item_Click(object sender, EventArgs e)
         {
-            object[] tag = (object[])((Control)sender).Tag;
+            foreach(Control cntrl in flpItems.Controls)
+            {
+                if (cntrl is Panel)
+                {
+                    cntrl.BackColor = Color.FromArgb(25, 0, 0, 0);
+                }
+            }
+            Control c = (Control)sender;
+            object[] tag = (object[])c.Tag;
+            c.BackColor = Color.FromArgb(25, Color.Gold);
             object obj = tag[0];
             ListMap mappedList = (ListMap)tag[1];
             flpDetails.Controls.Clear();
@@ -208,6 +269,7 @@ namespace DatabaseEditor
 
                 object[] pnlTag = new object[] { obj, field, new object() };
 
+                object value;
                 if (field.FieldType.IsEnum)
                 {
                     ComboBox cbx = new ComboBox();
@@ -218,12 +280,19 @@ namespace DatabaseEditor
                         if (i > 0)
                         {
                             cbx.Items.Add(f.Name);
-                            if (f.Name == field.GetValue(obj).ToString())
+                            if ((value = field.GetValue(obj)) != null)
                             {
-                                cbx.SelectedIndex = i-1;
+                                if (f.Name == field.GetValue(obj).ToString())
+                                {
+                                    cbx.SelectedIndex = i - 1;
+                                }
                             }
                         }
                         i++;
+                    }
+                    if (cbx.SelectedIndex == -1 && cbx.Items.Count > 0)
+                    {
+                        cbx.SelectedIndex = 0;
                     }
                     cbx.Width = pnl.Width - 6;
                     cbx.Top = labName.Bottom + 5;
@@ -239,7 +308,10 @@ namespace DatabaseEditor
                     {
                         case "String":
                             TextBox txbString = new TextBox();
-                            txbString.Text = field.GetValue(obj).ToString();
+                            if ((value = field.GetValue(obj)) != null)
+                            {
+                                txbString.Text = value.ToString();
+                            }
                             txbString.AutoSize = false;
                             txbString.Width = pnl.Width - 6;
                             txbString.Left = 3;
@@ -255,7 +327,10 @@ namespace DatabaseEditor
                             NumericUpDown nudInt = new NumericUpDown();
                             nudInt.Maximum = Int32.MaxValue;
                             nudInt.Minimum = Int32.MinValue;
-                            nudInt.Value = (int)field.GetValue(obj);
+                            if ((value = field.GetValue(obj)) != null)
+                            {
+                                nudInt.Value = (int)field.GetValue(obj);
+                            }
                             nudInt.AutoSize = false;
                             nudInt.Width = pnl.Width - 6;
                             nudInt.Left = 3;
@@ -269,10 +344,15 @@ namespace DatabaseEditor
                             break;
                         case "Image":
                             PictureBox pbx = new PictureBox();
-                            pbx.BackgroundImage = (Image)field.GetValue(obj);
+                            if ((value = field.GetValue(obj)) != null)
+                            {
+                                pbx.BackgroundImage = (Image)field.GetValue(obj);
+                            }
                             pbx.BackgroundImageLayout = ImageLayout.Zoom;
                             pbx.Height = pbx.Width = pnl.Width - 6;
                             pbx.Top = labName.Bottom + 5;
+                            pbx.Click += detailsImagePbx_Click;
+
                             pnl.Controls.Add(pbx);
                             flpDetails.Controls.Add(pnl);
 
@@ -293,6 +373,30 @@ namespace DatabaseEditor
             saveBtn.Tag = tag;
             saveBtn.Click += SaveBtn_Click;
             flpDetails.Controls.Add(saveBtn);
+        }
+
+        private void detailsImagePbx_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Title = "Select new image";
+            fileDialog.CheckFileExists = true;
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
+            string extentions = "";
+            foreach (ImageCodecInfo c in codecs)
+            {
+                extentions += c.FilenameExtension.Replace(";", "");
+            }
+            extentions = extentions.Replace("*.", ";*.");
+            while (extentions.First() == ';')
+            {
+                extentions = extentions.Substring(1);
+            }
+            fileDialog.Filter = "Image Files|" + extentions;
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                PictureBox pbxImage = (PictureBox)sender;
+                pbxImage.BackgroundImage = Image.FromFile(fileDialog.FileName);
+            }
         }
 
         private void detailsField_ValueChanged(object sender, EventArgs e)
@@ -349,7 +453,47 @@ namespace DatabaseEditor
         private void btnSaveToDB_Click(object sender, EventArgs e)
         {
             SaveData();
-            btnSaveToDB.BackColor = SystemColors.Control;
+        }
+
+        private void refreshDataSource()
+        {
+            lbxListTypes.DataSource = null;
+            lbxListTypes.DataSource = listMap;
+        }
+
+        private void btnCreateDB_Click(object sender, EventArgs e)
+        {
+            switch (cbxCreateTypeSelection.SelectedItem.ToString())
+            {
+                case "Game Database":
+                    listMap.Clear();
+                    if (dbPath != null)
+                    {
+                        txbDbPath.Text = dbPath = "";
+                    }
+                    listMap.Add(new ListMap(new Ammo()));
+                    listMap.Add(new ListMap(new Booster()));
+                    listMap.Add(new ListMap(new Drone()));
+                    listMap.Add(new ListMap(new Design()));
+                    listMap.Add(new ListMap(new Laser()));
+                    listMap.Add(new ListMap(new Pet()));
+                    listMap.Add(new ListMap(new Protocol()));
+                    listMap.Add(new ListMap(new Shield()));
+                    listMap.Add(new ListMap(new Spaceship()));
+                    break;
+                case "User save file":
+                    listMap.Clear();
+                    if (dbPath != null)
+                    {
+                        txbDbPath.Text = dbPath = "";
+                    }
+                    listMap.Add(new ListMap(new User()));
+                    break;
+                default:
+                    MessageBox.Show("You've selected unsupported database type!", "Error");
+                    break;
+            }
+            refreshDataSource();
         }
     }
 }

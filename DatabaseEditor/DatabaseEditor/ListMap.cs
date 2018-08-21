@@ -22,6 +22,14 @@ namespace DatabaseEditor
             this.fields = type.GetFields();
         }
 
+        public ListMap(object listObject)
+        {
+            this.list = new List<object>();
+            this.type = listObject.GetType();
+            this.name = type.Name;
+            this.fields = type.GetFields();
+        }
+
         public override string ToString()
         {
             return name;

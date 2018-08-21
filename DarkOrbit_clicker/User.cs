@@ -10,11 +10,11 @@ namespace DarkOrbit_clicker
     public class User // Основные параметры пользователя.
     {
         public string name;
-        public long kredits = 0;
-        public long uridium = 0;
-        public long expirience = 0;
-        public long honor = 0;
-        public int level = 1;
+        public long kredits;
+        public long uridium;
+        public long expirience;
+        public long honor;
+        public int level;
         public Corp corporation;
         public Spaceship currentSpaceship;
         public List<Spaceship> spaceships = new List<Spaceship>();
@@ -24,6 +24,11 @@ namespace DarkOrbit_clicker
             Venus,
             Mars,
             Earth
+        }
+
+        public User()
+        {
+
         }
 
         public User(string name)
