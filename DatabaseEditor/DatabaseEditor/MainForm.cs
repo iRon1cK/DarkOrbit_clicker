@@ -369,12 +369,12 @@ namespace DatabaseEditor
                 pnl.Tag = pnlTag;
                 pnl.Height = pnl.PreferredSize.Height;
             }
-            Button saveBtn = new Button();
-            saveBtn.Text = "Save";
-            saveBtn.Size = new Size(flpDetails.Width - 25, 35);
-            saveBtn.Tag = tag;
-            saveBtn.Click += SaveBtn_Click;
-            flpDetails.Controls.Add(saveBtn);
+            Button applyBtn = new Button();
+            applyBtn.Text = "Apply";
+            applyBtn.Size = new Size(flpDetails.Width - 25, 35);
+            applyBtn.Tag = tag;
+            applyBtn.Click += ApplyBtn_Click;
+            flpDetails.Controls.Add(applyBtn);
         }
 
         private void detailsImagePbx_Click(object sender, EventArgs e)
@@ -433,7 +433,7 @@ namespace DatabaseEditor
             }
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void ApplyBtn_Click(object sender, EventArgs e)
         {
             foreach (Control c in flpDetails.Controls)
             {
