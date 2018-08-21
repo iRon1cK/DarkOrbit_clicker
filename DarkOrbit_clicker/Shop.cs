@@ -96,7 +96,10 @@ namespace DarkOrbit_clicker
                 flp_backShopItems.Controls.Add(pnl);
                 i++;
             }
-            selectedShip = MainWindow.spaceshipList.First();
+            if (MainWindow.spaceshipList.Count > 0)
+            {
+                selectedShip = MainWindow.spaceshipList.First();
+            }
             updateSpaceshipInfo();
         }
 
@@ -104,10 +107,13 @@ namespace DarkOrbit_clicker
         private void updateSpaceshipInfo() // Метод для отображения информации о выбраном корабле.
         {
             //Тут selectedShip - корабль, по которому нажали
-            pctr_image_item_selected.BackgroundImage = selectedShip.image;
-            lbl_itemName.Text = selectedShip.name;
-            //lbl_itemPrice.Text = selectedShip.price;
-            btn_buyItem.Enabled = enoughMoney();
+            if (selectedShip != null)
+            {
+                pctr_image_item_selected.BackgroundImage = selectedShip.image;
+                lbl_itemName.Text = selectedShip.name;
+                //lbl_itemPrice.Text = selectedShip.price;
+                btn_buyItem.Enabled = enoughMoney();
+            }
         }
 
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.

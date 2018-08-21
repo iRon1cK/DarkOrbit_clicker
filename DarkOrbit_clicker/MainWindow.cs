@@ -13,9 +13,14 @@ using System.Windows.Forms;
 namespace DarkOrbit_clicker
 {    
     public partial class MainWindow : Form
-        
     {
-        public static User currentUser = new User("Name");
+        public const string DATABASE_PATH = "data.dodb";
+        public const string SAVEFILE_PATH = "users.dosv";
+
+
+        public static User currentUser;
+
+        public static List<User> userList = new List<User>();
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
         public static List<Drone> droneList = new List<Drone>();
@@ -40,6 +45,8 @@ namespace DarkOrbit_clicker
             InitializeComponent();
             LoadData();
 
+            currentUser = userList.First();
+
             TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
@@ -50,23 +57,92 @@ namespace DarkOrbit_clicker
             RefreshInfo();
         }
 
-        public void LoadData() // Метод заполняет тестовыми элементами базы данных категорий магазина . 
-        {
-            Random rnd = new Random();
-            for (int sp = 0; sp < 10; sp++)  // Заполнение базы данных для кораблей тестовыми элементами.
-            {
-                Spaceship spaceship = new Spaceship();
-                spaceship.name = "Index: " + sp;
-                spaceship.price = rnd.Next(100, 10000);
-                spaceshipList.Add(spaceship);
-            }
 
-            for (int sp = 0; sp < 10; sp++) // Заполнение базы данных для дизайнов корабля тестовыми элементами.
+        public void LoadData() //Загружает базу данных
+        {
+            List<object> result = new List<object>();
+            BinaryFormatter bf = new BinaryFormatter();
+            if (File.Exists(DATABASE_PATH))
             {
-                Design design = new Design();
-                design.name = "Index: " + sp;
-                design.price = rnd.Next(10000, 100000);
-                designList.Add(design);
+                FileStream fsin = new FileStream(DATABASE_PATH, FileMode.Open, FileAccess.Read, FileShare.None);
+                try
+                {
+                    using (fsin)
+                    {
+                        result = (List<object>)bf.Deserialize(fsin);
+                    }
+                    foreach (object obj in result)
+                    {
+                        foreach (object o in (List<object>)obj)
+                        {
+                            if (o is Spaceship)
+                            {
+                                spaceshipList.Add((Spaceship)o);
+                            }
+                            else if (o is Drone)
+                            {
+                                droneList.Add((Drone)o);
+                            }
+                            else if (o is Booster)
+                            {
+                                boosterList.Add((Booster)o);
+                            }
+                            else if (o is Pet)
+                            {
+                                petList.Add((Pet)o);
+                            }
+                            else if (o is Protocol)
+                            {
+                                protocolList.Add((Protocol)o);
+                            }
+                            else if (o is Ammo)
+                            {
+                                ammoList.Add((Ammo)o);
+                            }
+                            else if (o is Design)
+                            {
+                                designList.Add((Design)o);
+                            }
+                            else if (o is Laser)
+                            {
+                                laserList.Add((Laser)o);
+                            }
+                            else if (o is Shield)
+                            {
+                                shieldList.Add((Shield)o);
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error has occured: " + e.Message, "Error");
+                }
+            }
+            if (File.Exists(SAVEFILE_PATH))
+            {
+                FileStream fsin = new FileStream(SAVEFILE_PATH, FileMode.Open, FileAccess.Read, FileShare.None);
+                try
+                {
+                    using (fsin)
+                    {
+                        result = (List<object>)bf.Deserialize(fsin);
+                    }
+                    foreach (object obj in result)
+                    {
+                        foreach (object o in (List<object>)obj)
+                        {
+                            if (o is User)
+                            {
+                                userList.Add((User)o);
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error has occured: " + e.Message, "Error");
+                }
             }
         }
 
