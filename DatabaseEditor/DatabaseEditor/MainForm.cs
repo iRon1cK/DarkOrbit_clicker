@@ -74,6 +74,7 @@ namespace DatabaseEditor
                             }
                         }
                     }
+                    MessageBox.Show("File loaded successfully!", "Success");
                 }
                 catch (Exception e)
                 {
@@ -134,6 +135,7 @@ namespace DatabaseEditor
                     bf.Serialize(fsout, toSave);
                 }
                 btnSaveToDB.BackColor = btnSelectDb.BackColor;
+                MessageBox.Show("File saved successfully!", "Success");
             }
             catch (Exception e)
             {
