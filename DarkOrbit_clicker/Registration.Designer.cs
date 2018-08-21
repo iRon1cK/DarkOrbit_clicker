@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btn_logIn = new System.Windows.Forms.Button();
-            this.iHaveAccount = new System.Windows.Forms.RadioButton();
+            this.rdb_iHaveAccount = new System.Windows.Forms.RadioButton();
             this.txtBox_passEnter = new System.Windows.Forms.TextBox();
-            this.iDontHaveAccount = new System.Windows.Forms.RadioButton();
+            this.rdb_iDontHaveAccount = new System.Windows.Forms.RadioButton();
             this.txtBox_passRepeat = new System.Windows.Forms.TextBox();
             this.lbl_enterName = new System.Windows.Forms.Label();
             this.txtBox_nameEnter = new System.Windows.Forms.TextBox();
@@ -41,50 +41,59 @@
             // 
             // btn_logIn
             // 
+            this.btn_logIn.Enabled = false;
             this.btn_logIn.Location = new System.Drawing.Point(249, 76);
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(115, 23);
             this.btn_logIn.TabIndex = 18;
             this.btn_logIn.Text = "LOG IN";
             this.btn_logIn.UseVisualStyleBackColor = true;
+            this.btn_logIn.ClientSizeChanged += new System.EventHandler(this.btn_logIn_Click);
             // 
-            // iHaveAccount
+            // rdb_iHaveAccount
             // 
-            this.iHaveAccount.AutoSize = true;
-            this.iHaveAccount.Checked = true;
-            this.iHaveAccount.Location = new System.Drawing.Point(13, 10);
-            this.iHaveAccount.Name = "iHaveAccount";
-            this.iHaveAccount.Size = new System.Drawing.Size(97, 17);
-            this.iHaveAccount.TabIndex = 10;
-            this.iHaveAccount.TabStop = true;
-            this.iHaveAccount.Text = "I have account";
-            this.iHaveAccount.UseVisualStyleBackColor = true;
+            this.rdb_iHaveAccount.AutoSize = true;
+            this.rdb_iHaveAccount.Checked = true;
+            this.rdb_iHaveAccount.Location = new System.Drawing.Point(13, 10);
+            this.rdb_iHaveAccount.Name = "rdb_iHaveAccount";
+            this.rdb_iHaveAccount.Size = new System.Drawing.Size(97, 17);
+            this.rdb_iHaveAccount.TabIndex = 10;
+            this.rdb_iHaveAccount.TabStop = true;
+            this.rdb_iHaveAccount.Text = "I have account";
+            this.rdb_iHaveAccount.UseVisualStyleBackColor = true;
+            this.rdb_iHaveAccount.CheckedChanged += new System.EventHandler(this.haveOrDontHaveAccount_CheckedChanged);
             // 
             // txtBox_passEnter
             // 
             this.txtBox_passEnter.Location = new System.Drawing.Point(264, 34);
             this.txtBox_passEnter.Name = "txtBox_passEnter";
+            this.txtBox_passEnter.PasswordChar = '•';
             this.txtBox_passEnter.Size = new System.Drawing.Size(100, 20);
             this.txtBox_passEnter.TabIndex = 17;
+            this.txtBox_passEnter.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // iDontHaveAccount
+            // rdb_iDontHaveAccount
             // 
-            this.iDontHaveAccount.AutoSize = true;
-            this.iDontHaveAccount.Location = new System.Drawing.Point(13, 34);
-            this.iDontHaveAccount.Name = "iDontHaveAccount";
-            this.iDontHaveAccount.Size = new System.Drawing.Size(120, 17);
-            this.iDontHaveAccount.TabIndex = 11;
-            this.iDontHaveAccount.TabStop = true;
-            this.iDontHaveAccount.Text = "I need new account";
-            this.iDontHaveAccount.UseVisualStyleBackColor = true;
+            this.rdb_iDontHaveAccount.AutoSize = true;
+            this.rdb_iDontHaveAccount.Location = new System.Drawing.Point(13, 34);
+            this.rdb_iDontHaveAccount.Name = "rdb_iDontHaveAccount";
+            this.rdb_iDontHaveAccount.Size = new System.Drawing.Size(120, 17);
+            this.rdb_iDontHaveAccount.TabIndex = 11;
+            this.rdb_iDontHaveAccount.TabStop = true;
+            this.rdb_iDontHaveAccount.Text = "I need new account";
+            this.rdb_iDontHaveAccount.UseVisualStyleBackColor = true;
+            this.rdb_iDontHaveAccount.CheckedChanged += new System.EventHandler(this.haveOrDontHaveAccount_CheckedChanged);
             // 
             // txtBox_passRepeat
             // 
+            this.txtBox_passRepeat.BackColor = System.Drawing.Color.White;
             this.txtBox_passRepeat.Location = new System.Drawing.Point(123, 78);
             this.txtBox_passRepeat.Name = "txtBox_passRepeat";
+            this.txtBox_passRepeat.PasswordChar = '•';
             this.txtBox_passRepeat.Size = new System.Drawing.Size(100, 20);
             this.txtBox_passRepeat.TabIndex = 16;
             this.txtBox_passRepeat.Visible = false;
+            this.txtBox_passRepeat.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // lbl_enterName
             // 
@@ -101,6 +110,7 @@
             this.txtBox_nameEnter.Name = "txtBox_nameEnter";
             this.txtBox_nameEnter.Size = new System.Drawing.Size(100, 20);
             this.txtBox_nameEnter.TabIndex = 15;
+            this.txtBox_nameEnter.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // lbl_enterPass
             // 
@@ -125,11 +135,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 143);
+            this.ClientSize = new System.Drawing.Size(381, 119);
             this.Controls.Add(this.btn_logIn);
-            this.Controls.Add(this.iHaveAccount);
+            this.Controls.Add(this.rdb_iHaveAccount);
             this.Controls.Add(this.txtBox_passEnter);
-            this.Controls.Add(this.iDontHaveAccount);
+            this.Controls.Add(this.rdb_iDontHaveAccount);
             this.Controls.Add(this.txtBox_passRepeat);
             this.Controls.Add(this.lbl_enterName);
             this.Controls.Add(this.txtBox_nameEnter);
@@ -137,6 +147,7 @@
             this.Controls.Add(this.lbl_repeatPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,9 +157,9 @@
         #endregion
 
         private System.Windows.Forms.Button btn_logIn;
-        private System.Windows.Forms.RadioButton iHaveAccount;
+        private System.Windows.Forms.RadioButton rdb_iHaveAccount;
         private System.Windows.Forms.TextBox txtBox_passEnter;
-        private System.Windows.Forms.RadioButton iDontHaveAccount;
+        private System.Windows.Forms.RadioButton rdb_iDontHaveAccount;
         private System.Windows.Forms.TextBox txtBox_passRepeat;
         private System.Windows.Forms.Label lbl_enterName;
         private System.Windows.Forms.TextBox txtBox_nameEnter;
