@@ -35,11 +35,14 @@ namespace DarkOrbit_clicker
         public MainWindow()
 
         {
-           // CorpSelect corpSelect = new CorpSelect()
-            //if (currentUser != null)
-           // {
-           //corpSelect.ShowDialog());
-           // }
+            Registration registration = new Registration();
+
+            registration.ShowDialog();
+
+           // CorpSelect corpSelect = new CorpSelect();
+            
+           //corpSelect.ShowDialog();
+          
 
 
             InitializeComponent();
