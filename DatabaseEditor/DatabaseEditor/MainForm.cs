@@ -329,11 +329,12 @@ namespace DatabaseEditor
                             break;
                         case "Int32":
                             NumericUpDown nudInt = new NumericUpDown();
+                            nudInt.Name = "32";
                             nudInt.Maximum = Int32.MaxValue;
                             nudInt.Minimum = Int32.MinValue;
                             if ((value = field.GetValue(obj)) != null)
                             {
-                                nudInt.Value = (int)field.GetValue(obj);
+                                nudInt.Value = (Int32)field.GetValue(obj);
                             }
                             nudInt.AutoSize = false;
                             nudInt.Width = pnl.Width - 6;
@@ -345,6 +346,26 @@ namespace DatabaseEditor
 
                             pnlTag[2] = Int32.Parse(nudInt.Value.ToString());
                             nudInt.ValueChanged += detailsField_ValueChanged;
+                            break;
+                        case "Int64":
+                            NumericUpDown nudLong = new NumericUpDown();
+                            nudLong.Name = "64";
+                            nudLong.Maximum = Int64.MaxValue;
+                            nudLong.Minimum = Int64.MinValue;
+                            if ((value = field.GetValue(obj)) != null)
+                            {
+                                nudLong.Value = (Int64)field.GetValue(obj);
+                            }
+                            nudLong.AutoSize = false;
+                            nudLong.Width = pnl.Width - 6;
+                            nudLong.Left = 3;
+                            nudLong.Top = labName.Bottom + 5;
+                            nudLong.TextAlign = HorizontalAlignment.Center;
+                            pnl.Controls.Add(nudLong);
+                            flpDetails.Controls.Add(pnl);
+
+                            pnlTag[2] = Int32.Parse(nudLong.Value.ToString());
+                            nudLong.ValueChanged += detailsField_ValueChanged;
                             break;
                         case "Image":
                             PictureBox pbx = new PictureBox();
@@ -414,9 +435,17 @@ namespace DatabaseEditor
             else if (sender is NumericUpDown)
             {
                 NumericUpDown nudInt = (NumericUpDown)sender;
-                if (tag[2] is Int32)
+                switch (((FieldInfo)tag[1]).FieldType.Name)
                 {
-                    tag[2] = Int32.Parse(nudInt.Value.ToString());
+                    case "Int32":
+                        tag[2] = Int32.Parse(nudInt.Value.ToString());
+                        break;
+                    case "Int64":
+                        tag[2] = Int64.Parse(nudInt.Value.ToString());
+                        break;
+                    default:
+                        Console.WriteLine(tag[1].GetType().Name + " value of NumericUpDown is not supported!");
+                        break;
                 }
             }
             else if (sender is PictureBox)
