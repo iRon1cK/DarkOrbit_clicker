@@ -45,7 +45,7 @@
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(115, 23);
             this.btn_logIn.TabIndex = 18;
-            this.btn_logIn.Text = "LOG IN/REGISTER";
+            this.btn_logIn.Text = "LOG IN";
             this.btn_logIn.UseVisualStyleBackColor = true;
             // 
             // iHaveAccount

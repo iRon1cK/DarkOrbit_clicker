@@ -17,7 +17,7 @@ namespace DarkOrbit_clicker
             InitializeComponent();
         }
 
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        private void haveOrDontHaveAccount_CheckedChanged(object sender, EventArgs e)
         {
             
                
