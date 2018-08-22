@@ -37,5 +37,11 @@ namespace DarkOrbit_clicker
         private void btn_logIn_Click(object sender, EventArgs e)
         { 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string hashedPass = Hasher.hashSha256(txtBox_passRepeat.Text);
+            MessageBox.Show(hashedPass);
+        }
     }
 }

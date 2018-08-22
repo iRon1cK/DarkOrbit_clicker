@@ -37,6 +37,7 @@
             this.txtBox_nameEnter = new System.Windows.Forms.TextBox();
             this.lbl_enterPass = new System.Windows.Forms.Label();
             this.lbl_repeatPass = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_logIn
@@ -131,11 +132,22 @@
             this.lbl_repeatPass.Text = "Repeat your password:";
             this.lbl_repeatPass.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(346, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "HASH";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 119);
+            this.ClientSize = new System.Drawing.Size(433, 158);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_logIn);
             this.Controls.Add(this.rdb_iHaveAccount);
             this.Controls.Add(this.txtBox_passEnter);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.TextBox txtBox_nameEnter;
         private System.Windows.Forms.Label lbl_enterPass;
         private System.Windows.Forms.Label lbl_repeatPass;
+        private System.Windows.Forms.Button button1;
     }
 }

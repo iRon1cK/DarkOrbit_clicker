@@ -67,6 +67,7 @@
     <Compile Include="Hangar.Designer.cs">
       <DependentUpon>Hangar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hasher.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
