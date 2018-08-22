@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
-{    
+{
     public partial class MainWindow : Form
     {
         public const string DATABASE_PATH = "data.dodb";
@@ -39,29 +39,23 @@ namespace DarkOrbit_clicker
 
             registration.ShowDialog();
 
-           // CorpSelect corpSelect = new CorpSelect();
+            // CorpSelect corpSelect = new CorpSelect();
+
+            //corpSelect.ShowDialog();
+
             
-           //corpSelect.ShowDialog();
-          
-
-
             InitializeComponent();
             LoadData();
-
-            currentUser = userList.First();
 
             TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
-            //currentUser.kredits += 5000;
-            //currentUser.spaceships.Add(new Spaceship());
-            //currentUser.currentSpaceship = currentUser.spaceships.First();
             RefreshInfo();
         }
 
-
-        public void LoadData() //Загружает базу данных
+        //Загружает базу данных
+        public void LoadData() 
         {
             List<object> result = new List<object>();
             BinaryFormatter bf = new BinaryFormatter();
@@ -149,9 +143,28 @@ namespace DarkOrbit_clicker
             }
         }
 
-        public void InsertFormIntoControl(Control control, Form frm) // Метод принимает Control и возвращает Form.
-                                                                    // Используется для того , чтобы поместить отправленную форму в отправленный элемент.
-                                                                   // Благодаря DockStyle.Fill помещенная в панель форма полностью  её заполняет.
+        //Сохраняет всех юзеров в файл
+        public static void SaveGame() 
+        {
+            try
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream fsout = new FileStream(SAVEFILE_PATH, FileMode.Create, FileAccess.Write, FileShare.None);
+                using (fsout)
+                {
+                    bf.Serialize(fsout, userList);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error has occured while saving: " + e.Message, "Error");
+            }
+        }
+
+        // Метод принимает Control и возвращает Form.
+        // Используется для того , чтобы поместить отправленную форму в отправленный элемент.
+        // Благодаря DockStyle.Fill помещенная в панель форма полностью  её заполняет.
+        public void InsertFormIntoControl(Control control, Form frm) 
         {
             frm.TopLevel = false;
             control.Controls.Clear();
@@ -160,7 +173,8 @@ namespace DarkOrbit_clicker
             frm.Show();
         }
 
-        public void RefreshInfo() // Метод для обновления пользовтельской информации.
+        // Метод для обновления пользовтельской информации.
+        public void RefreshInfo()
         {
             lbl_level.Text = "Level: " + currentUser.level;
             lbl_exp.Text = "Exp: " + currentUser.expirience;
@@ -170,8 +184,9 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_hangar_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
-                                                                           // Панель заполняет форма ангара и отрисовывается.
+        // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+        // Панель заполняет форма ангара и отрисовывается.
+        private void btn_hangar_MouseClick(object sender, MouseEventArgs e)
         {
             Form hangar = new Hangar();
             hangar.TopLevel = false;
@@ -181,29 +196,34 @@ namespace DarkOrbit_clicker
 
         }
 
-        private void btn_shop_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
-                                                                         // Панель заполняет форма магазина и отрисовывается.
+        // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+        // Панель заполняет форма магазина и отрисовывается.
+        private void btn_shop_MouseClick(object sender, MouseEventArgs e) 
         {
             InsertFormIntoControl(pnlContent, new Shop(this));
         }
 
-        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
-                                                                                // Панель заполняет форма галактических врат и отрисовывается.
+        // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
+        // Панель заполняет форма галактических врат и отрисовывается.
+        private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) 
         {
             InsertFormIntoControl(pnlContent, new GalaxyGates());
         }
 
-        private void MainWindow_Deactivate(object sender, EventArgs e) // Форма не поверх всех элементов.
+        // Форма не поверх всех элементов.
+        private void MainWindow_Deactivate(object sender, EventArgs e) 
         {
             TopMost = false;
         }
 
-        private void MainWindow_Activated(object sender, EventArgs e) // Метод для присваивания TopMost результата сравнения WindowState с FormWindowState.Maximized .
+        // Метод для присваивания TopMost результата сравнения WindowState с FormWindowState.Maximized .
+        private void MainWindow_Activated(object sender, EventArgs e) 
         {
             TopMost = WindowState == FormWindowState.Maximized;
         }
 
-        private void btn_exit_Click(object sender, EventArgs e) // Метод для выхода из игры.
+        // Метод для выхода из игры.
+        private void btn_exit_Click(object sender, EventArgs e) 
         {
             Application.Exit();
         }
