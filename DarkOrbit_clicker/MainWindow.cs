@@ -31,7 +31,6 @@ namespace DarkOrbit_clicker
         public static List<Design> designList = new List<Design>();
         public static List<Laser> laserList = new List<Laser>();
         public static List<Shield> shieldList = new List<Shield>();
-
         public MainWindow()
 
         {

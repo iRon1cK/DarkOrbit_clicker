@@ -15,6 +15,7 @@ namespace DarkOrbit_clicker
         public long expirience;
         public long honor;
         public int level;
+        public int password;
         public Corp corporation;
         public Spaceship currentSpaceship;
         public List<Spaceship> spaceships = new List<Spaceship>();
