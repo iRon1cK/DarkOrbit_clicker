@@ -21,21 +21,39 @@ namespace DarkOrbit_clicker
         {
             btn_logIn.Text = rdb_iHaveAccount.Checked ? "Log in" : "Register";  // Меняется кнопка , в зависимости от выбора rdb.
             lbl_repeatPass.Visible = txtBox_passRepeat.Visible = rdb_iDontHaveAccount.Checked; // Показывает или не показывает поле для ввода подтверждения пароля.
+
+            ValidateFields();
         }
 
         private void txtBox_TextChanged(object sender, EventArgs e) // Метод вызывается , когда начинается ввод текста в поле для ввода.
         {
-            txtBox_passRepeat.BackColor = txtBox_passEnter.Text != "" && txtBox_passEnter.Text != txtBox_passRepeat.Text && //Если при регистрации ввели не одинаковые пароли подсветка
-            rdb_iDontHaveAccount.Checked ? Color.FromArgb(255, 255, 200, 200) : Color.White;  // поля для ввода подтверждения пароля становится красной.
-
-
-            btn_logIn.Enabled = txtBox_nameEnter.Text != "" && txtBox_passEnter.Text != "" && // Активация кнопки входа  или регистрации, если
-            (rdb_iHaveAccount.Checked || txtBox_passEnter.Text == txtBox_passRepeat.Text);   //все данные введены верно.
-
+            ValidateFields();
         }
 
         private void btn_logIn_Click(object sender, EventArgs e)
         { 
+        }
+
+        private void ValidateFields()
+        {
+            string error = "";
+            error += txtBox_nameEnter.Text == "" ? "Login field is empty!\n" : "";
+            error += txtBox_nameEnter.TextLength > Constants.MAX_LOGIN_LENGTH ? "Login can't be more than " + Constants.MAX_LOGIN_LENGTH + " characters!\n" : "";
+            error += txtBox_nameEnter.TextLength < Constants.MIN_LOGIN_LENGTH ? "Login can't be less than " + Constants.MIN_LOGIN_LENGTH + " characters!\n" : "";
+
+            error += 
+                txtBox_passEnter.Text != "" && txtBox_passEnter.Text != txtBox_passRepeat.Text && rdb_iDontHaveAccount.Checked ? 
+                "Passwords are not matching!\n" : "";
+            error += 
+                txtBox_passEnter.TextLength > Constants.MAX_PASSWORD_LENGTH ? "Password can't be more than " + Constants.MAX_PASSWORD_LENGTH + " characters!\n" : "";
+            error += 
+                txtBox_passEnter.TextLength < Constants.MIN_PASSWORD_LENGTH ? "Password can't be less than " + Constants.MIN_PASSWORD_LENGTH + " characters!\n" : "";
+
+            if (error != lbl_error.Text)
+            {
+                lbl_error.Text = error;
+            }
+            btn_logIn.Enabled = (error == "");
         }
 
         private void button1_Click(object sender, EventArgs e)

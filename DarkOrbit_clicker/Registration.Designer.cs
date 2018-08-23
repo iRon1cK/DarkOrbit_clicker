@@ -38,6 +38,7 @@
             this.lbl_enterPass = new System.Windows.Forms.Label();
             this.lbl_repeatPass = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbl_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_logIn
@@ -142,11 +143,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbl_error
+            // 
+            this.lbl_error.AutoSize = true;
+            this.lbl_error.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error.Location = new System.Drawing.Point(10, 105);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(0, 13);
+            this.lbl_error.TabIndex = 20;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(433, 158);
+            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_logIn);
             this.Controls.Add(this.rdb_iHaveAccount);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Label lbl_enterPass;
         private System.Windows.Forms.Label lbl_repeatPass;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_error;
     }
 }
