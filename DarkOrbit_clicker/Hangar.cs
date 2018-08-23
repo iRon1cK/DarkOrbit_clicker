@@ -15,7 +15,7 @@ namespace DarkOrbit_clicker
         public Hangar()
         {
             InitializeComponent();
-            ShowSpaceship(MainWindow.currentUser.currentSpaceship);
+            ShowSpaceship(AuthService.currentUser.currentSpaceship);
         }
 
         private void ShowSpaceship(Spaceship spaceship) // Метод принимает Spaceship, ничего не возвращает. 

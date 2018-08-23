@@ -14,13 +14,6 @@ namespace DarkOrbit_clicker
 {
     public partial class MainWindow : Form
     {
-        public const string DATABASE_PATH = "data.dodb";
-        public const string SAVEFILE_PATH = "users.dosv";
-
-
-        public static User currentUser;
-
-        public static List<User> userList = new List<User>();
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
         public static List<Drone> droneList = new List<Drone>();
@@ -31,8 +24,8 @@ namespace DarkOrbit_clicker
         public static List<Design> designList = new List<Design>();
         public static List<Laser> laserList = new List<Laser>();
         public static List<Shield> shieldList = new List<Shield>();
-        public MainWindow()
 
+        public MainWindow()
         {
             Registration registration = new Registration();
 
@@ -58,9 +51,9 @@ namespace DarkOrbit_clicker
         {
             List<object> result = new List<object>();
             BinaryFormatter bf = new BinaryFormatter();
-            if (File.Exists(DATABASE_PATH))
+            if (File.Exists(Constants.DATABASE_PATH))
             {
-                FileStream fsin = new FileStream(DATABASE_PATH, FileMode.Open, FileAccess.Read, FileShare.None);
+                FileStream fsin = new FileStream(Constants.DATABASE_PATH, FileMode.Open, FileAccess.Read, FileShare.None);
                 try
                 {
                     using (fsin)
@@ -112,52 +105,10 @@ namespace DarkOrbit_clicker
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("An error has occured: " + e.Message, "Error");
+                    MessageBox.Show("An error has occured while loading game database: " + e.Message, "Error");
                 }
             }
-            if (File.Exists(SAVEFILE_PATH))
-            {
-                FileStream fsin = new FileStream(SAVEFILE_PATH, FileMode.Open, FileAccess.Read, FileShare.None);
-                try
-                {
-                    using (fsin)
-                    {
-                        result = (List<object>)bf.Deserialize(fsin);
-                    }
-                    foreach (object obj in result)
-                    {
-                        foreach (object o in (List<object>)obj)
-                        {
-                            if (o is User)
-                            {
-                                userList.Add((User)o);
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("An error has occured: " + e.Message, "Error");
-                }
-            }
-        }
-
-        //Сохраняет всех юзеров в файл
-        public static void SaveGame() 
-        {
-            try
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                FileStream fsout = new FileStream(SAVEFILE_PATH, FileMode.Create, FileAccess.Write, FileShare.None);
-                using (fsout)
-                {
-                    bf.Serialize(fsout, userList);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("An error has occured while saving: " + e.Message, "Error");
-            }
+            AuthService.LoadSaves();
         }
 
         // Метод принимает Control и возвращает Form.
@@ -175,12 +126,11 @@ namespace DarkOrbit_clicker
         // Метод для обновления пользовтельской информации.
         public void RefreshInfo()
         {
-            lbl_level.Text = "Level: " + currentUser.level;
-            lbl_exp.Text = "Exp: " + currentUser.expirience;
-            lbl_hon.Text = "Honor: " + currentUser.honor;
-            lbl_uridium.Text = "Uridium: " + currentUser.uridium;
-            lbl_kredits.Text = "Kredits: " + currentUser.kredits;
-
+            lbl_level.Text = "Level: " + AuthService.currentUser.level;
+            lbl_exp.Text = "Exp: " + AuthService.currentUser.expirience;
+            lbl_hon.Text = "Honor: " + AuthService.currentUser.honor;
+            lbl_uridium.Text = "Uridium: " + AuthService.currentUser.uridium;
+            lbl_kredits.Text = "Kredits: " + AuthService.currentUser.kredits;
         }
 
         // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.

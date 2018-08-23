@@ -19,17 +19,17 @@ namespace DarkOrbit_clicker
 
         private void btn_acceptMMO_Click(object sender, EventArgs e)
         {
-            MainWindow.currentUser.corporation = User.Corp.Mars;
+            AuthService.currentUser.corporation = User.Corp.Mars;
         }
 
         private void btn_acceptVRU_Click(object sender, EventArgs e)
         {
-            MainWindow.currentUser.corporation = User.Corp.Venus;
+            AuthService.currentUser.corporation = User.Corp.Venus;
         }
 
         private void btn_acceptEIC_Click(object sender, EventArgs e)
         {
-            MainWindow.currentUser.corporation = User.Corp.Earth;
+            AuthService.currentUser.corporation = User.Corp.Earth;
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)

@@ -48,6 +48,7 @@
     <Compile Include="Ammo.cs" />
     <Compile Include="AuthService.cs" />
     <Compile Include="Booster.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="CorpSelect.cs">
       <SubType>Form</SubType>
     </Compile>

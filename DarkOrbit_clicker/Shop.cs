@@ -118,9 +118,9 @@ namespace DarkOrbit_clicker
 
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
-            if (selectedShip.currency == Currency.Kredits && (MainWindow.currentUser.kredits >= selectedShip.price))
+            if (selectedShip.currency == Currency.Kredits && (AuthService.currentUser.kredits >= selectedShip.price))
                 return true;
-            else if (selectedShip.currency == Currency.Uridium && (MainWindow.currentUser.uridium >= selectedShip.price))
+            else if (selectedShip.currency == Currency.Uridium && (AuthService.currentUser.uridium >= selectedShip.price))
                 return true;
             return false;
         }
@@ -135,7 +135,7 @@ namespace DarkOrbit_clicker
 
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
-            User currentUser = MainWindow.currentUser;
+            User currentUser = AuthService.currentUser;
             if (selectedShip.currency == Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
             {
                 currentUser.kredits -= selectedShip.price;
