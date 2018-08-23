@@ -14,13 +14,13 @@ namespace DarkOrbit_clicker
         public static User currentUser; 
         private static List<User> userList = new List<User>();
 
-        public static bool LogIn(string login, int password)
+        public static bool LogIn(string login, string password)
         {
             //
             return false;
         }
 
-        public static bool Register(string login, int password)
+        public static bool Register(string login, string password)
         {
             //
             return false;
