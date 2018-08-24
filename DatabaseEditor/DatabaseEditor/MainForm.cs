@@ -32,6 +32,7 @@ namespace DatabaseEditor
             new Shield(),
             new Spaceship()
         };
+        ListMap selectedList;
 
         public MainForm()
         {
@@ -42,10 +43,7 @@ namespace DatabaseEditor
 
         public void LoadData()
         {
-            foreach (ListMap lmap in listMap)
-            {
-                lmap.list.Clear();
-            }
+            listMap.Clear();
             List<object> result = new List<object>();
             BinaryFormatter bf = new BinaryFormatter();
             if (File.Exists(dbPath))
@@ -159,17 +157,19 @@ namespace DatabaseEditor
 
         private void lbxListTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (sender is ListBox)
+            ListBox lbx = (ListBox)sender;
+            if (lbx.Items.Count < 1 || lbx.SelectedItem == null || lbx.SelectedItem.ToString() == "")
             {
-                ListBox lbx = (ListBox)sender;
-                if (lbx.Items.Count < 1 || lbx.SelectedItem == null || lbx.SelectedItem.ToString() == "")
-                {
-                    return;
-                }
+                return;
             }
+            selectedList = (ListMap)lbxListTypes.SelectedItem;
+            DisplayItems(selectedList);
+        }
+
+        private void DisplayItems(ListMap mappedList)
+        {
             int size = 160;
             flpItems.Controls.Clear();
-            ListMap mappedList = ((ListMap)lbxListTypes.SelectedItem);
             foreach (object obj in mappedList.list)
             {
                 Panel pnl = new Panel();
@@ -398,6 +398,22 @@ namespace DatabaseEditor
             applyBtn.Tag = tag;
             applyBtn.Click += ApplyBtn_Click;
             flpDetails.Controls.Add(applyBtn);
+
+            Button removeBtn = new Button();
+            removeBtn.Text = "Remove";
+            removeBtn.Size = new Size(flpDetails.Width - 25, 35);
+            removeBtn.Tag = tag;
+            removeBtn.Click += RemoveBtn_Click;
+            flpDetails.Controls.Add(removeBtn);
+        }
+
+        private void RemoveBtn_Click(object sender, EventArgs e)
+        {
+            object[] tag = (object[])((Control)sender).Tag;
+            ((ListMap)tag[1]).list.Remove(tag[0]);
+            refreshDataSource();
+            DisplayItems((ListMap)tag[1]);
+            btnSaveToDB.BackColor = Color.Red;
         }
 
         private void detailsImagePbx_Click(object sender, EventArgs e)
@@ -479,7 +495,7 @@ namespace DatabaseEditor
                     }
                 }
             }
-            lbxListTypes_SelectedIndexChanged(new object(), new EventArgs());
+            DisplayItems(selectedList);
             btnSaveToDB.BackColor = Color.Red;
         }
 
