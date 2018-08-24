@@ -11,24 +11,55 @@ namespace DarkOrbit_clicker
 {
     class AuthService
     {
-        public static User currentUser; 
+        public static User currentUser;
         private static List<User> userList = new List<User>();
 
-        
-        
 
+
+        //-проверка, есть ли в списке юзеров юзер с такими логином и паролем
+        //-если есть, присваивать его переменной currentUser
+        //-если нет, возвращать false
         public static bool LogIn(string login, string password)
         {
-            //
+            string hash = CalculateHash(login, password);
+            //обычный вариарт
+            foreach (User user in userList)
+            {
+                if (user.name == login && user.password == hash)
+                {
+                    currentUser = user;
+                    return true;
+                }
+                
+            }
             return false;
-        }
 
+            /*лямбда
+            User foundUser = userList.Find(user => (user.name == login && user.password == hash));
+            if (foundUser != null)
+            {
+                currentUser = foundUser;
+                return true;
+            }*/
+
+        }
+    
         public static bool Register(string login, string password)
         {
-            CalculateHash (login,password);
+            try
+            {
 
-
-            return true;
+                CalculateHash(login, password);
+                User user = new User(login, password);
+                userList.Add(user);
+                currentUser = user;
+                SaveGame();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static string CalculateHash (string login, string password)
