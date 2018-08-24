@@ -10,12 +10,12 @@ namespace DarkOrbit_clicker
     public class User // Основные параметры пользователя.
     {
         public string name;
-        public long kredits;
-        public long uridium;
-        public long expirience;
-        public long honor;
-        public int level;
-        public int password;
+        public long kredits = 1000;
+        public long uridium = 0;
+        public long expirience = 0;
+        public long honor = 0;
+        public int level = 1;
+        public string password;
         public Corp corporation;
         public Spaceship currentSpaceship;
         public List<Spaceship> spaceships = new List<Spaceship>();
@@ -32,9 +32,11 @@ namespace DarkOrbit_clicker
 
         }
 
-        public User(string name)
+        public User(string name, string password)
         {
             this.name = name;
+            this.password = password;
+
             //switch (corp)
             //{
             //    case Corp.Earth:
