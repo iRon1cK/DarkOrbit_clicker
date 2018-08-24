@@ -13,6 +13,6 @@ namespace DarkOrbit_clicker
         public int damage;
         public int price;
         public int reloadTime;
-        public Shop.Currency currency;
+        public Shop_form.Currency currency;
     }
 }

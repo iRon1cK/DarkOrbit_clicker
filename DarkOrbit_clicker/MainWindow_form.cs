@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class MainWindow : Form
+    public partial class MainWindow_form : Form
     {
 
         public static List<Spaceship> spaceshipList = new List<Spaceship>();
@@ -25,9 +25,9 @@ namespace DarkOrbit_clicker
         public static List<Laser> laserList = new List<Laser>();
         public static List<Shield> shieldList = new List<Shield>();
 
-        public MainWindow()
+        public MainWindow_form()
         {
-            Registration registration = new Registration();
+            Registration_form registration = new Registration_form();
 
             registration.ShowDialog();
 
@@ -137,7 +137,7 @@ namespace DarkOrbit_clicker
         // Панель заполняет форма ангара и отрисовывается.
         private void btn_hangar_MouseClick(object sender, MouseEventArgs e)
         {
-            Form hangar = new Hangar();
+            Form hangar = new Hangar_form();
             hangar.TopLevel = false;
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(hangar);
@@ -149,14 +149,14 @@ namespace DarkOrbit_clicker
         // Панель заполняет форма магазина и отрисовывается.
         private void btn_shop_MouseClick(object sender, MouseEventArgs e) 
         {
-            InsertFormIntoControl(pnlContent, new Shop(this));
+            InsertFormIntoControl(pnlContent, new Shop_form(this));
         }
 
         // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
         // Панель заполняет форма галактических врат и отрисовывается.
         private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) 
         {
-            InsertFormIntoControl(pnlContent, new GalaxyGates());
+            InsertFormIntoControl(pnlContent, new GalaxyGates_form());
         }
 
         // Форма не поверх всех элементов.

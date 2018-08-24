@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Registration : Form
+    public partial class Registration_form : Form
     {
-        public Registration()
+        public Registration_form()
         {
             InitializeComponent();
         }

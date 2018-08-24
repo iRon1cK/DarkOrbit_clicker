@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class Registration
+    partial class Registration_form
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class MapSelection : Form
+    public partial class MapSelection_form : Form
     {
-        public MapSelection()
+        public MapSelection_form()
         {
             InitializeComponent();
         }
