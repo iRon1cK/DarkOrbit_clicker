@@ -29,7 +29,7 @@ namespace DarkOrbit_clicker
 
         public User()
         {
-
+          
         }
 
         public User(string name, string password)
