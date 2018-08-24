@@ -17,7 +17,7 @@ namespace DarkOrbit_clicker
         public int shieldsMax;
         public int lasersMax;
         public int price;
-        public Shop.Currency currency;
+        public Shop_form.Currency currency;
         public Image image;
     }
 }

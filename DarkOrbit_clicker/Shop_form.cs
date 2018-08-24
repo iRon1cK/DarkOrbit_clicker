@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Shop : Form
+    public partial class Shop_form : Form
     {
         public enum Category
         {
@@ -35,9 +35,9 @@ namespace DarkOrbit_clicker
         public Spaceship selectedShip;
       
 
-        private MainWindow mainWindow;
+        private MainWindow_form mainWindow;
 
-        public Shop(MainWindow main)
+        public Shop_form(MainWindow_form main)
         {
             mainWindow = main;
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace DarkOrbit_clicker
                                //Предметы он берёт из списков, которые в MainWindow
         {
             int i = 0;
-            foreach (Spaceship spaceship in MainWindow.spaceshipList) 
+            foreach (Spaceship spaceship in MainWindow_form.spaceshipList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
@@ -96,9 +96,9 @@ namespace DarkOrbit_clicker
                 flp_backShopItems.Controls.Add(pnl);
                 i++;
             }
-            if (MainWindow.spaceshipList.Count > 0)
+            if (MainWindow_form.spaceshipList.Count > 0)
             {
-                selectedShip = MainWindow.spaceshipList.First();
+                selectedShip = MainWindow_form.spaceshipList.First();
             }
             updateSpaceshipInfo();
         }

@@ -12,6 +12,6 @@ namespace DarkOrbit_clicker
         public string name;
         public int capacity;
         public int price;
-        public Shop.Currency currency;
+        public Shop_form.Currency currency;
     }
 }

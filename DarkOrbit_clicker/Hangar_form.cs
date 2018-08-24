@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Hangar : Form
+    public partial class Hangar_form : Form
     {
-        public Hangar()
+        public Hangar_form()
         {
             InitializeComponent();
             ShowSpaceship(AuthService.currentUser.currentSpaceship);

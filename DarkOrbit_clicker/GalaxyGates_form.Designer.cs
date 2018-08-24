@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class GalaxyGates
+    partial class GalaxyGates_form
     {
         /// <summary>
         /// Required designer variable.
