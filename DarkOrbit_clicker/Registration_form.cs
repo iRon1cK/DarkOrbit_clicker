@@ -73,7 +73,9 @@ namespace DarkOrbit_clicker
             btn_logIn.Enabled = (error == "");
         }
 
+        private void Registration_form_Load(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
