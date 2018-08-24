@@ -14,6 +14,9 @@ namespace DarkOrbit_clicker
         public static User currentUser; 
         private static List<User> userList = new List<User>();
 
+        
+        
+
         public static bool LogIn(string login, string password)
         {
             //
@@ -22,10 +25,17 @@ namespace DarkOrbit_clicker
 
         public static bool Register(string login, string password)
         {
-            //
-            return false;
+            CalculateHash (login,password);
+
+
+            return true;
         }
-        
+
+        private static string CalculateHash (string login, string password)
+        {
+            return Hasher.hashSha256( login + password);
+        }
+
         public static void SaveGame()
         {
             try

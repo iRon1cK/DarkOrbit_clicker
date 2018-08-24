@@ -141,7 +141,7 @@
             this.lbl_error.Size = new System.Drawing.Size(0, 13);
             this.lbl_error.TabIndex = 20;
             // 
-            // Registration
+            // Registration_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,9 +158,10 @@
             this.Controls.Add(this.lbl_enterPass);
             this.Controls.Add(this.lbl_repeatPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Registration";
+            this.Name = "Registration_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
