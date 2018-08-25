@@ -45,12 +45,15 @@ namespace DarkOrbit_clicker
                     }
                 }
             }
-
             else
             {
-                AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text);
+                if (AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text))
+                {
+                    this.Hide();
+                    CorpSelect_form corpselect = new CorpSelect_form();
+                    corpselect.Show();
+                }
             }
-
         }
 
         //Проверка полей на корректность введённых данных

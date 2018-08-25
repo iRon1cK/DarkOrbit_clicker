@@ -13,6 +13,7 @@ namespace DarkOrbit_clicker
     public partial class CorpSelect_form : Form
     {
         public CorpSelect_form()
+
         {
             InitializeComponent();
         }
