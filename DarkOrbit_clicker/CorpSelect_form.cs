@@ -12,10 +12,13 @@ namespace DarkOrbit_clicker
 {
     public partial class CorpSelect_form : Form
     {
-        public CorpSelect_form()
+        public CorpSelect_form(Registration_form authForm)
         {
+            this.authForm = authForm;
             InitializeComponent();
         }
+
+        private Registration_form authForm;
 
         private void btn_acceptMMO_Click(object sender, EventArgs e)
         {
@@ -51,5 +54,6 @@ namespace DarkOrbit_clicker
         {
 
         }
+        
     }
 }
