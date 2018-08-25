@@ -75,7 +75,7 @@ namespace DarkOrbit_clicker
                 FileStream fsout = new FileStream(Constants.SAVEFILE_PATH, FileMode.Create, FileAccess.Write, FileShare.None);
                 using (fsout)
                 {
-                    bf.Serialize(fsout, userList);
+                    bf.Serialize(fsout, new List<object>() { userList });
                 }
             }
             catch (Exception e)
