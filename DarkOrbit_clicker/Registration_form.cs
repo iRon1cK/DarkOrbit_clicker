@@ -23,7 +23,7 @@ namespace DarkOrbit_clicker
             // Меняется кнопка , в зависимости от выбора rdb.
             btn_logIn.Text = rdb_iHaveAccount.Checked ? "Log in" : "Register";
             // Показывает или не показывает поле для ввода подтверждения пароля.
-            lbl_repeatPass.Visible = txtBox_passRepeat.Visible = rdb_iDontHaveAccount.Checked; 
+            lbl_repeatPass.Visible = txtBox_passRepeat.Visible = rdb_iDontHaveAccount.Checked;
 
             ValidateFields();
         }
@@ -36,34 +36,40 @@ namespace DarkOrbit_clicker
 
         private void btn_logIn_Click(object sender, EventArgs e)
         {
-            if (rdb_iHaveAccount.Checked) 
+            if (rdb_iHaveAccount.Checked)
             {
-                AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text);
+                if (AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text))
+                {
+                    {
+                        Success();
+                    }
+                }
             }
-            else 
+
+            else
             {
                 AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text);
             }
- 
+
         }
 
         //Проверка полей на корректность введённых данных
         private void ValidateFields()
         {
-            
+
             string error = "";
             error += txtBox_nameEnter.Text == "" ? "Login field is empty!\n" : "";
-            error += txtBox_nameEnter.TextLength > Constants.MAX_LOGIN_LENGTH ? 
+            error += txtBox_nameEnter.TextLength > Constants.MAX_LOGIN_LENGTH ?
                 "Login can't be more than " + Constants.MAX_LOGIN_LENGTH + " characters!\n" : "";
-            error += txtBox_nameEnter.TextLength < Constants.MIN_LOGIN_LENGTH ? 
+            error += txtBox_nameEnter.TextLength < Constants.MIN_LOGIN_LENGTH ?
                 "Login can't be less than " + Constants.MIN_LOGIN_LENGTH + " characters!\n" : "";
 
-            error += 
-                txtBox_passEnter.Text != "" && txtBox_passEnter.Text != txtBox_passRepeat.Text && rdb_iDontHaveAccount.Checked ? 
+            error +=
+                txtBox_passEnter.Text != "" && txtBox_passEnter.Text != txtBox_passRepeat.Text && rdb_iDontHaveAccount.Checked ?
                 "Passwords are not matching!\n" : "";
-            error += txtBox_passEnter.TextLength > Constants.MAX_PASSWORD_LENGTH ? 
+            error += txtBox_passEnter.TextLength > Constants.MAX_PASSWORD_LENGTH ?
                 "Password can't be more than " + Constants.MAX_PASSWORD_LENGTH + " characters!\n" : "";
-            error += txtBox_passEnter.TextLength < Constants.MIN_PASSWORD_LENGTH ? 
+            error += txtBox_passEnter.TextLength < Constants.MIN_PASSWORD_LENGTH ?
                 "Password can't be less than " + Constants.MIN_PASSWORD_LENGTH + " characters!\n" : "";
 
             if (error != lbl_error.Text)
@@ -77,5 +83,14 @@ namespace DarkOrbit_clicker
         {
 
         }
+
+        public void Success()
+        {
+
+            this.Close();
+
+       }
+
     }
+
 }
