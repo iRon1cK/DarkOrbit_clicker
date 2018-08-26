@@ -53,11 +53,12 @@ namespace DatabaseEditor
                 {
                     using (fsin)
                     {
-                        result = (List<object>)bf.Deserialize(fsin);
+                        object o = bf.Deserialize(fsin);
+                        result = (List<object>)o;
                     }
                     foreach (object obj in result)
                     {
-                        foreach (object o in (List<object>)obj)
+                        foreach (object o in (IEnumerable<object>)obj)
                         {
                             ListMap map = listMap.Find(s => s.type == o.GetType());
                             if (map != null)

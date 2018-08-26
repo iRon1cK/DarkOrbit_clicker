@@ -49,7 +49,7 @@
             this.btn_logIn.TabIndex = 18;
             this.btn_logIn.Text = "LOG IN";
             this.btn_logIn.UseVisualStyleBackColor = true;
-            this.btn_logIn.ClientSizeChanged += new System.EventHandler(this.btn_logIn_Click);
+            this.btn_logIn.Click += new System.EventHandler(this.btn_logIn_Click);
             // 
             // rdb_iHaveAccount
             // 

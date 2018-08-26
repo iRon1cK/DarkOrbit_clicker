@@ -60,7 +60,7 @@
             this.btn_acceptVRU.TabIndex = 1;
             this.btn_acceptVRU.Text = "ACCEPT";
             this.btn_acceptVRU.UseVisualStyleBackColor = true;
-            this.btn_acceptVRU.Click += new System.EventHandler(this.btn_acceptVRU_Click);
+            this.btn_acceptVRU.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
             // pnl_EIC
             // 
@@ -80,7 +80,7 @@
             this.btn_acceptEIC.TabIndex = 2;
             this.btn_acceptEIC.Text = "ACCEPT";
             this.btn_acceptEIC.UseVisualStyleBackColor = true;
-            this.btn_acceptEIC.Click += new System.EventHandler(this.btn_acceptEIC_Click);
+            this.btn_acceptEIC.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
             // pnl_companyDescription
             // 
@@ -118,9 +118,9 @@
             this.btn_acceptMMO.TabIndex = 0;
             this.btn_acceptMMO.Text = "ACCEPT";
             this.btn_acceptMMO.UseVisualStyleBackColor = true;
-            this.btn_acceptMMO.Click += new System.EventHandler(this.btn_acceptMMO_Click);
+            this.btn_acceptMMO.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
-            // CorpSelect
+            // CorpSelect_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,10 +132,9 @@
             this.Controls.Add(this.pnl_MMO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "CorpSelect";
+            this.Name = "CorpSelect_form";
             this.RightToLeftLayout = true;
             this.Text = "CorpSelection";
-            this.Load += new System.EventHandler(this.CorpSelect_Load);
             this.pnl_VRU.ResumeLayout(false);
             this.pnl_EIC.ResumeLayout(false);
             this.pnl_companyDescription.ResumeLayout(false);
