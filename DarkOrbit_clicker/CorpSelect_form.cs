@@ -16,24 +16,12 @@ namespace DarkOrbit_clicker
         {
             this.authForm = authForm;
             InitializeComponent();
+            btn_acceptMMO.Tag = User.Corp.Mars;
+            btn_acceptEIC.Tag = User.Corp.Earth;
+            btn_acceptVRU.Tag = User.Corp.Venus;
         }
 
         private Registration_form authForm;
-
-        private void btn_acceptMMO_Click(object sender, EventArgs e)
-        {
-            AuthService.currentUser.corporation = User.Corp.Mars;
-        }
-
-        private void btn_acceptVRU_Click(object sender, EventArgs e)
-        {
-            AuthService.currentUser.corporation = User.Corp.Venus;
-        }
-
-        private void btn_acceptEIC_Click(object sender, EventArgs e)
-        {
-            AuthService.currentUser.corporation = User.Corp.Earth;
-        }
 
         private void panel1_MouseEnter(object sender, EventArgs e)
         {
@@ -50,10 +38,16 @@ namespace DarkOrbit_clicker
             lbl_companyDescription.Text = "This is Earth.You have permanent bonus 15% for your shield.";
         }
 
-        private void CorpSelect_Load(object sender, EventArgs e)
+        private void btn_acceptCorp_Click(object sender, EventArgs e)
         {
-
+            Button buttonClicked = (Button)sender;
+            //Tag у каждой кнопки содержит в себе соответствующий ей User.Corp
+            //Если будет нажата кнопка, отвечающая за Марс, то MessageBox выведет "Mars"
+            //Tag возвращает object. Чтобы из него получить User.Corp, надо "кастовать" его
+            //Кастовать объект - указывать более точный тип объекта, когда ты наверняка знаешь, что именно этот тип тут будет
+            //Синтаксис:       (ТипВКоторыйКастовать)объектКоторыйКастовать
+            //В строчке выше я кастую объект sender к типу Button
+            MessageBox.Show(buttonClicked.Tag.ToString());
         }
-        
     }
 }
