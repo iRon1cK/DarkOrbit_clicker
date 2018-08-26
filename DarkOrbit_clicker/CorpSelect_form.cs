@@ -19,6 +19,8 @@ namespace DarkOrbit_clicker
             btn_acceptMMO.Tag = User.Corp.Mars;
             btn_acceptEIC.Tag = User.Corp.Earth;
             btn_acceptVRU.Tag = User.Corp.Venus;
+            authForm.Success();
+
         }
 
         private Registration_form authForm;

@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace DarkOrbit_clicker
 {
     public partial class Registration_form : Form
+
     {
+        
         public Registration_form()
         {
             InitializeComponent();
@@ -50,7 +52,7 @@ namespace DarkOrbit_clicker
                 if (AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
                     this.Hide();
-                    CorpSelect_form corpselect = new CorpSelect_form();
+                    CorpSelect_form corpselect = new CorpSelect_form(this);
                     corpselect.Show();
                 }
             }
