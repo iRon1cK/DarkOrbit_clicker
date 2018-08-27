@@ -14,8 +14,6 @@ namespace DarkOrbit_clicker
         public static User currentUser;
         private static List<User> userList = new List<User>();
 
-
-
         //-проверка, есть ли в списке юзеров юзер с такими логином и паролем
         //-если есть, присваивать его переменной currentUser
         //-если нет, возвращать false
@@ -30,7 +28,6 @@ namespace DarkOrbit_clicker
                     currentUser = user;
                     return true;
                 }
-                
             }
             return false;
 

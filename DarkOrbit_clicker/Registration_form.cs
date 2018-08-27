@@ -11,9 +11,11 @@ using System.Windows.Forms;
 namespace DarkOrbit_clicker
 {
     public partial class Registration_form : Form
-
     {
-        private bool success = false;
+
+        public static bool success = false;
+
+        List<string> somethingVierd = new List<string>() { "a", "b", "c" };
         public Registration_form()
         {
             InitializeComponent();
@@ -42,19 +44,31 @@ namespace DarkOrbit_clicker
             {
                 if (AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
-                    {
-                        Success();
-                    }
+                    Success();
                 }
             }
             else
             {
                 if (AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
-                    this.Hide();
+                    HideForm();
                     CorpSelect_form corpselect = new CorpSelect_form(this);
                     corpselect.Show();
                 }
+            }
+        }
+
+        private void HideForm()
+        {
+            if (this.Enabled)
+            {
+                this.Enabled = false;
+                this.Opacity = 0;
+            }
+            else
+            {
+                this.Enabled = true;
+                this.Opacity = 1;
             }
         }
 
@@ -84,11 +98,6 @@ namespace DarkOrbit_clicker
             btn_logIn.Enabled = (error == "");
         }
 
-        private void Registration_form_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void Success()
         {
             success = true;
@@ -101,6 +110,15 @@ namespace DarkOrbit_clicker
             if (success == false)
             {
                 Application.Exit();
+            }
+        }
+
+        private void toDel()
+        {
+
+            foreach (string i in somethingVierd)
+            {
+
             }
         }
     }

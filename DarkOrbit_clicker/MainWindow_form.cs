@@ -27,9 +27,15 @@ namespace DarkOrbit_clicker
 
         public MainWindow_form()
         {
+            LoadData();
             Registration_form registration = new Registration_form();
-
             registration.ShowDialog();
+
+            if (!Registration_form.success)
+            {
+                Application.Exit();
+                return;
+            }
 
             // CorpSelect corpSelect = new CorpSelect();
 
@@ -37,7 +43,7 @@ namespace DarkOrbit_clicker
 
             
             InitializeComponent();
-            LoadData();
+            
 
             TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
