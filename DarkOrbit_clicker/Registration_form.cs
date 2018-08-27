@@ -13,7 +13,7 @@ namespace DarkOrbit_clicker
     public partial class Registration_form : Form
 
     {
-        
+        private bool success = false;
         public Registration_form()
         {
             InitializeComponent();
@@ -91,11 +91,18 @@ namespace DarkOrbit_clicker
 
         public void Success()
         {
-
+            success = true;
             this.Close();
 
        }
 
+        private void Registration_form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (success == false)
+            {
+                Application.Exit();
+            }
+        }
     }
 
 }
