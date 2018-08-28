@@ -68,7 +68,7 @@ namespace DarkOrbit_clicker
                     }
                     foreach (object obj in result)
                     {
-                        foreach (object o in (List<object>)obj)
+                        foreach (object o in (IEnumerable<object>)obj)
                         {
                             if (o is Spaceship)
                             {
