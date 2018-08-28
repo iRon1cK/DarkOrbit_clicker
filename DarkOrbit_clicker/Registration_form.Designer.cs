@@ -162,7 +162,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_form_FormClosing);
-            this.Load += new System.EventHandler(this.Registration_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

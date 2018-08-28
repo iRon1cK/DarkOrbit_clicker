@@ -19,7 +19,7 @@ namespace DarkOrbit_clicker
             btn_acceptMMO.Tag = User.Corp.Mars;
             btn_acceptEIC.Tag = User.Corp.Earth;
             btn_acceptVRU.Tag = User.Corp.Venus;
-            
+
 
         }
 
@@ -43,17 +43,21 @@ namespace DarkOrbit_clicker
         private void btn_acceptCorp_Click(object sender, EventArgs e)
 
         {
-            
+
             Button buttonClicked = (Button)sender;
-            AuthService.currentUser.corporation = (User.Corp)buttonClicked.Tag;
-            //Tag у каждой кнопки содержит в себе соответствующий ей User.Corp
-            //Если будет нажата кнопка, отвечающая за Марс, то MessageBox выведет "Mars"
-            //Tag возвращает object. Чтобы из него получить User.Corp, надо "кастовать" его
-            //Кастовать объект - указывать более точный тип объекта, когда ты наверняка знаешь, что именно этот тип тут будет
-            //Синтаксис:       (ТипВКоторыйКастовать)объектКоторыйКастовать
-            //В строчке выше я кастую объект sender к типу Button
-            authForm.Success();
-            this.Close();
+            User.Corp corp = (User.Corp)buttonClicked.Tag;
+            if (MessageBox.Show("Are you sure you want to choose " + corp + "?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                AuthService.currentUser.corporation = corp;
+                //Tag у каждой кнопки содержит в себе соответствующий ей User.Corp
+                //Если будет нажата кнопка, отвечающая за Марс, то MessageBox выведет "Mars"
+                //Tag возвращает object. Чтобы из него получить User.Corp, надо "кастовать" его
+                //Кастовать объект - указывать более точный тип объекта, когда ты наверняка знаешь, что именно этот тип тут будет
+                //Синтаксис:       (ТипВКоторыйКастовать)объектКоторыйКастовать
+                //В строчке выше я кастую объект sender к типу Button
+                authForm.Success();
+                this.Close();
+            }
         }
     }
 }
