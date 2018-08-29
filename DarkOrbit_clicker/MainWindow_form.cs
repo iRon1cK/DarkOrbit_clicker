@@ -45,9 +45,9 @@ namespace DarkOrbit_clicker
             InitializeComponent();
             
 
-            TopMost = true;
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
+           // TopMost = true;
+           // FormBorderStyle = FormBorderStyle.None;
+           // WindowState = FormWindowState.Maximized;
 
             RefreshInfo();
         }
