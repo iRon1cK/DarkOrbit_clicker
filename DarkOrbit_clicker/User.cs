@@ -31,7 +31,6 @@ namespace DarkOrbit_clicker
         {
           
         }
-        //111
         public User(string name, string password)
         {
             this.name = name;
