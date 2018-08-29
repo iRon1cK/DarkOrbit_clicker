@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class MainWindow_form
+    partial class MainWindowForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

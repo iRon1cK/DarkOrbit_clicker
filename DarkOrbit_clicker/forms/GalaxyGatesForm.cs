@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class GalaxyGates_form : Form
+    public partial class GalaxyGatesForm : Form
     {
-        public GalaxyGates_form()
+        public GalaxyGatesForm()
         {
             InitializeComponent();
         }

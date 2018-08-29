@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class Shop_form
+    partial class ShopForm
     {
         /// <summary>
         /// Required designer variable.

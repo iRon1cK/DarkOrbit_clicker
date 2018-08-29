@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkOrbit_clicker.entities;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,16 +9,13 @@ using System.Threading.Tasks;
 namespace DarkOrbit_clicker
 {
     [Serializable]
-    public class Spaceship
+    public class SpaceshipEntity : ShopItem
     {
-        public string name;
         public int hp;
-        public List<Laser> lasers = new List<Laser>();
-        public List<Shield> shields = new List<Shield>();
+        public List<LaserEntity> lasers = new List<LaserEntity>();
+        public List<ShieldEntity> shields = new List<ShieldEntity>();
         public int shieldsMax;
         public int lasersMax;
-        public int price;
-        public Shop_form.Currency currency;
         public Image image;
     }
 }

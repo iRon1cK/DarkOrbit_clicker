@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class MapSelection_form
+    partial class MapSelectionForm
     {
         /// <summary>
         /// Required designer variable.

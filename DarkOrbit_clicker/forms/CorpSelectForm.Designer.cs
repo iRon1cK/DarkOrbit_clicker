@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class CorpSelect_form
+    partial class CorpSelectForm
     {
         /// <summary>
         /// Required designer variable.

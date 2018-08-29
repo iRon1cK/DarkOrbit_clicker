@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkOrbit_clicker
 {
-    public class Hasher
+    public class HasherService
     {
             public static string hashSha256(string stringToHash)
             {

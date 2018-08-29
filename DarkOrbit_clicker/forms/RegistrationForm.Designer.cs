@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class Registration_form
+    partial class RegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             this.btn_logIn.Location = new System.Drawing.Point(249, 76);
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(115, 23);
-            this.btn_logIn.TabIndex = 18;
+            this.btn_logIn.TabIndex = 6;
             this.btn_logIn.Text = "LOG IN";
             this.btn_logIn.UseVisualStyleBackColor = true;
             this.btn_logIn.Click += new System.EventHandler(this.btn_logIn_Click);
@@ -55,10 +55,10 @@
             // 
             this.rdb_iHaveAccount.AutoSize = true;
             this.rdb_iHaveAccount.Checked = true;
-            this.rdb_iHaveAccount.Location = new System.Drawing.Point(13, 10);
+            this.rdb_iHaveAccount.Location = new System.Drawing.Point(18, 15);
             this.rdb_iHaveAccount.Name = "rdb_iHaveAccount";
             this.rdb_iHaveAccount.Size = new System.Drawing.Size(97, 17);
-            this.rdb_iHaveAccount.TabIndex = 10;
+            this.rdb_iHaveAccount.TabIndex = 1;
             this.rdb_iHaveAccount.TabStop = true;
             this.rdb_iHaveAccount.Text = "I have account";
             this.rdb_iHaveAccount.UseVisualStyleBackColor = true;
@@ -66,20 +66,20 @@
             // 
             // txtBox_passEnter
             // 
-            this.txtBox_passEnter.Location = new System.Drawing.Point(264, 34);
+            this.txtBox_passEnter.Location = new System.Drawing.Point(264, 38);
             this.txtBox_passEnter.Name = "txtBox_passEnter";
             this.txtBox_passEnter.PasswordChar = '•';
             this.txtBox_passEnter.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_passEnter.TabIndex = 17;
+            this.txtBox_passEnter.TabIndex = 4;
             this.txtBox_passEnter.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // rdb_iDontHaveAccount
             // 
             this.rdb_iDontHaveAccount.AutoSize = true;
-            this.rdb_iDontHaveAccount.Location = new System.Drawing.Point(13, 34);
+            this.rdb_iDontHaveAccount.Location = new System.Drawing.Point(18, 39);
             this.rdb_iDontHaveAccount.Name = "rdb_iDontHaveAccount";
             this.rdb_iDontHaveAccount.Size = new System.Drawing.Size(120, 17);
-            this.rdb_iDontHaveAccount.TabIndex = 11;
+            this.rdb_iDontHaveAccount.TabIndex = 2;
             this.rdb_iDontHaveAccount.TabStop = true;
             this.rdb_iDontHaveAccount.Text = "I need new account";
             this.rdb_iDontHaveAccount.UseVisualStyleBackColor = true;
@@ -88,18 +88,18 @@
             // txtBox_passRepeat
             // 
             this.txtBox_passRepeat.BackColor = System.Drawing.Color.White;
-            this.txtBox_passRepeat.Location = new System.Drawing.Point(123, 78);
+            this.txtBox_passRepeat.Location = new System.Drawing.Point(137, 78);
             this.txtBox_passRepeat.Name = "txtBox_passRepeat";
             this.txtBox_passRepeat.PasswordChar = '•';
             this.txtBox_passRepeat.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_passRepeat.TabIndex = 16;
+            this.txtBox_passRepeat.TabIndex = 5;
             this.txtBox_passRepeat.Visible = false;
             this.txtBox_passRepeat.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // lbl_enterName
             // 
             this.lbl_enterName.AutoSize = true;
-            this.lbl_enterName.Location = new System.Drawing.Point(152, 14);
+            this.lbl_enterName.Location = new System.Drawing.Point(152, 17);
             this.lbl_enterName.Name = "lbl_enterName";
             this.lbl_enterName.Size = new System.Drawing.Size(87, 13);
             this.lbl_enterName.TabIndex = 12;
@@ -107,16 +107,16 @@
             // 
             // txtBox_nameEnter
             // 
-            this.txtBox_nameEnter.Location = new System.Drawing.Point(264, 9);
+            this.txtBox_nameEnter.Location = new System.Drawing.Point(264, 14);
             this.txtBox_nameEnter.Name = "txtBox_nameEnter";
             this.txtBox_nameEnter.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_nameEnter.TabIndex = 15;
+            this.txtBox_nameEnter.TabIndex = 3;
             this.txtBox_nameEnter.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // lbl_enterPass
             // 
             this.lbl_enterPass.AutoSize = true;
-            this.lbl_enterPass.Location = new System.Drawing.Point(152, 38);
+            this.lbl_enterPass.Location = new System.Drawing.Point(152, 41);
             this.lbl_enterPass.Name = "lbl_enterPass";
             this.lbl_enterPass.Size = new System.Drawing.Size(106, 13);
             this.lbl_enterPass.TabIndex = 13;
@@ -125,7 +125,7 @@
             // lbl_repeatPass
             // 
             this.lbl_repeatPass.AutoSize = true;
-            this.lbl_repeatPass.Location = new System.Drawing.Point(10, 81);
+            this.lbl_repeatPass.Location = new System.Drawing.Point(15, 81);
             this.lbl_repeatPass.Name = "lbl_repeatPass";
             this.lbl_repeatPass.Size = new System.Drawing.Size(116, 13);
             this.lbl_repeatPass.TabIndex = 14;
@@ -135,17 +135,19 @@
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
+            this.lbl_error.BackColor = System.Drawing.Color.Transparent;
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(10, 105);
+            this.lbl_error.Location = new System.Drawing.Point(15, 99);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(0, 13);
-            this.lbl_error.TabIndex = 20;
+            this.lbl_error.TabIndex = 0;
             // 
-            // Registration_form
+            // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(433, 158);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.btn_logIn);
@@ -158,7 +160,8 @@
             this.Controls.Add(this.lbl_enterPass);
             this.Controls.Add(this.lbl_repeatPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Registration_form";
+            this.Name = "RegistrationForm";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_form_FormClosing);

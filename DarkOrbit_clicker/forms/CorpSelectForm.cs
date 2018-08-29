@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class CorpSelect_form : Form
+    public partial class CorpSelectForm : Form
     {
-        public CorpSelect_form(Registration_form authForm)
+        public CorpSelectForm(RegistrationForm authForm)
         {
             this.authForm = authForm;
             InitializeComponent();
-            btn_acceptMMO.Tag = User.Corp.Mars;
-            btn_acceptEIC.Tag = User.Corp.Earth;
-            btn_acceptVRU.Tag = User.Corp.Venus;
+            btn_acceptMMO.Tag = UserEntity.Corp.Mars;
+            btn_acceptEIC.Tag = UserEntity.Corp.Earth;
+            btn_acceptVRU.Tag = UserEntity.Corp.Venus;
 
 
         }
 
-        private Registration_form authForm;
+        private RegistrationForm authForm;
 
         private void panel1_MouseEnter(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace DarkOrbit_clicker
 
         {
             Button buttonClicked = (Button)sender;
-            User.Corp corp = (User.Corp)buttonClicked.Tag;
+            UserEntity.Corp corp = (UserEntity.Corp)buttonClicked.Tag;
 
             if (MessageBox.Show("Are you sure you want to choose " + corp + "?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

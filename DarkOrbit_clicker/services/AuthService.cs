@@ -11,8 +11,8 @@ namespace DarkOrbit_clicker
 {
     class AuthService
     {
-        public static User currentUser;
-        private static List<User> userList = new List<User>();
+        public static UserEntity currentUser;
+        private static List<UserEntity> userList = new List<UserEntity>();
 
         //-проверка, есть ли в списке юзеров юзер с такими логином и паролем
         //-если есть, присваивать его переменной currentUser
@@ -31,7 +31,7 @@ namespace DarkOrbit_clicker
             //}
 
             //лямбда
-            User foundUser = userList.Find(user => (user.name == login && user.password == hash));
+            UserEntity foundUser = userList.Find(user => (user.name == login && user.password == hash));
             if (foundUser != null)
             {
                 currentUser = foundUser;
@@ -48,7 +48,7 @@ namespace DarkOrbit_clicker
                 if (userList.Find(user => user.name == login) == null)
                 {
                     CalculateHash(login, password);
-                    User user = new User(login, CalculateHash(login, password));
+                    UserEntity user = new UserEntity(login, CalculateHash(login, password));
                     userList.Add(user);
                     currentUser = user;
                     SaveGame();
@@ -65,7 +65,7 @@ namespace DarkOrbit_clicker
 
         private static string CalculateHash (string login, string password)
         {
-            return Hasher.hashSha256( login + password);
+            return HasherService.hashSha256( login + password);
         }
 
         public static void SaveGame()
@@ -102,9 +102,9 @@ namespace DarkOrbit_clicker
                     {
                         foreach (object o in (IEnumerable<object>)obj)
                         {
-                            if (o is User)
+                            if (o is UserEntity)
                             {
-                                userList.Add((User)o);
+                                userList.Add((UserEntity)o);
                             }
                         }
                     }
