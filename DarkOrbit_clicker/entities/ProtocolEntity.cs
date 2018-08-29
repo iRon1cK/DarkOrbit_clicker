@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkOrbit_clicker.entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +8,9 @@ using System.Threading.Tasks;
 namespace DarkOrbit_clicker
 {
     [Serializable]
-    public class Pet
+    public class ProtocolEntity : ShopItem
     {
-        public string name;
         public int bonus;
-        public int skill;
-        public int price;
-        public int petLaserSlots;
-        public int petProtocolSlots;
-
+        public int protocolLevel;
     }
 }

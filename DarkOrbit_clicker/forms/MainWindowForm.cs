@@ -12,26 +12,26 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class MainWindow_form : Form
+    public partial class MainWindowForm : Form
     {
 
-        public static List<Spaceship> spaceshipList = new List<Spaceship>();
-        public static List<Drone> droneList = new List<Drone>();
-        public static List<Booster> boosterList = new List<Booster>();
-        public static List<Pet> petList = new List<Pet>();
-        public static List<Protocol> protocolList = new List<Protocol>();
-        public static List<Ammo> ammoList = new List<Ammo>();
-        public static List<Design> designList = new List<Design>();
-        public static List<Laser> laserList = new List<Laser>();
-        public static List<Shield> shieldList = new List<Shield>();
+        public static List<SpaceshipEntity> spaceshipList = new List<SpaceshipEntity>();
+        public static List<DroneEntity> droneList = new List<DroneEntity>();
+        public static List<BoosterEntity> boosterList = new List<BoosterEntity>();
+        public static List<PetEntity> petList = new List<PetEntity>();
+        public static List<ProtocolEntity> protocolList = new List<ProtocolEntity>();
+        public static List<AmmoEntity> ammoList = new List<AmmoEntity>();
+        public static List<DesignEntity> designList = new List<DesignEntity>();
+        public static List<LaserEntity> laserList = new List<LaserEntity>();
+        public static List<ShieldEntity> shieldList = new List<ShieldEntity>();
 
-        public MainWindow_form()
+        public MainWindowForm()
         {
             LoadData();
-            Registration_form registration = new Registration_form();
+            RegistrationForm registration = new RegistrationForm();
             registration.ShowDialog();
 
-            if (!Registration_form.success)
+            if (!RegistrationForm.success)
             {
                 Application.Exit();
                 return;
@@ -70,41 +70,41 @@ namespace DarkOrbit_clicker
                     {
                         foreach (object o in (IEnumerable<object>)obj)
                         {
-                            if (o is Spaceship)
+                            if (o is SpaceshipEntity)
                             {
-                                spaceshipList.Add((Spaceship)o);
+                                spaceshipList.Add((SpaceshipEntity)o);
                             }
-                            else if (o is Drone)
+                            else if (o is DroneEntity)
                             {
-                                droneList.Add((Drone)o);
+                                droneList.Add((DroneEntity)o);
                             }
-                            else if (o is Booster)
+                            else if (o is BoosterEntity)
                             {
-                                boosterList.Add((Booster)o);
+                                boosterList.Add((BoosterEntity)o);
                             }
-                            else if (o is Pet)
+                            else if (o is PetEntity)
                             {
-                                petList.Add((Pet)o);
+                                petList.Add((PetEntity)o);
                             }
-                            else if (o is Protocol)
+                            else if (o is ProtocolEntity)
                             {
-                                protocolList.Add((Protocol)o);
+                                protocolList.Add((ProtocolEntity)o);
                             }
-                            else if (o is Ammo)
+                            else if (o is AmmoEntity)
                             {
-                                ammoList.Add((Ammo)o);
+                                ammoList.Add((AmmoEntity)o);
                             }
-                            else if (o is Design)
+                            else if (o is DesignEntity)
                             {
-                                designList.Add((Design)o);
+                                designList.Add((DesignEntity)o);
                             }
-                            else if (o is Laser)
+                            else if (o is LaserEntity)
                             {
-                                laserList.Add((Laser)o);
+                                laserList.Add((LaserEntity)o);
                             }
-                            else if (o is Shield)
+                            else if (o is ShieldEntity)
                             {
-                                shieldList.Add((Shield)o);
+                                shieldList.Add((ShieldEntity)o);
                             }
                         }
                     }
@@ -143,7 +143,7 @@ namespace DarkOrbit_clicker
         // Панель заполняет форма ангара и отрисовывается.
         private void btn_hangar_MouseClick(object sender, MouseEventArgs e)
         {
-            Form hangar = new Hangar_form();
+            Form hangar = new HangarForm();
             hangar.TopLevel = false;
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(hangar);
@@ -155,14 +155,14 @@ namespace DarkOrbit_clicker
         // Панель заполняет форма магазина и отрисовывается.
         private void btn_shop_MouseClick(object sender, MouseEventArgs e) 
         {
-            InsertFormIntoControl(pnlContent, new Shop_form(this));
+            InsertFormIntoControl(pnlContent, new ShopForm(this));
         }
 
         // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
         // Панель заполняет форма галактических врат и отрисовывается.
         private void btn_galaxyGates_MouseClick(object sender, MouseEventArgs e) 
         {
-            InsertFormIntoControl(pnlContent, new GalaxyGates_form());
+            InsertFormIntoControl(pnlContent, new GalaxyGatesForm());
         }
 
         // Форма не поверх всех элементов.

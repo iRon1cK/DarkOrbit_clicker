@@ -1,6 +1,6 @@
 ﻿namespace DarkOrbit_clicker
 {
-    partial class Hangar_form
+    partial class HangarForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hangar_form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangarForm));
             this.pnl_shipImage = new System.Windows.Forms.Panel();
             this.pbx_shipImage = new System.Windows.Forms.PictureBox();
             this.lbl_shipStats = new System.Windows.Forms.Label();

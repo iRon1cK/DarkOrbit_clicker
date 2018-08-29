@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Registration_form : Form
+    public partial class RegistrationForm : Form
     {
 
         public static bool success = false;
-        public Registration_form()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
@@ -43,13 +43,13 @@ namespace DarkOrbit_clicker
                 if (AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
 
-                    if (AuthService.currentUser.corporation != User.Corp.NotSelected)
+                    if (AuthService.currentUser.corporation != UserEntity.Corp.NotSelected)
                     {
                         Success();
 
                     }
                     else {
-                        CorpSelect_form corpselect = new CorpSelect_form(this);
+                        CorpSelectForm corpselect = new CorpSelectForm(this);
                         corpselect.Show();
                     }
                 }
@@ -59,7 +59,7 @@ namespace DarkOrbit_clicker
                 if (AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
                     HideForm();
-                    CorpSelect_form corpselect = new CorpSelect_form(this);
+                    CorpSelectForm corpselect = new CorpSelectForm(this);
                     corpselect.Show();
                 }
             }

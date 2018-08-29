@@ -22,15 +22,15 @@ namespace DatabaseEditor
 
         List<ListMap> listMap = new List<ListMap>();
         List<object> typeList = new List<object>() {
-            new Ammo(),
-            new Booster(),
-            new Drone(),
-            new Design(),
-            new Laser(),
-            new Pet(),
-            new Protocol(),
-            new Shield(),
-            new Spaceship()
+            new AmmoEntity(),
+            new BoosterEntity(),
+            new DroneEntity(),
+            new DesignEntity(),
+            new LaserEntity(),
+            new PetEntity(),
+            new ProtocolEntity(),
+            new ShieldEntity(),
+            new SpaceshipEntity()
         };
         ListMap selectedList;
 
@@ -532,7 +532,7 @@ namespace DatabaseEditor
                     {
                         txbDbPath.Text = dbPath = "";
                     }
-                    listMap.Add(new ListMap(new User()));
+                    listMap.Add(new ListMap(new UserEntity()));
                     break;
                 default:
                     MessageBox.Show("You've selected unsupported database type!", "Error");

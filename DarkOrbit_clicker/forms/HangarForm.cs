@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Hangar_form : Form
+    public partial class HangarForm : Form
     {
-        public Hangar_form()
+        public HangarForm()
         {
             InitializeComponent();
             ShowSpaceship(AuthService.currentUser.currentSpaceship);
         }
 
-        private void ShowSpaceship(Spaceship spaceship) // Метод принимает Spaceship, ничего не возвращает. 
+        private void ShowSpaceship(SpaceshipEntity spaceship) // Метод принимает Spaceship, ничего не возвращает. 
                                                        // Используется для того, чтобы вывести информацию о отправленном в него корабле.
                                                       // Вызываться должен только из этой формы - при первом её открытии и при изменении корабля.
         {

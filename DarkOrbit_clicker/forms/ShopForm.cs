@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkOrbit_clicker.entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class Shop_form : Form
+    public partial class ShopForm : Form
     {
         public enum Category
         {
@@ -25,19 +26,12 @@ namespace DarkOrbit_clicker
             Ammo
         }
 
-        public enum Currency
-        {
-            Uridium,
-            Kredits
-        }
-
         public Category category = Category.Ships;
-        public Spaceship selectedShip;
-      
+        public SpaceshipEntity selectedShip;
 
-        private MainWindow_form mainWindow;
+        private MainWindowForm mainWindow;
 
-        public Shop_form(MainWindow_form main)
+        public ShopForm(MainWindowForm main)
         {
             mainWindow = main;
             InitializeComponent();
@@ -48,7 +42,7 @@ namespace DarkOrbit_clicker
                                //Предметы он берёт из списков, которые в MainWindow
         {
             int i = 0;
-            foreach (Spaceship spaceship in MainWindow_form.spaceshipList) 
+            foreach (SpaceshipEntity spaceship in MainWindowForm.spaceshipList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
@@ -96,9 +90,9 @@ namespace DarkOrbit_clicker
                 flp_backShopItems.Controls.Add(pnl);
                 i++;
             }
-            if (MainWindow_form.spaceshipList.Count > 0)
+            if (MainWindowForm.spaceshipList.Count > 0)
             {
-                selectedShip = MainWindow_form.spaceshipList.First();
+                selectedShip = MainWindowForm.spaceshipList.First();
             }
             updateSpaceshipInfo();
         }
@@ -118,16 +112,16 @@ namespace DarkOrbit_clicker
 
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
-            if (selectedShip.currency == Currency.Kredits && (AuthService.currentUser.kredits >= selectedShip.price))
+            if (selectedShip.currency == ShopItem.Currency.Kredits && (AuthService.currentUser.kredits >= selectedShip.price))
                 return true;
-            else if (selectedShip.currency == Currency.Uridium && (AuthService.currentUser.uridium >= selectedShip.price))
+            else if (selectedShip.currency == ShopItem.Currency.Uridium && (AuthService.currentUser.uridium >= selectedShip.price))
                 return true;
             return false;
         }
 
         private void pnlSpaceShip_Click(object sender, EventArgs e)
         {
-            selectedShip = (Spaceship)((Control)sender).Tag;
+            selectedShip = (SpaceshipEntity)((Control)sender).Tag;
             updateSpaceshipInfo();
         }
        
@@ -135,14 +129,14 @@ namespace DarkOrbit_clicker
 
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
-            User currentUser = AuthService.currentUser;
-            if (selectedShip.currency == Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
+            UserEntity currentUser = AuthService.currentUser;
+            if (selectedShip.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
             {
                 currentUser.kredits -= selectedShip.price;
                 currentUser.spaceships.Add(selectedShip);
                 MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
             }
-            else if (selectedShip.currency == Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
+            else if (selectedShip.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
             {
                 currentUser.uridium -= selectedShip.price;
                 currentUser.spaceships.Add(selectedShip);

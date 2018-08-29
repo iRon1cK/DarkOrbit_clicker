@@ -123,16 +123,6 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap phoenix_100x100 {
-            get {
-                object obj = ResourceManager.GetObject("phoenix_100x100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap shopBTAN {
             get {
                 object obj = ResourceManager.GetObject("shopBTAN", resourceCulture);
@@ -156,16 +146,6 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap spr_START_pass {
             get {
                 object obj = ResourceManager.GetObject("spr_START_pass", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap yamato_pasive {
-            get {
-                object obj = ResourceManager.GetObject("yamato_pasive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

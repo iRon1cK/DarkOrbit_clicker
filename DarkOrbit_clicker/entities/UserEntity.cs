@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DarkOrbit_clicker
 {
     [Serializable]
-    public class User // Основные параметры пользователя.
+    public class UserEntity // Основные параметры пользователя.
     {
         public string name;
         public long kredits = 1000;
@@ -17,8 +17,8 @@ namespace DarkOrbit_clicker
         public int level = 1;
         public string password;
         public Corp corporation = Corp.NotSelected;
-        public Spaceship currentSpaceship;
-        public List<Spaceship> spaceships = new List<Spaceship>();
+        public SpaceshipEntity currentSpaceship;
+        public List<SpaceshipEntity> spaceships = new List<SpaceshipEntity>();
         
         public enum Corp
         {
@@ -28,12 +28,12 @@ namespace DarkOrbit_clicker
             Earth
         }
 
-        public User()
+        public UserEntity()
         {
           
         }
 
-        public User(string name, string password)
+        public UserEntity(string name, string password)
         {
             this.name = name;
             this.password = password;

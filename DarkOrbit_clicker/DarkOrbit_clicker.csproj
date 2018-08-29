@@ -45,93 +45,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ammo.cs" />
-    <Compile Include="AuthService.cs" />
-    <Compile Include="Booster.cs" />
+    <Compile Include="entities\AmmoEntity.cs" />
+    <Compile Include="entities\ShopItem.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="services\AuthService.cs" />
+    <Compile Include="entities\BoosterEntity.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="CorpSelect_form.cs">
+    <Compile Include="forms\CorpSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CorpSelect_form.Designer.cs">
-      <DependentUpon>CorpSelect_form.cs</DependentUpon>
+    <Compile Include="forms\CorpSelectForm.Designer.cs">
+      <DependentUpon>CorpSelectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design.cs" />
-    <Compile Include="Drone.cs" />
-    <Compile Include="GalaxyGates_form.cs">
+    <Compile Include="entities\DesignEntity.cs" />
+    <Compile Include="entities\DroneEntity.cs" />
+    <Compile Include="forms\GalaxyGatesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GalaxyGates_form.Designer.cs">
-      <DependentUpon>GalaxyGates_form.cs</DependentUpon>
+    <Compile Include="forms\GalaxyGatesForm.Designer.cs">
+      <DependentUpon>GalaxyGatesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hangar_form.cs">
+    <Compile Include="forms\HangarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hangar_form.Designer.cs">
-      <DependentUpon>Hangar_form.cs</DependentUpon>
+    <Compile Include="forms\HangarForm.Designer.cs">
+      <DependentUpon>HangarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hasher.cs" />
-    <Compile Include="Laser.cs" />
-    <Compile Include="MainWindow_form.cs">
+    <Compile Include="services\HasherService.cs" />
+    <Compile Include="entities\LaserEntity.cs" />
+    <Compile Include="forms\MainWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow_form.Designer.cs">
-      <DependentUpon>MainWindow_form.cs</DependentUpon>
+    <Compile Include="forms\MainWindowForm.Designer.cs">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapSelection_form.cs">
+    <Compile Include="forms\MapSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MapSelection_form.Designer.cs">
-      <DependentUpon>MapSelection_form.cs</DependentUpon>
+    <Compile Include="forms\MapSelectionForm.Designer.cs">
+      <DependentUpon>MapSelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pet.cs" />
+    <Compile Include="entities\PetEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocol.cs" />
-    <Compile Include="Registration_form.cs">
+    <Compile Include="entities\ProtocolEntity.cs" />
+    <Compile Include="forms\RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registration_form.Designer.cs">
-      <DependentUpon>Registration_form.cs</DependentUpon>
+    <Compile Include="forms\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shield.cs" />
-    <Compile Include="Shop_form.cs">
+    <Compile Include="entities\ShieldEntity.cs" />
+    <Compile Include="forms\ShopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shop_form.Designer.cs">
-      <DependentUpon>Shop_form.cs</DependentUpon>
+    <Compile Include="forms\ShopForm.Designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Spaceship.cs" />
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="CorpSelect_form.resx">
-      <DependentUpon>CorpSelect_form.cs</DependentUpon>
+    <Compile Include="entities\SpaceshipEntity.cs" />
+    <Compile Include="entities\UserEntity.cs" />
+    <EmbeddedResource Include="forms\CorpSelectForm.resx">
+      <DependentUpon>CorpSelectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GalaxyGates_form.resx">
-      <DependentUpon>GalaxyGates_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\GalaxyGatesForm.resx">
+      <DependentUpon>GalaxyGatesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hangar_form.resx">
-      <DependentUpon>Hangar_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\HangarForm.resx">
+      <DependentUpon>HangarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow_form.resx">
-      <DependentUpon>MainWindow_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\MainWindowForm.resx">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapSelection_form.resx">
-      <DependentUpon>MapSelection_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\MapSelectionForm.resx">
+      <DependentUpon>MapSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Registration_form.resx">
-      <DependentUpon>Registration_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shop_form.resx">
-      <DependentUpon>Shop_form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,5 +189,6 @@
   <ItemGroup>
     <None Include="Resources\phoenix_100x100.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

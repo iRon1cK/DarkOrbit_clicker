@@ -130,9 +130,6 @@
   <data name="shopBTAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopBTAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yamato_pasive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yamato_pasive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="shopButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,9 +147,6 @@
   </data>
   <data name="bg_real_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-real_100x100.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phoenix_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phoenix_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
