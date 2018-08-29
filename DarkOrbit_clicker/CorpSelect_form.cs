@@ -43,12 +43,13 @@ namespace DarkOrbit_clicker
         private void btn_acceptCorp_Click(object sender, EventArgs e)
 
         {
-
             Button buttonClicked = (Button)sender;
             User.Corp corp = (User.Corp)buttonClicked.Tag;
+
             if (MessageBox.Show("Are you sure you want to choose " + corp + "?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 AuthService.currentUser.corporation = corp;
+                AuthService.SaveGame();
                 //Tag у каждой кнопки содержит в себе соответствующий ей User.Corp
                 //Если будет нажата кнопка, отвечающая за Марс, то MessageBox выведет "Mars"
                 //Tag возвращает object. Чтобы из него получить User.Corp, надо "кастовать" его

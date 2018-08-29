@@ -20,7 +20,7 @@ namespace DarkOrbit_clicker
         public static bool LogIn(string login, string password)
         {
             string hash = CalculateHash(login, password);
-            //обычный вариарт
+            //TODO не проверяется при регистрации , есть ли в базе уже юзер с таким логином
             foreach (User user in userList)
             {
                 if (user.name == login && user.password == hash)
@@ -45,7 +45,6 @@ namespace DarkOrbit_clicker
         {
             try
             {
-
                 CalculateHash(login, password);
                 User user = new User(login, CalculateHash(login, password));
                 userList.Add(user);

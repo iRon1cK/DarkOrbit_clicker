@@ -22,16 +22,16 @@ namespace DarkOrbit_clicker
 
         public enum Corp
         {
+            Earth,
             Venus,
             Mars,
-            Earth
         }
 
         public User()
         {
           
         }
-
+        //111
         public User(string name, string password)
         {
             this.name = name;
