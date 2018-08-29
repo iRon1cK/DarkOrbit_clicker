@@ -47,7 +47,7 @@ namespace DarkOrbit_clicker
             {
 
                 CalculateHash(login, password);
-                User user = new User(login, password);
+                User user = new User(login, CalculateHash(login, password));
                 userList.Add(user);
                 currentUser = user;
                 SaveGame();

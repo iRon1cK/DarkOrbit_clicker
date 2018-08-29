@@ -14,8 +14,6 @@ namespace DarkOrbit_clicker
     {
 
         public static bool success = false;
-
-        List<string> somethingVierd = new List<string>() { "a", "b", "c" };
         public Registration_form()
         {
             InitializeComponent();
@@ -25,7 +23,7 @@ namespace DarkOrbit_clicker
         private void haveOrDontHaveAccount_CheckedChanged(object sender, EventArgs e)
         {
             // Меняется кнопка , в зависимости от выбора rdb.
-            btn_logIn.Text = rdb_iHaveAccount.Checked ? "Log in" : "Register";
+            btn_logIn.Text = rdb_iHaveAccount.Checked ? "LOG IN" : "REGISTER";
             // Показывает или не показывает поле для ввода подтверждения пароля.
             lbl_repeatPass.Visible = txtBox_passRepeat.Visible = rdb_iDontHaveAccount.Checked;
 
@@ -111,16 +109,7 @@ namespace DarkOrbit_clicker
             {
                 Application.Exit();
             }
-        }
-
-        private void toDel()
-        {
-
-            foreach (string i in somethingVierd)
-            {
-
-            }
-        }
+        }    
     }
 
 }
