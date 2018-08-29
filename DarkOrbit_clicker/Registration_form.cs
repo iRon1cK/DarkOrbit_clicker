@@ -42,7 +42,16 @@ namespace DarkOrbit_clicker
             {
                 if (AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
-                    Success();
+
+                    if (AuthService.currentUser.corporation != User.Corp.NotSelected)
+                    {
+                        Success();
+
+                    }
+                    else {
+                        CorpSelect_form corpselect = new CorpSelect_form(this);
+                        corpselect.Show();
+                    }
                 }
             }
             else

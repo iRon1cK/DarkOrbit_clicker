@@ -16,12 +16,13 @@ namespace DarkOrbit_clicker
         public long honor = 0;
         public int level = 1;
         public string password;
-        public Corp corporation;
+        public Corp corporation = Corp.NotSelected;
         public Spaceship currentSpaceship;
         public List<Spaceship> spaceships = new List<Spaceship>();
-
+        
         public enum Corp
         {
+            NotSelected,
             Venus,
             Mars,
             Earth
