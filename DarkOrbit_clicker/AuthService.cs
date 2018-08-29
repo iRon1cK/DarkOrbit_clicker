@@ -20,43 +20,47 @@ namespace DarkOrbit_clicker
         public static bool LogIn(string login, string password)
         {
             string hash = CalculateHash(login, password);
-            //обычный вариарт
-            foreach (User user in userList)
-            {
-                if (user.name == login && user.password == hash)
-                {
-                    currentUser = user;
-                    return true;
-                }
-            }
-            return false;
+            //обычный вариант
+            //foreach (User user in userList)
+            //{
+            //    if (user.name == login && user.password == hash)
+            //    {
+            //        currentUser = user;
+            //        return true;
+            //    }
+            //}
 
-            /*лямбда
+            //лямбда
             User foundUser = userList.Find(user => (user.name == login && user.password == hash));
             if (foundUser != null)
             {
                 currentUser = foundUser;
                 return true;
-            }*/
-
+            }
+            MessageBox.Show("Login or password is incorrect");
+            return false;
         }
-    
+
         public static bool Register(string login, string password)
         {
             try
             {
-
-                CalculateHash(login, password);
-                User user = new User(login, CalculateHash(login, password));
-                userList.Add(user);
-                currentUser = user;
-                SaveGame();
-                return true;
+                if (userList.Find(user => user.name == login) == null)
+                {
+                    CalculateHash(login, password);
+                    User user = new User(login, CalculateHash(login, password));
+                    userList.Add(user);
+                    currentUser = user;
+                    SaveGame();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("User with this name already exists", "Error");
+                }
             }
-            catch
-            {
-                return false;
-            }
+            catch { }
+            return false;
         }
 
         private static string CalculateHash (string login, string password)
