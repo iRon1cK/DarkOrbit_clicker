@@ -374,9 +374,11 @@ namespace DatabaseEditor
                             {
                                 pbx.BackgroundImage = (Image)field.GetValue(obj);
                             }
+                            pbx.BackColor = Color.White;
                             pbx.BackgroundImageLayout = ImageLayout.Zoom;
                             pbx.Height = pbx.Width = pnl.Width - 6;
                             pbx.Top = labName.Bottom + 5;
+                            pbx.Left = 3;
                             pbx.Click += detailsImagePbx_Click;
 
                             pnl.Controls.Add(pbx);

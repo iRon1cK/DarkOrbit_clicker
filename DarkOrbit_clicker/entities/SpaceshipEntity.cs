@@ -16,6 +16,5 @@ namespace DarkOrbit_clicker
         public List<ShieldEntity> shields = new List<ShieldEntity>();
         public int shieldsMax;
         public int lasersMax;
-        public Image image;
     }
 }
