@@ -10,6 +10,7 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class ShieldEntity : ShopItem
     {
-        public int capacity;
+        public int power;
+        public int absorption;
     }
 }

@@ -10,7 +10,7 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class DesignEntity : ShopItem
     {
-        public int bonus;
-        public int skill;
+        public int designBonus;
+        public int designSkill;
     }
 }
