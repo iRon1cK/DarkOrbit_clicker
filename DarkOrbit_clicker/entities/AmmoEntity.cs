@@ -10,6 +10,7 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class AmmoEntity : ShopItem
     {
-        public int effect;
+        public int multiplier;
+        public int amount;
     }
 }

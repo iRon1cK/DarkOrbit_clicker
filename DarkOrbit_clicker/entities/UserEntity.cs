@@ -37,18 +37,6 @@ namespace DarkOrbit_clicker
         {
             this.name = name;
             this.password = password;
-
-            //switch (corp)
-            //{
-            //    case Corp.Earth:
-            //        break;
-
-            //    case Corp.Mars:
-            //        break;
-
-            //    case Corp.Venus:
-            //        break;
-            //}
         }
     }
 }

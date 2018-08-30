@@ -10,7 +10,7 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class ProtocolEntity : ShopItem
     {
-        public int bonus;
+        public int protocolBonus;
         public int protocolLevel;
     }
 }

@@ -10,6 +10,8 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class BoosterEntity : ShopItem
     {
-        public int bonus;
+        public int bonusAmount;
+        public int duration;
+        public string bonusType;
     }
 }
