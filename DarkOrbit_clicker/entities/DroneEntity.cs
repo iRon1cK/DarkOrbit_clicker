@@ -10,7 +10,7 @@ namespace DarkOrbit_clicker
     [Serializable]
     public class DroneEntity : ShopItem
     {
-        public int type; // Iris or Flax. Stas: MUST BE ENUM
+        public DroneType type; // Iris or Flax. Stas: MUST BE ENUM
         public int droneBonus;
         public int droneLevel = 1;
         public int droneSlots;
