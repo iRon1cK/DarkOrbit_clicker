@@ -11,6 +11,6 @@ namespace DarkOrbit_clicker
     public class ShieldEntity : ShopItem
     {
         public int power;
-        public int absorption;
+        public double absorptionMultiplier;
     }
 }
