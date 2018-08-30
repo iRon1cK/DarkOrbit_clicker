@@ -14,3 +14,8 @@ namespace DarkOrbit_clicker
         public int amount;
     }
 }
+
+    
+    
+    
+
