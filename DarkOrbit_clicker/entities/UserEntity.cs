@@ -28,6 +28,11 @@ namespace DarkOrbit_clicker
             Earth
         }
 
+        public override string ToString()
+        {
+            return "Name: " + name  + ",Corporation: " + corporation + ",Level: " + level;
+        }
+
         public UserEntity()
         {
           

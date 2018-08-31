@@ -13,20 +13,18 @@ namespace DarkOrbit_clicker
 {
     public partial class ShopForm : Form
     {
-        public enum Category
-        {
-            Ships,
-            Designs,
-            Drones,
-            Weapoons,
-            Generators,
-            Boosters,
-            PET,
-            PETprotocols,
-            Ammo
-        }
-
-        public Category category = Category.Ships;
+        /*
+            btn_ships.Tag = MainWindowForm.spaceshipList;
+            btn_designs.Tag = MainWindowForm.designList;
+            btn_drones.Tag = MainWindowForm.droneList;
+            btn_weapoons.Tag = MainWindowForm.laserList;
+            btn_generators.Tag = MainWindowForm.shieldList;
+            btn_boosters.Tag = MainWindowForm.boosterList;
+            btn_pet.Tag = MainWindowForm.petList;
+            btn_petProtocols.Tag = MainWindowForm.protocolList;
+            btn_ammo.Tag = MainWindowForm.ammoList;
+            */
+        
         public SpaceshipEntity selectedShip;
 
         private MainWindowForm mainWindow;
