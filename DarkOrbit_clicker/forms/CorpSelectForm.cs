@@ -41,7 +41,6 @@ namespace DarkOrbit_clicker
         }
 
         private void btn_acceptCorp_Click(object sender, EventArgs e)
-
         {
             Button buttonClicked = (Button)sender;
             UserEntity.Corp corp = (UserEntity.Corp)buttonClicked.Tag;

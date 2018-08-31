@@ -37,29 +37,24 @@ namespace DarkOrbit_clicker
                 currentUser = foundUser;
                 return true;
             }
-            MessageBox.Show("Login or password is incorrect");
+            MessageBox.Show("Login or password is incorrect", "Error");
             return false;
         }
 
         public static bool Register(string login, string password)
         {
-            try
+            if (userList.Find(user => user.name == login) == null)
             {
-                if (userList.Find(user => user.name == login) == null)
-                {
-                    CalculateHash(login, password);
-                    UserEntity user = new UserEntity(login, CalculateHash(login, password));
-                    userList.Add(user);
-                    currentUser = user;
-                    SaveGame();
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("User with this name already exists", "Error");
-                }
+                CalculateHash(login, password);
+                UserEntity user = new UserEntity(login, CalculateHash(login, password));
+                userList.Add(user);
+                currentUser = user;
+                SaveGame();
+                return true;
             }
-            catch { }
+            {
+                MessageBox.Show("User with this name already exists", "Error");
+            }
             return false;
         }
 
