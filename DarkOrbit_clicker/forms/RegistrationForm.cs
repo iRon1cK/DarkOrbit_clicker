@@ -14,6 +14,7 @@ namespace DarkOrbit_clicker
     {
 
         public static bool success = false;
+
         public RegistrationForm()
         {
             InitializeComponent();
@@ -42,15 +43,14 @@ namespace DarkOrbit_clicker
             {
                 if (AuthService.LogIn(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
-
                     if (AuthService.currentUser.corporation != UserEntity.Corp.NotSelected)
                     {
                         Success();
 
                     }
-                    else {
-                        CorpSelectForm corpselect = new CorpSelectForm(this);
-                        corpselect.Show();
+                    else
+                    {
+                        ShowCorpSelect();
                     }
                 }
             }
@@ -58,11 +58,17 @@ namespace DarkOrbit_clicker
             {
                 if (AuthService.Register(txtBox_nameEnter.Text, txtBox_passEnter.Text))
                 {
-                    HideForm();
-                    CorpSelectForm corpselect = new CorpSelectForm(this);
-                    corpselect.Show();
+                    ShowCorpSelect();
                 }
             }
+        }
+
+        private void ShowCorpSelect()
+        {
+            HideForm();
+            CorpSelectForm corpselect = new CorpSelectForm(this);
+            corpselect.ShowDialog();
+            HideForm();
         }
 
         private void HideForm()
@@ -112,7 +118,7 @@ namespace DarkOrbit_clicker
 
        }
 
-        private void Registration_form_FormClosing(object sender, FormClosingEventArgs e)
+        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (success == false)
             {
