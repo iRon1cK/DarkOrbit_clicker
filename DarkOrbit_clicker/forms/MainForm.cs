@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DarkOrbit_clicker
 {
-    public partial class MainWindowForm : Form
+    public partial class MainForm : Form
     {
 
         public static List<SpaceshipEntity> spaceshipList = new List<SpaceshipEntity>();
@@ -25,7 +25,7 @@ namespace DarkOrbit_clicker
         public static List<LaserEntity> laserList = new List<LaserEntity>();
         public static List<ShieldEntity> shieldList = new List<ShieldEntity>();
 
-        public MainWindowForm()
+        public MainForm()
         {
             LoadData();
             RegistrationForm registration = new RegistrationForm();
