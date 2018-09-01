@@ -14,20 +14,15 @@ namespace DarkOrbit_clicker
     public partial class ShopForm : Form
     {
         public SpaceshipEntity selectedShip;
-
-        private void btn_shopCategory_Click(object sender, EventArgs e)
-        {
-            Button buttonClicked = (Button)sender;
-            MainWindowForm form = (MainWindowForm)buttonClicked.Tag;
-            Button selectedButton = (Button)btn_ships.Tag;
-        }
-
+        private Button selectedButton = null;
         private MainWindowForm mainWindow;
+
         public ShopForm(MainWindowForm main)
         {
             mainWindow = main;
             InitializeComponent();
-            LoadShips();
+            LoadShopItems();
+
             btn_ships.Tag = MainWindowForm.spaceshipList;
             btn_designs.Tag = MainWindowForm.designList;
             btn_drones.Tag = MainWindowForm.droneList;
@@ -37,12 +32,43 @@ namespace DarkOrbit_clicker
             btn_pet.Tag = MainWindowForm.petList;
             btn_petProtocols.Tag = MainWindowForm.protocolList;
             btn_ammo.Tag = MainWindowForm.ammoList;
-            
+            SelectButton(btn_ships);
         }
 
-        public void LoadShips() // Метод используется для автоматического отображения ячеек и предметов в магазине. 
-                               //Предметы он берёт из списков, которые в MainWindow
+        private void shopButton_Click(object sender, EventArgs e)
         {
+            SelectButton((Button)sender);
+        }
+
+        private void shopButton_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = btn == selectedButton ? Color.Orange : Color.Gray;
+        }
+
+        private void shopButton_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = btn == selectedButton ? Color.Yellow : Color.White;
+        }
+
+        public void SelectButton(Button buttonToSelect)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.BackColor = Color.White;
+            }
+            selectedButton = buttonToSelect;
+            LoadShopItems();
+            buttonToSelect.BackColor = Color.Yellow;
+            //when category changed
+        }
+
+        //Метод используется для автоматического отображения ячеек и предметов в магазине.
+        //Предметы он берёт из списков, которые в MainWindow
+        public void LoadShopItems()
+        {
+            //TODO work with selectedButton Tag
             int i = 0;
             foreach (SpaceshipEntity spaceship in MainWindowForm.spaceshipList) 
             {

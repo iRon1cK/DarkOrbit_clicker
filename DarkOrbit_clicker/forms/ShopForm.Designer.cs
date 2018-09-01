@@ -60,6 +60,9 @@
             this.btn_designs.TabIndex = 2;
             this.btn_designs.Text = "DESIGNS";
             this.btn_designs.UseVisualStyleBackColor = false;
+            this.btn_designs.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_designs.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_designs.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_drones
             // 
@@ -71,18 +74,23 @@
             this.btn_drones.TabIndex = 2;
             this.btn_drones.Text = "DRONES";
             this.btn_drones.UseVisualStyleBackColor = false;
+            this.btn_drones.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_drones.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_drones.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_ships
             // 
             this.btn_ships.BackColor = System.Drawing.SystemColors.Control;
             this.btn_ships.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_ships.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ships.Location = new System.Drawing.Point(3, 3);
             this.btn_ships.Name = "btn_ships";
             this.btn_ships.Size = new System.Drawing.Size(194, 41);
             this.btn_ships.TabIndex = 2;
             this.btn_ships.Text = "SHIPS";
             this.btn_ships.UseVisualStyleBackColor = false;
+            this.btn_ships.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_ships.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_ships.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_generators
             // 
@@ -94,6 +102,9 @@
             this.btn_generators.TabIndex = 2;
             this.btn_generators.Text = "GENERATORS";
             this.btn_generators.UseVisualStyleBackColor = false;
+            this.btn_generators.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_generators.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_generators.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_weapoons
             // 
@@ -105,6 +116,9 @@
             this.btn_weapoons.TabIndex = 2;
             this.btn_weapoons.Text = "WEAPOONS";
             this.btn_weapoons.UseVisualStyleBackColor = false;
+            this.btn_weapoons.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_weapoons.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_weapoons.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_boosters
             // 
@@ -116,6 +130,9 @@
             this.btn_boosters.TabIndex = 2;
             this.btn_boosters.Text = "BOOSTERS";
             this.btn_boosters.UseVisualStyleBackColor = false;
+            this.btn_boosters.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_boosters.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_boosters.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_petProtocols
             // 
@@ -127,6 +144,9 @@
             this.btn_petProtocols.TabIndex = 2;
             this.btn_petProtocols.Text = "P.E.T./Protocols";
             this.btn_petProtocols.UseVisualStyleBackColor = false;
+            this.btn_petProtocols.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_petProtocols.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_petProtocols.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_pet
             // 
@@ -138,6 +158,9 @@
             this.btn_pet.TabIndex = 2;
             this.btn_pet.Text = "P.E.T.";
             this.btn_pet.UseVisualStyleBackColor = false;
+            this.btn_pet.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_pet.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_pet.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_ammo
             // 
@@ -149,6 +172,9 @@
             this.btn_ammo.TabIndex = 2;
             this.btn_ammo.Text = "AMMO";
             this.btn_ammo.UseVisualStyleBackColor = false;
+            this.btn_ammo.Click += new System.EventHandler(this.shopButton_Click);
+            this.btn_ammo.MouseEnter += new System.EventHandler(this.shopButton_MouseEnter);
+            this.btn_ammo.MouseLeave += new System.EventHandler(this.shopButton_MouseLeave);
             // 
             // btn_buyItem
             // 
