@@ -436,6 +436,7 @@ namespace DatabaseEditor
             Form frmImageList = new Form();
             frmImageList.Text = "Image List Editor";
             FlowLayoutPanel flpImages = new FlowLayoutPanel();
+            flpImages.AutoScroll = true;
             flpImages.Dock = DockStyle.Fill;
             frmImageList.Controls.Add(flpImages);
             if (imageList == null)
@@ -445,19 +446,22 @@ namespace DatabaseEditor
             foreach (Image img in imageList)
             {
                 Panel panel = new Panel();
+                panel.Size = new Size(100, 100);
                 panel.BackgroundImage = img;
+                panel.BackgroundImageLayout = ImageLayout.Zoom;
                 Button btn = new Button();
                 btn.Text = "X";
+                btn.Click += BtnRemoveImageFromList_Click;
                 btn.TextAlign = ContentAlignment.MiddleCenter;
                 btn.Size = new Size(20, 20);
                 btn.Top = 1;
                 btn.Left = panel.Width - btn.Width - 1;
                 panel.Controls.Add(btn);
-                frmImageList.Controls.Add(btn);
+                flpImages.Controls.Add(panel);
             }
             Button btnAdd = new Button();
             btnAdd.Click += BtnAddImageToList_Click;
-            btnAdd.Tag = imageList;
+            btnAdd.Tag = new object[] { imageList, sender };
             btnAdd.Text = "+";
             btnAdd.Size = new Size(50,50);
             btnAdd.TextAlign = ContentAlignment.MiddleCenter;
@@ -465,9 +469,16 @@ namespace DatabaseEditor
             frmImageList.ShowDialog();
         }
 
+        //TODO
+        private void BtnRemoveImageFromList_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implemented yet", "Error");
+        }
+
         private void BtnAddImageToList_Click(object sender, EventArgs e)
         {
-            List<Image> imageList = (List<Image>)((Control)sender).Tag;
+            object[] tag = (object[])((Control)sender).Tag;
+            List<Image> imageList = (List<Image>)tag[0];
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Title = "Select new image";
             fileDialog.CheckFileExists = true;
@@ -486,7 +497,13 @@ namespace DatabaseEditor
             fileDialog.Filter = "Image Files|" + extentions;
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                imageList.Add(Image.FromFile(fileDialog.FileName));
+                foreach (string file in fileDialog.FileNames)
+                {
+                    imageList.Add(Image.FromFile(file));
+                }
+                ((Form)((Button)sender).Parent.Parent).Close();
+                object[] mainTag = (object[])((Control)tag[1]).Parent.Tag;
+                ((FieldInfo)mainTag[1]).SetValue(mainTag[0], imageList);
             }
         }
 
