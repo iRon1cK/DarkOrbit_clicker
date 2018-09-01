@@ -145,7 +145,7 @@ namespace DarkOrbit_clicker
         {
             Panel pnl = (Panel)((Control)sender).Parent;
             pnl.BackgroundImage = pnl == selectedItemPanel ? Properties.Resources.clicked_icon : Properties.Resources.active_icon;
-
+            //flickering
         }
 
         private void pnlShopItem_MouseLeave(object sender, EventArgs e)
