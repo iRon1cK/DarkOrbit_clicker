@@ -179,7 +179,7 @@ namespace DarkOrbit_clicker
         {
            ((Button)sender).BackgroundImage = Properties.Resources.buy_active;
         }
-
+         
         private void btn_buyItem_MouseLeave(object sender, EventArgs e)
         {
             ((Button)sender).BackgroundImage = Properties.Resources.buy_passive;
