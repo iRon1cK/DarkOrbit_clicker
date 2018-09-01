@@ -113,6 +113,26 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buy_active {
+            get {
+                object obj = ResourceManager.GetObject("buy_active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buy_passive {
+            get {
+                object obj = ResourceManager.GetObject("buy_passive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap header_background_02 {
             get {
                 object obj = ResourceManager.GetObject("header_background_02", resourceCulture);
@@ -123,9 +143,9 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shopBTAN {
+        internal static System.Drawing.Bitmap spr_shop_a {
             get {
-                object obj = ResourceManager.GetObject("shopBTAN", resourceCulture);
+                object obj = ResourceManager.GetObject("spr_shop_a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +153,19 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shopButt {
+        internal static System.Drawing.Bitmap spr_shop_clicked {
             get {
-                object obj = ResourceManager.GetObject("shopButt", resourceCulture);
+                object obj = ResourceManager.GetObject("spr_shop_clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spr_shop_p {
+            get {
+                object obj = ResourceManager.GetObject("spr_shop_p", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
