@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,14 @@ namespace DarkOrbit_clicker
         public static List<LaserEntity> laserList = new List<LaserEntity>();
         public static List<ShieldEntity> shieldList = new List<ShieldEntity>();
 
+        static void AddFontFromResource(PrivateFontCollection collection)
+        {
+            byte[] bytes = Properties.Resources.font;
+            var memory = Marshal.AllocCoTaskMem(bytes.Length);
+            Marshal.Copy(bytes, 0, memory, bytes.Length);
+            collection.AddMemoryFont(memory, bytes.Length);
+        }
+
         public MainForm()
         {
             LoadData();
@@ -37,23 +47,26 @@ namespace DarkOrbit_clicker
                 return;
             }
 
-            // CorpSelect corpSelect = new CorpSelect();
+            PrivateFontCollection fontCollection = new PrivateFontCollection();
+            AddFontFromResource(fontCollection);
 
-            //corpSelect.ShowDialog();
 
-            
             InitializeComponent();
-            
+            foreach (Control c in Controls)
+            {
+                c.Font = new Font(fontCollection.Families.First(), c.Font.Size);
+            }
 
-           // TopMost = true;
-           // FormBorderStyle = FormBorderStyle.None;
-           // WindowState = FormWindowState.Maximized;
+
+            // TopMost = true;
+            // FormBorderStyle = FormBorderStyle.None;
+            // WindowState = FormWindowState.Maximized;
 
             RefreshInfo();
         }
 
         //Загружает базу данных
-        public void LoadData() 
+        public void LoadData()
         {
             List<object> result = new List<object>();
             BinaryFormatter bf = new BinaryFormatter();
@@ -120,7 +133,7 @@ namespace DarkOrbit_clicker
         // Метод принимает Control и возвращает Form.
         // Используется для того , чтобы поместить отправленную форму в отправленный элемент.
         // Благодаря DockStyle.Fill помещенная в панель форма полностью  её заполняет.
-        public void InsertFormIntoControl(Control control, Form frm) 
+        public void InsertFormIntoControl(Control control, Form frm)
         {
             frm.TopLevel = false;
             control.Controls.Clear();

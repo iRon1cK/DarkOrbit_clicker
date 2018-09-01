@@ -243,7 +243,7 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 445);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // MainWindow
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(1100, 720);
-            this.Name = "MainWindow";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Название Окна";
             this.Activated += new System.EventHandler(this.MainWindow_Activated);
