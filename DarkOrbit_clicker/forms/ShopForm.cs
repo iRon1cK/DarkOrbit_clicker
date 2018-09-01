@@ -15,9 +15,9 @@ namespace DarkOrbit_clicker
     {
         public SpaceshipEntity selectedShip;
         private Button selectedButton = null;
-        private MainWindowForm mainWindow;
+        private MainForm mainWindow;
 
-        public ShopForm(MainWindowForm main)
+        public ShopForm(MainForm main)
         {
             mainWindow = main;
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace DarkOrbit_clicker
         {
             //TODO work with selectedButton Tag
             int i = 0;
-            foreach (SpaceshipEntity spaceship in MainWindowForm.spaceshipList) 
+            foreach (SpaceshipEntity spaceship in MainForm.spaceshipList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
@@ -118,9 +118,9 @@ namespace DarkOrbit_clicker
                 flp_backShopItems.Controls.Add(pnl);
                 i++;
             }
-            if (MainWindowForm.spaceshipList.Count > 0)
+            if (MainForm.spaceshipList.Count > 0)
             {
-                selectedShip = MainWindowForm.spaceshipList.First();
+                selectedShip = MainForm.spaceshipList.First();
             }
             updateSpaceshipInfo();
         }

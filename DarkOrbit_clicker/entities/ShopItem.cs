@@ -21,5 +21,10 @@ namespace DarkOrbit_clicker.entities
             Uridium,
             Kredits
         }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

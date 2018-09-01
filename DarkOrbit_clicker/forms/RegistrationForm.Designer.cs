@@ -164,7 +164,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_form_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

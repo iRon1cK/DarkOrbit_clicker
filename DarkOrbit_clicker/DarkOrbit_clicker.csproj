@@ -77,11 +77,11 @@
     </Compile>
     <Compile Include="services\HasherService.cs" />
     <Compile Include="entities\LaserEntity.cs" />
-    <Compile Include="forms\MainWindowForm.cs">
+    <Compile Include="forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MainWindowForm.Designer.cs">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <Compile Include="forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\MapSelectionForm.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="forms\HangarForm.resx">
       <DependentUpon>HangarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MainWindowForm.resx">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <EmbeddedResource Include="forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MapSelectionForm.resx">
       <DependentUpon>MapSelectionForm.cs</DependentUpon>

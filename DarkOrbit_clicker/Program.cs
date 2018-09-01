@@ -16,7 +16,7 @@ namespace DarkOrbit_clicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindowForm());
+            Application.Run(new MainForm());
         }
     }
 }
