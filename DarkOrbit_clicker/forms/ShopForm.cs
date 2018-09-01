@@ -17,6 +17,7 @@ namespace DarkOrbit_clicker
         private Button selectedButton = null;
         private Panel selectedItemPanel = null;
         private MainForm mainWindow;
+        private Timer timer = new Timer();
 
         private int animationStep = 0;
 
@@ -25,8 +26,8 @@ namespace DarkOrbit_clicker
             mainWindow = main;
             InitializeComponent();
 
-            Timer timer = new Timer();
-            timer.Interval = 1000 / Constants.ANIMATION_IMAGES_PER_SECOND;
+            
+            timer.Interval = 1000 / Constants.ANIMATION_ROTATIONS_PER_MINUTE;
             timer.Tick += Timer_Tick;
             timer.Start();
 
@@ -155,8 +156,6 @@ namespace DarkOrbit_clicker
         }
 
         
-
-        //TODO
         //Метод для отображения информации о выбраном ShopItem.
         private void updateSelecedItemInfo()
         {
@@ -165,6 +164,10 @@ namespace DarkOrbit_clicker
                 if (selectedItem.previewAnimationImages == null || selectedItem.previewAnimationImages.Count <= 0)
                 {
                     shop_item_image_selected.BackgroundImage = selectedItem.image;
+                }
+                else
+                {
+                    timer.Interval = ((1000 / selectedItem.previewAnimationImages.Count) * 60) / Constants.ANIMATION_ROTATIONS_PER_MINUTE;
                 }
                 lbl_itemName.Text = selectedItem.name;
                 lbl_itemDescription.Text = selectedItem.description;
