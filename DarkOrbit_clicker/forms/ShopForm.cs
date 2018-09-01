@@ -43,24 +43,24 @@ namespace DarkOrbit_clicker
         private void shopButton_MouseEnter(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = btn == selectedButton ? Color.Orange : Color.Gray;
+            btn.BackgroundImage = btn == selectedButton ? Properties.Resources.spr_shop_clicked : Properties.Resources.spr_shop_a;
         }
 
         private void shopButton_MouseLeave(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = btn == selectedButton ? Color.Yellow : Color.White;
+            btn.BackgroundImage = btn == selectedButton ? Properties.Resources.spr_shop_clicked : Properties.Resources.spr_shop_p;
         }
 
         public void SelectButton(Button buttonToSelect)
         {
             if (selectedButton != null)
             {
-                selectedButton.BackColor = Color.White;
+                selectedButton.BackgroundImage = Properties.Resources.spr_shop_p;
             }
             selectedButton = buttonToSelect;
             LoadShopItems();
-            buttonToSelect.BackColor = Color.Yellow;
+            buttonToSelect.BackgroundImage = Properties.Resources.spr_shop_clicked;
             //when category changed
         }
 
@@ -154,7 +154,6 @@ namespace DarkOrbit_clicker
         }
        
         
-
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
             UserEntity currentUser = AuthService.currentUser;
@@ -174,6 +173,16 @@ namespace DarkOrbit_clicker
             {
                 MessageBox.Show("You have not enough money!", "Error");
             }
+        }
+
+        private void btn_buyItem_MouseEnter(object sender, EventArgs e)
+        {
+           ((Button)sender).BackgroundImage = Properties.Resources.buy_active;
+        }
+         
+        private void btn_buyItem_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).BackgroundImage = Properties.Resources.buy_passive;
         }
     }
 }
