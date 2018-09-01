@@ -15,19 +15,22 @@ namespace DarkOrbit_clicker
         public HangarForm()
         {
             InitializeComponent();
-            ShowSpaceship(AuthService.currentUser.currentSpaceship);
+            if (AuthService.currentUser.currentSpaceship != null)
+            {
+                ShowSpaceship(AuthService.currentUser.currentSpaceship);
+            }
         }
 
-        private void ShowSpaceship(SpaceshipEntity spaceship) // Метод принимает Spaceship, ничего не возвращает. 
-                                                       // Используется для того, чтобы вывести информацию о отправленном в него корабле.
-                                                      // Вызываться должен только из этой формы - при первом её открытии и при изменении корабля.
+        // Метод принимает Spaceship, ничего не возвращает. 
+        // Используется для того, чтобы вывести информацию о отправленном в него корабле.
+        // Вызываться должен только из этой формы - при первом её открытии и при изменении корабля.
+        private void ShowSpaceship(SpaceshipEntity spaceship)
         {
             pbx_shipImage.BackgroundImage = spaceship.image;
             lbl_shipStats.Text =
-                 spaceship.name + "\n" +
+            spaceship.name + "\n" +
                 "Lasers: " + spaceship.lasersMax + "\n" +
                 "Shields: " + spaceship.shieldsMax;
-
         }
 
         private void Hangar_Load(object sender, EventArgs e)

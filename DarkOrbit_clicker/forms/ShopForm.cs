@@ -23,15 +23,15 @@ namespace DarkOrbit_clicker
             InitializeComponent();
             LoadShopItems();
 
-            btn_ships.Tag = MainWindowForm.spaceshipList;
-            btn_designs.Tag = MainWindowForm.designList;
-            btn_drones.Tag = MainWindowForm.droneList;
-            btn_weapoons.Tag = MainWindowForm.laserList;
-            btn_generators.Tag = MainWindowForm.shieldList;
-            btn_boosters.Tag = MainWindowForm.boosterList;
-            btn_pet.Tag = MainWindowForm.petList;
-            btn_petProtocols.Tag = MainWindowForm.protocolList;
-            btn_ammo.Tag = MainWindowForm.ammoList;
+            btn_ships.Tag = MainForm.spaceshipList;
+            btn_designs.Tag = MainForm.designList;
+            btn_drones.Tag = MainForm.droneList;
+            btn_weapoons.Tag = MainForm.laserList;
+            btn_generators.Tag = MainForm.shieldList;
+            btn_boosters.Tag = MainForm.boosterList;
+            btn_pet.Tag = MainForm.petList;
+            btn_petProtocols.Tag = MainForm.protocolList;
+            btn_ammo.Tag = MainForm.ammoList;
             SelectButton(btn_ships);
         }
 

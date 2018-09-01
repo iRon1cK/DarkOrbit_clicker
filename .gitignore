@@ -11,6 +11,8 @@ obj/*
 *.exe.config
 *.cache
 *.ide-*
+*.CodeAnalysisLog.xml
+*.lastcodeanalysissucceeded
 
 # User-specific files
 *.suo
