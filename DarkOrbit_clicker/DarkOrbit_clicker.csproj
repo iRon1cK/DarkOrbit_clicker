@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="entities\SpaceshipEntity.cs" />
     <Compile Include="entities\UserEntity.cs" />
+    <Compile Include="services\RegestryService.cs" />
     <EmbeddedResource Include="forms\CorpSelectForm.resx">
       <DependentUpon>CorpSelectForm.cs</DependentUpon>
     </EmbeddedResource>
