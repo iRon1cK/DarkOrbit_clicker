@@ -23,5 +23,7 @@ namespace DarkOrbit_clicker
 
         //=============Development skips=============
         public static bool LOGIN_SKIP = true;
+
+        public static string SUBKEY = "Software\\DarkOrbit_clicker";
     }
 }
