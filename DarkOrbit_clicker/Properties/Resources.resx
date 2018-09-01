@@ -130,9 +130,6 @@
   <data name="spr_START_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spr_START_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="spr_shop_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spr_shop_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bg_real_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-real_100x100.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,12 +141,6 @@
   </data>
   <data name="bg_shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_shop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spr_shop_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spr_shop_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spr_shop_p" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spr_shop_p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_character_mmo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_character_mmo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,5 +252,23 @@
   </data>
   <data name="_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_btn_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_btn_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_btn_p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spr_shop_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spr_shop_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spr_shop_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spr_shop_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spr_shop_p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spr_shop_p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

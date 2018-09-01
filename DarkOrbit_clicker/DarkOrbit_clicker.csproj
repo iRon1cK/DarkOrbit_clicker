@@ -286,15 +286,6 @@
     <None Include="Resources\32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\spr_shop_p.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\spr_shop_clicked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\spr_shop_a.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\imgonline-com-ua-Transparent-backgr-3MpZb3AUJchif.png" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +293,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buy_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spr_shop_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spr_shop_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spr_shop_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_clicked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

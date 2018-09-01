@@ -208,6 +208,7 @@ namespace DarkOrbit_clicker
 
         private void pnlSpaceShip_Click(object sender, EventArgs e)
         {
+            //sender - Panel
             selectedItem = (ShopItem)((Control)sender).Tag;
             updateSelecedItemInfo();
         }
