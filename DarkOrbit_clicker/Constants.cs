@@ -19,7 +19,7 @@ namespace DarkOrbit_clicker
         public const int MIN_PASSWORD_LENGTH = 6;
 
         //=============Shop animation=============
-        public const int ANIMATION_IMAGES_PER_SECOND = 16;
+        public const int ANIMATION_IMAGES_PER_SECOND = 16; //max 64 images/sec
 
         //=============Development skips=============
         public static bool LOGIN_SKIP = true;

@@ -164,9 +164,6 @@
     <None Include="Resources\bg_shop.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-real_100x100.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\yamato_pasive.png" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +309,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shop_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\иконка наведена.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Иконка выбрана.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-real_100x100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clicked icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passive_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clicked_icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
