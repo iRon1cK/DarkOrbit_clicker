@@ -432,10 +432,15 @@ namespace DatabaseEditor
         private void BtnListImage_Click(object sender, EventArgs e)
         {
             object[] tag = (object[])((Control)sender).Parent.Tag;
+            List<Image> imageList = (List<Image>)tag[1];
             Form frmImageList = new Form();
             frmImageList.Text = "Image List Editor";
             FlowLayoutPanel flpImages = new FlowLayoutPanel();
             frmImageList.Controls.Add(flpImages);
+            foreach (Image img in imageList)
+            {
+
+            }
             frmImageList.ShowDialog();
         }
 
