@@ -29,44 +29,6 @@ namespace DarkOrbit_clicker
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            //TODELETE
-            foreach (SpaceshipEntity spaceship in MainForm.spaceshipList)
-            {
-                spaceship.previewAnimationImages = new List<Image>();
-                spaceship.previewAnimationImages.Add(Properties.Resources._1);
-                spaceship.previewAnimationImages.Add(Properties.Resources._2);
-                spaceship.previewAnimationImages.Add(Properties.Resources._3);
-                spaceship.previewAnimationImages.Add(Properties.Resources._4);
-                spaceship.previewAnimationImages.Add(Properties.Resources._5);
-                spaceship.previewAnimationImages.Add(Properties.Resources._6);
-                spaceship.previewAnimationImages.Add(Properties.Resources._7);
-                spaceship.previewAnimationImages.Add(Properties.Resources._8);
-                spaceship.previewAnimationImages.Add(Properties.Resources._9);
-                spaceship.previewAnimationImages.Add(Properties.Resources._10);
-                spaceship.previewAnimationImages.Add(Properties.Resources._11);
-                spaceship.previewAnimationImages.Add(Properties.Resources._12);
-                spaceship.previewAnimationImages.Add(Properties.Resources._13);
-                spaceship.previewAnimationImages.Add(Properties.Resources._14);
-                spaceship.previewAnimationImages.Add(Properties.Resources._15);
-                spaceship.previewAnimationImages.Add(Properties.Resources._16);
-                spaceship.previewAnimationImages.Add(Properties.Resources._17);
-                spaceship.previewAnimationImages.Add(Properties.Resources._18);
-                spaceship.previewAnimationImages.Add(Properties.Resources._19);
-                spaceship.previewAnimationImages.Add(Properties.Resources._20);
-                spaceship.previewAnimationImages.Add(Properties.Resources._21);
-                spaceship.previewAnimationImages.Add(Properties.Resources._22);
-                spaceship.previewAnimationImages.Add(Properties.Resources._23);
-                spaceship.previewAnimationImages.Add(Properties.Resources._24);
-                spaceship.previewAnimationImages.Add(Properties.Resources._25);
-                spaceship.previewAnimationImages.Add(Properties.Resources._26);
-                spaceship.previewAnimationImages.Add(Properties.Resources._27);
-                spaceship.previewAnimationImages.Add(Properties.Resources._28);
-                spaceship.previewAnimationImages.Add(Properties.Resources._29);
-                spaceship.previewAnimationImages.Add(Properties.Resources._30);
-                spaceship.previewAnimationImages.Add(Properties.Resources._31);
-                spaceship.previewAnimationImages.Add(Properties.Resources._32);
-            }
-
             btn_ships.Tag = MainForm.spaceshipList;
             btn_designs.Tag = MainForm.designList;
             btn_drones.Tag = MainForm.droneList;
@@ -108,6 +70,7 @@ namespace DarkOrbit_clicker
             }
             selectedButton = buttonToSelect;
             LoadShopItems();
+            updateSelecedItemInfo();
             buttonToSelect.BackgroundImage = Properties.Resources.spr_shop_clicked;
         }
 
@@ -175,16 +138,27 @@ namespace DarkOrbit_clicker
 
         //TODO
         //Метод для отображения информации о выбраном ShopItem.
-        private void updateSelecedItemInfo() 
+        private void updateSelecedItemInfo()
         {
             if (selectedItem != null)
             {
-                shop_item_image_selected.BackgroundImage = selectedItem.image;
+                if (selectedItem.previewAnimationImages == null || selectedItem.previewAnimationImages.Count <= 0)
+                {
+                    shop_item_image_selected.BackgroundImage = selectedItem.image;
+                }
                 lbl_itemName.Text = selectedItem.name;
                 lbl_itemDescription.Text = selectedItem.description;
                 lbl_itemPrice.Text = selectedItem.price + " " + selectedItem.currency;
                 btn_buyItem.Enabled = enoughMoney();
                 animationStep = 0;
+            }
+            else
+            {
+                shop_item_image_selected.BackgroundImage = null;
+                lbl_itemName.Text = "";
+                lbl_itemDescription.Text = "";
+                lbl_itemPrice.Text = "";
+                btn_buyItem.Enabled = false;
             }
         }
 
@@ -192,8 +166,15 @@ namespace DarkOrbit_clicker
         {
             if (selectedItem != null)
             {
-                animationStep = animationStep + 1 >= selectedItem.previewAnimationImages.Count() ? 0 : animationStep + 1;
-                shop_item_image_selected.BackgroundImage = selectedItem.previewAnimationImages.ElementAt(animationStep);
+                if (selectedItem.previewAnimationImages != null && selectedItem.previewAnimationImages.Count > 0)
+                {
+                    animationStep = animationStep + 1 >= selectedItem.previewAnimationImages.Count() ? 0 : animationStep + 1;
+                    shop_item_image_selected.BackgroundImage = selectedItem.previewAnimationImages.ElementAt(animationStep);
+                }
+                else if (shop_item_image_selected.BackgroundImage != selectedItem.image)
+                {
+                    shop_item_image_selected.BackgroundImage = selectedItem.image;
+                }
             }
         }
 
