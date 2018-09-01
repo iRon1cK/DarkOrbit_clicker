@@ -189,5 +189,36 @@ namespace DarkOrbit_clicker
         {
             Application.Exit();
         }
+        private void EnterFullscreenMode(bool fullscreen)
+    {
+        if (fullscreen)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
+            btn_exit.Visible = true;
+            btn_fscr.Visible = true;
+        }
+        else
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            btn_exit.Visible = false;
+            btn_fscr.Visible = false;
+            }
+    }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                EnterFullscreenMode(true);
+            }
+        }
+
+        private void btn_fscr_Click(object sender, EventArgs e)
+        {
+            EnterFullscreenMode(false);
+        }
     }
 }

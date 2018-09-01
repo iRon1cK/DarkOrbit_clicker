@@ -45,6 +45,7 @@
             this.btn_start = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_fscr = new System.Windows.Forms.Button();
             this.p_backBarStats.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -65,6 +66,7 @@
             this.p_backBarStats.AutoSize = true;
             this.p_backBarStats.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.header_background_02;
             this.p_backBarStats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.p_backBarStats.Controls.Add(this.btn_fscr);
             this.p_backBarStats.Controls.Add(this.btn_exit);
             this.p_backBarStats.Controls.Add(this.lbl_level);
             this.p_backBarStats.Controls.Add(this.lbl_hon);
@@ -93,6 +95,7 @@
             this.btn_exit.TabIndex = 12;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Visible = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // lbl_level
@@ -243,7 +246,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 445);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // MainWindow
+            // btn_fscr
+            // 
+            this.btn_fscr.Location = new System.Drawing.Point(782, 81);
+            this.btn_fscr.Name = "btn_fscr";
+            this.btn_fscr.Size = new System.Drawing.Size(75, 37);
+            this.btn_fscr.TabIndex = 13;
+            this.btn_fscr.Text = "Exit Fullscreen";
+            this.btn_fscr.UseVisualStyleBackColor = true;
+            this.btn_fscr.Visible = false;
+            this.btn_fscr.Click += new System.EventHandler(this.btn_fscr_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,11 +267,12 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(1100, 720);
-            this.Name = "MainWindow";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Название Окна";
             this.Activated += new System.EventHandler(this.MainWindow_Activated);
             this.Deactivate += new System.EventHandler(this.MainWindow_Deactivate);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.p_backBarStats.ResumeLayout(false);
             this.p_backBarStats.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -286,6 +301,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Button btn_fscr;
     }
 }
 
