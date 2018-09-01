@@ -30,6 +30,7 @@
         {
             this.pnlContent = new System.Windows.Forms.Panel();
             this.p_backBarStats = new System.Windows.Forms.Panel();
+            this.btn_fscr = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_level = new System.Windows.Forms.Label();
             this.lbl_hon = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btn_start = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_fscr = new System.Windows.Forms.Button();
             this.p_backBarStats.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -87,9 +87,20 @@
             this.p_backBarStats.Size = new System.Drawing.Size(860, 235);
             this.p_backBarStats.TabIndex = 2;
             // 
+            // btn_fscr
+            // 
+            this.btn_fscr.Location = new System.Drawing.Point(54, 52);
+            this.btn_fscr.Name = "btn_fscr";
+            this.btn_fscr.Size = new System.Drawing.Size(75, 37);
+            this.btn_fscr.TabIndex = 13;
+            this.btn_fscr.Text = "Exit Fullscreen";
+            this.btn_fscr.UseVisualStyleBackColor = true;
+            this.btn_fscr.Visible = false;
+            this.btn_fscr.Click += new System.EventHandler(this.btn_fscr_Click);
+            // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(782, 52);
+            this.btn_exit.Location = new System.Drawing.Point(54, 24);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 12;
@@ -155,7 +166,7 @@
             // 
             // btn_galaxyGates
             // 
-            this.btn_galaxyGates.Location = new System.Drawing.Point(563, 129);
+            this.btn_galaxyGates.Location = new System.Drawing.Point(205, 129);
             this.btn_galaxyGates.Name = "btn_galaxyGates";
             this.btn_galaxyGates.Size = new System.Drawing.Size(92, 57);
             this.btn_galaxyGates.TabIndex = 5;
@@ -165,27 +176,48 @@
             // 
             // btn_skylab
             // 
-            this.btn_skylab.Location = new System.Drawing.Point(90, 95);
+            this.btn_skylab.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_skylab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_skylab.FlatAppearance.BorderSize = 0;
+            this.btn_skylab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_skylab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_skylab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_skylab.ForeColor = System.Drawing.Color.Red;
+            this.btn_skylab.Location = new System.Drawing.Point(557, 153);
             this.btn_skylab.Name = "btn_skylab";
-            this.btn_skylab.Size = new System.Drawing.Size(75, 23);
+            this.btn_skylab.Size = new System.Drawing.Size(107, 33);
             this.btn_skylab.TabIndex = 4;
             this.btn_skylab.Text = "SKYLAB";
             this.btn_skylab.UseVisualStyleBackColor = true;
             // 
             // btn_skillTree
             // 
-            this.btn_skillTree.Location = new System.Drawing.Point(204, 163);
+            this.btn_skillTree.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_skillTree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_skillTree.FlatAppearance.BorderSize = 0;
+            this.btn_skillTree.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_skillTree.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_skillTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_skillTree.ForeColor = System.Drawing.Color.Red;
+            this.btn_skillTree.Location = new System.Drawing.Point(557, 115);
             this.btn_skillTree.Name = "btn_skillTree";
-            this.btn_skillTree.Size = new System.Drawing.Size(87, 23);
+            this.btn_skillTree.Size = new System.Drawing.Size(111, 32);
             this.btn_skillTree.TabIndex = 3;
             this.btn_skillTree.Text = "SKILL TREE";
             this.btn_skillTree.UseVisualStyleBackColor = true;
             // 
             // btn_hangar
             // 
-            this.btn_hangar.Location = new System.Drawing.Point(695, 109);
+            this.btn_hangar.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_hangar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_hangar.FlatAppearance.BorderSize = 0;
+            this.btn_hangar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_hangar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_hangar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hangar.ForeColor = System.Drawing.Color.Red;
+            this.btn_hangar.Location = new System.Drawing.Point(682, 115);
             this.btn_hangar.Name = "btn_hangar";
-            this.btn_hangar.Size = new System.Drawing.Size(75, 23);
+            this.btn_hangar.Size = new System.Drawing.Size(107, 33);
             this.btn_hangar.TabIndex = 1;
             this.btn_hangar.Text = "HANGAR";
             this.btn_hangar.UseVisualStyleBackColor = true;
@@ -193,9 +225,16 @@
             // 
             // btn_shop
             // 
-            this.btn_shop.Location = new System.Drawing.Point(695, 154);
+            this.btn_shop.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_shop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_shop.FlatAppearance.BorderSize = 0;
+            this.btn_shop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_shop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_shop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_shop.ForeColor = System.Drawing.Color.Red;
+            this.btn_shop.Location = new System.Drawing.Point(682, 154);
             this.btn_shop.Name = "btn_shop";
-            this.btn_shop.Size = new System.Drawing.Size(75, 23);
+            this.btn_shop.Size = new System.Drawing.Size(107, 32);
             this.btn_shop.TabIndex = 2;
             this.btn_shop.Text = "SHOP";
             this.btn_shop.UseVisualStyleBackColor = true;
@@ -203,12 +242,16 @@
             // 
             // btn_start
             // 
-            this.btn_start.Image = global::DarkOrbit_clicker.Properties.Resources.spr_START_pass;
-            this.btn_start.Location = new System.Drawing.Point(334, 129);
+            this.btn_start.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.spr_START_pass;
+            this.btn_start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_start.FlatAppearance.BorderSize = 0;
+            this.btn_start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start.Location = new System.Drawing.Point(333, 129);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(190, 48);
             this.btn_start.TabIndex = 0;
-            this.btn_start.Text = "START";
             this.btn_start.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -245,17 +288,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 445);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // btn_fscr
-            // 
-            this.btn_fscr.Location = new System.Drawing.Point(782, 81);
-            this.btn_fscr.Name = "btn_fscr";
-            this.btn_fscr.Size = new System.Drawing.Size(75, 37);
-            this.btn_fscr.TabIndex = 13;
-            this.btn_fscr.Text = "Exit Fullscreen";
-            this.btn_fscr.UseVisualStyleBackColor = true;
-            this.btn_fscr.Visible = false;
-            this.btn_fscr.Click += new System.EventHandler(this.btn_fscr_Click);
             // 
             // MainForm
             // 
