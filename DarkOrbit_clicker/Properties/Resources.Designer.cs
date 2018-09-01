@@ -393,6 +393,16 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap active_icon {
+            get {
+                object obj = ResourceManager.GetObject("active_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_character_mmo {
             get {
                 object obj = ResourceManager.GetObject("bg_character_mmo", resourceCulture);
@@ -406,16 +416,6 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap bg_character_vru {
             get {
                 object obj = ResourceManager.GetObject("bg_character_vru", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bg_real_100x100 {
-            get {
-                object obj = ResourceManager.GetObject("bg_real_100x100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +446,16 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap buy_passive {
             get {
                 object obj = ResourceManager.GetObject("buy_passive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clicked_icon {
+            get {
+                object obj = ResourceManager.GetObject("clicked_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +496,16 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap main_btn_p {
             get {
                 object obj = ResourceManager.GetObject("main_btn_p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap passive_icon {
+            get {
+                object obj = ResourceManager.GetObject("passive_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

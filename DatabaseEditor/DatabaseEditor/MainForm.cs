@@ -503,7 +503,7 @@ namespace DatabaseEditor
                 }
                 ((Form)((Button)sender).Parent.Parent).Close();
                 object[] mainTag = (object[])((Control)tag[1]).Parent.Tag;
-                ((FieldInfo)mainTag[1]).SetValue(mainTag[0], imageList);
+                mainTag[2] = imageList;
             }
         }
 
