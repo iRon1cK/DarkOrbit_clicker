@@ -11,7 +11,7 @@ namespace DarkOrbit_clicker.services
     {
         public enum Keys
         {
-            isFullScreen
+
         }
 
         public String Read(Keys key)
@@ -59,7 +59,7 @@ namespace DarkOrbit_clicker.services
             RegistryKey removeValue = Registry.CurrentUser.OpenSubKey(Constants.SUBKEY);
             try
             {
-                removeValue.DeleteSubKey(key.ToString());
+                removeValue.DeleteValue(key.ToString());
             }
             catch
             {
