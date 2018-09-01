@@ -13,8 +13,9 @@ namespace DarkOrbit_clicker
 {
     public partial class ShopForm : Form
     {
-        public ShopItem selectedItem;
+        private ShopItem selectedItem;
         private Button selectedButton = null;
+        private Panel selectedItemPanel = null;
         private MainForm mainWindow;
 
         private int animationStep = 0;
@@ -121,7 +122,8 @@ namespace DarkOrbit_clicker
             foreach (ShopItem item in itemList) 
             {
                 Panel pnl = new Panel();
-                pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
+                pnl.BackgroundImage = Properties.Resources.passive_icon;
+                pnl.BackgroundImageLayout = ImageLayout.Zoom;
                 
                 pnl.Width = pnl.Height = 155;
                 pnl.Margin = new Padding(10);
@@ -131,9 +133,9 @@ namespace DarkOrbit_clicker
                 labName.Text = item.name;
                 labName.TextAlign = ContentAlignment.MiddleCenter;
                 labName.AutoSize = false;
-                labName.Width = pnl.Width-2;
+                labName.Width = pnl.Width-10;
                 labName.Height = 20;
-                labName.Location = new Point(1, 1);
+                labName.Location = new Point(5, 4);
                 labName.BackColor = Color.FromArgb(175, Color.Black);
                 labName.ForeColor = Color.White;
                 pnl.Controls.Add(labName);
@@ -142,9 +144,9 @@ namespace DarkOrbit_clicker
                 labPrice.Text = item.price + " " + item.currency;
                 labPrice.TextAlign = ContentAlignment.MiddleCenter;
                 labPrice.AutoSize = false;
-                labPrice.Width = pnl.Width - 2;
+                labPrice.Width = pnl.Width - 10;
                 labPrice.Height = 20;
-                labPrice.Location = new Point(1, pnl.Height-labPrice.Height-1);
+                labPrice.Location = new Point(5, pnl.Height-labPrice.Height-4);
                 labPrice.BackColor = Color.FromArgb(175, Color.Black);
                 labPrice.ForeColor = Color.White;
                 pnl.Controls.Add(labPrice);
@@ -159,7 +161,9 @@ namespace DarkOrbit_clicker
 
                 foreach (Control c in pnl.Controls)
                 {
-                    c.Click += pnlSpaceShip_Click;
+                    c.Click += pnlShopItem_Click;
+                    c.MouseEnter += pnlShopItem_MouseEnter;
+                    c.MouseLeave += pnlShopItem_MouseLeave;
                     c.Tag = item;
                 }
 
@@ -172,6 +176,22 @@ namespace DarkOrbit_clicker
             updateSelecedItemInfo();
             flp_backShopItems.ResumeLayout();
         }
+
+
+        private void pnlShopItem_MouseEnter(object sender, EventArgs e)
+        {
+            Panel pnl = (Panel)((Control)sender).Parent;
+            pnl.BackgroundImage = pnl == selectedItemPanel ? Properties.Resources.clicked_icon : Properties.Resources.active_icon;
+
+        }
+
+        private void pnlShopItem_MouseLeave(object sender, EventArgs e)
+        {
+            Panel pnl = (Panel)((Control)sender).Parent;
+            pnl.BackgroundImage = pnl == selectedItemPanel ? Properties.Resources.clicked_icon : Properties.Resources.passive_icon;
+        }
+
+        
 
         //TODO
         //Метод для отображения информации о выбраном ShopItem.
@@ -206,9 +226,13 @@ namespace DarkOrbit_clicker
             return false;
         }
 
-        private void pnlSpaceShip_Click(object sender, EventArgs e)
+        private void pnlShopItem_Click(object sender, EventArgs e)
         {
             //sender - Panel
+            if (selectedItemPanel != null)
+                selectedItemPanel.BackgroundImage = Properties.Resources.passive_icon;
+            selectedItemPanel = (Panel)((Control)sender).Parent;
+            selectedItemPanel.BackgroundImage = Properties.Resources.clicked_icon;
             selectedItem = (ShopItem)((Control)sender).Tag;
             updateSelecedItemInfo();
         }
