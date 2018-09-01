@@ -76,6 +76,7 @@
             // 
             this.btn_ships.BackColor = System.Drawing.SystemColors.Control;
             this.btn_ships.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ships.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ships.Location = new System.Drawing.Point(3, 3);
             this.btn_ships.Name = "btn_ships";
             this.btn_ships.Size = new System.Drawing.Size(194, 41);
@@ -260,7 +261,7 @@
             this.flp_backShopItems.Size = new System.Drawing.Size(574, 576);
             this.flp_backShopItems.TabIndex = 0;
             // 
-            // Shop
+            // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,7 +272,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_shopItemDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Shop";
+            this.Name = "ShopForm";
             this.Text = "Shop";
             this.pnl_shopItemDescription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).EndInit();

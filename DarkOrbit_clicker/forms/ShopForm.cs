@@ -13,7 +13,21 @@ namespace DarkOrbit_clicker
 {
     public partial class ShopForm : Form
     {
-        /*
+        public SpaceshipEntity selectedShip;
+
+        private void btn_shopCategory_Click(object sender, EventArgs e)
+        {
+            Button buttonClicked = (Button)sender;
+            MainWindowForm form = (MainWindowForm)buttonClicked.Tag;
+            Button selectedButton = (Button)btn_ships.Tag;
+        }
+
+        private MainWindowForm mainWindow;
+        public ShopForm(MainWindowForm main)
+        {
+            mainWindow = main;
+            InitializeComponent();
+            LoadShips();
             btn_ships.Tag = MainWindowForm.spaceshipList;
             btn_designs.Tag = MainWindowForm.designList;
             btn_drones.Tag = MainWindowForm.droneList;
@@ -23,17 +37,7 @@ namespace DarkOrbit_clicker
             btn_pet.Tag = MainWindowForm.petList;
             btn_petProtocols.Tag = MainWindowForm.protocolList;
             btn_ammo.Tag = MainWindowForm.ammoList;
-            */
-        
-        public SpaceshipEntity selectedShip;
-
-        private MainWindowForm mainWindow;
-
-        public ShopForm(MainWindowForm main)
-        {
-            mainWindow = main;
-            InitializeComponent();
-            LoadShips();
+            
         }
 
         public void LoadShips() // Метод используется для автоматического отображения ячеек и предметов в магазине. 
