@@ -12,7 +12,7 @@ namespace DarkOrbit_clicker
     class AuthService
     {
         public static UserEntity currentUser;
-        private static List<UserEntity> userList = new List<UserEntity>();
+        public static List<UserEntity> userList = new List<UserEntity>();
 
         //-проверка, есть ли в списке юзеров юзер с такими логином и паролем
         //-если есть, присваивать его переменной currentUser

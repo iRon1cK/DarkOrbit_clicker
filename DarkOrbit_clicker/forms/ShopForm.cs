@@ -13,15 +13,59 @@ namespace DarkOrbit_clicker
 {
     public partial class ShopForm : Form
     {
-        public SpaceshipEntity selectedShip;
+        public ShopItem selectedItem;
         private Button selectedButton = null;
         private MainForm mainWindow;
+
+        private int animationStep = 0;
 
         public ShopForm(MainForm main)
         {
             mainWindow = main;
             InitializeComponent();
-            LoadShopItems();
+
+            Timer timer = new Timer();
+            timer.Interval = 1000 / Constants.ANIMATION_IMAGES_PER_SECOND;
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            //TODELETE
+            foreach (SpaceshipEntity spaceship in MainForm.spaceshipList)
+            {
+                spaceship.previewAnimationImages = new List<Image>();
+                spaceship.previewAnimationImages.Add(Properties.Resources._1);
+                spaceship.previewAnimationImages.Add(Properties.Resources._2);
+                spaceship.previewAnimationImages.Add(Properties.Resources._3);
+                spaceship.previewAnimationImages.Add(Properties.Resources._4);
+                spaceship.previewAnimationImages.Add(Properties.Resources._5);
+                spaceship.previewAnimationImages.Add(Properties.Resources._6);
+                spaceship.previewAnimationImages.Add(Properties.Resources._7);
+                spaceship.previewAnimationImages.Add(Properties.Resources._8);
+                spaceship.previewAnimationImages.Add(Properties.Resources._9);
+                spaceship.previewAnimationImages.Add(Properties.Resources._10);
+                spaceship.previewAnimationImages.Add(Properties.Resources._11);
+                spaceship.previewAnimationImages.Add(Properties.Resources._12);
+                spaceship.previewAnimationImages.Add(Properties.Resources._13);
+                spaceship.previewAnimationImages.Add(Properties.Resources._14);
+                spaceship.previewAnimationImages.Add(Properties.Resources._15);
+                spaceship.previewAnimationImages.Add(Properties.Resources._16);
+                spaceship.previewAnimationImages.Add(Properties.Resources._17);
+                spaceship.previewAnimationImages.Add(Properties.Resources._18);
+                spaceship.previewAnimationImages.Add(Properties.Resources._19);
+                spaceship.previewAnimationImages.Add(Properties.Resources._20);
+                spaceship.previewAnimationImages.Add(Properties.Resources._21);
+                spaceship.previewAnimationImages.Add(Properties.Resources._22);
+                spaceship.previewAnimationImages.Add(Properties.Resources._23);
+                spaceship.previewAnimationImages.Add(Properties.Resources._24);
+                spaceship.previewAnimationImages.Add(Properties.Resources._25);
+                spaceship.previewAnimationImages.Add(Properties.Resources._26);
+                spaceship.previewAnimationImages.Add(Properties.Resources._27);
+                spaceship.previewAnimationImages.Add(Properties.Resources._28);
+                spaceship.previewAnimationImages.Add(Properties.Resources._29);
+                spaceship.previewAnimationImages.Add(Properties.Resources._30);
+                spaceship.previewAnimationImages.Add(Properties.Resources._31);
+                spaceship.previewAnimationImages.Add(Properties.Resources._32);
+            }
 
             btn_ships.Tag = MainForm.spaceshipList;
             btn_designs.Tag = MainForm.designList;
@@ -32,12 +76,15 @@ namespace DarkOrbit_clicker
             btn_pet.Tag = MainForm.petList;
             btn_petProtocols.Tag = MainForm.protocolList;
             btn_ammo.Tag = MainForm.ammoList;
+
             SelectButton(btn_ships);
         }
 
         private void shopButton_Click(object sender, EventArgs e)
         {
-            SelectButton((Button)sender);
+            Button clickedBtn = (Button)sender;
+            if (clickedBtn != selectedButton)
+                SelectButton(clickedBtn);
         }
 
         private void shopButton_MouseEnter(object sender, EventArgs e)
@@ -52,6 +99,7 @@ namespace DarkOrbit_clicker
             btn.BackColor = btn == selectedButton ? Color.Yellow : Color.White;
         }
 
+        //when category changed
         public void SelectButton(Button buttonToSelect)
         {
             if (selectedButton != null)
@@ -61,16 +109,16 @@ namespace DarkOrbit_clicker
             selectedButton = buttonToSelect;
             LoadShopItems();
             buttonToSelect.BackColor = Color.Yellow;
-            //when category changed
         }
 
         //Метод используется для автоматического отображения ячеек и предметов в магазине.
         //Предметы он берёт из списков, которые в MainWindow
         public void LoadShopItems()
         {
-            //TODO work with selectedButton Tag
-            int i = 0;
-            foreach (SpaceshipEntity spaceship in MainForm.spaceshipList) 
+            flp_backShopItems.SuspendLayout();
+            flp_backShopItems.Controls.Clear();
+            IEnumerable<ShopItem> itemList = (IEnumerable<ShopItem>)selectedButton.Tag;
+            foreach (ShopItem item in itemList) 
             {
                 Panel pnl = new Panel();
                 pnl.BackgroundImage = Properties.Resources.bg_real_100x100;
@@ -80,7 +128,7 @@ namespace DarkOrbit_clicker
                 
 
                 Label labName = new Label();
-                labName.Text = spaceship.name;
+                labName.Text = item.name;
                 labName.TextAlign = ContentAlignment.MiddleCenter;
                 labName.AutoSize = false;
                 labName.Width = pnl.Width-2;
@@ -91,7 +139,7 @@ namespace DarkOrbit_clicker
                 pnl.Controls.Add(labName);
 
                 Label labPrice = new Label();
-                labPrice.Text = spaceship.price.ToString();
+                labPrice.Text = item.price + " " + item.currency;
                 labPrice.TextAlign = ContentAlignment.MiddleCenter;
                 labPrice.AutoSize = false;
                 labPrice.Width = pnl.Width - 2;
@@ -103,7 +151,7 @@ namespace DarkOrbit_clicker
 
                 Panel pnlImage = new Panel();
                 pnlImage.BackgroundImageLayout = ImageLayout.Zoom;
-                pnlImage.BackgroundImage = spaceship.image;
+                pnlImage.BackgroundImage = item.image;
                 pnlImage.BackColor = Color.Transparent;
                 pnlImage.Size = pnl.Size;
                 pnlImage.Location = new Point(0, 0);
@@ -112,68 +160,80 @@ namespace DarkOrbit_clicker
                 foreach (Control c in pnl.Controls)
                 {
                     c.Click += pnlSpaceShip_Click;
-                    c.Tag = spaceship;
+                    c.Tag = item;
                 }
 
                 flp_backShopItems.Controls.Add(pnl);
-                i++;
             }
-            if (MainForm.spaceshipList.Count > 0)
+            if (itemList.Count() > 0)
             {
-                selectedShip = MainForm.spaceshipList.First();
+                selectedItem = itemList.First();
             }
-            updateSpaceshipInfo();
+            updateSelecedItemInfo();
+            flp_backShopItems.ResumeLayout();
         }
 
         //TODO
-        private void updateSpaceshipInfo() // Метод для отображения информации о выбраном корабле.
+        //Метод для отображения информации о выбраном ShopItem.
+        private void updateSelecedItemInfo() 
         {
-            //Тут selectedShip - корабль, по которому нажали
-            if (selectedShip != null)
+            if (selectedItem != null)
             {
-                pctr_image_item_selected.BackgroundImage = selectedShip.image;
-                lbl_itemName.Text = selectedShip.name;
-                //lbl_itemPrice.Text = selectedShip.price;
+                shop_item_image_selected.BackgroundImage = selectedItem.image;
+                lbl_itemName.Text = selectedItem.name;
+                lbl_itemDescription.Text = selectedItem.description;
+                lbl_itemPrice.Text = selectedItem.price + " " + selectedItem.currency;
                 btn_buyItem.Enabled = enoughMoney();
+                animationStep = 0;
+            }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (selectedItem != null)
+            {
+                animationStep = animationStep + 1 >= selectedItem.previewAnimationImages.Count() ? 0 : animationStep + 1;
+                shop_item_image_selected.BackgroundImage = selectedItem.previewAnimationImages.ElementAt(animationStep);
             }
         }
 
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
-            if (selectedShip.currency == ShopItem.Currency.Kredits && (AuthService.currentUser.kredits >= selectedShip.price))
+            if (selectedItem.currency == ShopItem.Currency.Kredits && (AuthService.currentUser.kredits >= selectedItem.price))
                 return true;
-            else if (selectedShip.currency == ShopItem.Currency.Uridium && (AuthService.currentUser.uridium >= selectedShip.price))
+            else if (selectedItem.currency == ShopItem.Currency.Uridium && (AuthService.currentUser.uridium >= selectedItem.price))
                 return true;
             return false;
         }
 
         private void pnlSpaceShip_Click(object sender, EventArgs e)
         {
-            selectedShip = (SpaceshipEntity)((Control)sender).Tag;
-            updateSpaceshipInfo();
+            selectedItem = (ShopItem)((Control)sender).Tag;
+            updateSelecedItemInfo();
         }
-       
-        
 
-        private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
+
+        //TODO
+        //Метод и условия для покупки корабля по нажатию на кнопку.
+        private void btn_buyItem_Click(object sender, EventArgs e)
         {
-            UserEntity currentUser = AuthService.currentUser;
-            if (selectedShip.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
-            {
-                currentUser.kredits -= selectedShip.price;
-                currentUser.spaceships.Add(selectedShip);
-                MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            }
-            else if (selectedShip.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
-            {
-                currentUser.uridium -= selectedShip.price;
-                currentUser.spaceships.Add(selectedShip);
-                MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            }
-            else
-            {
-                MessageBox.Show("You have not enough money!", "Error");
-            }
+            //UserEntity currentUser = AuthService.currentUser;
+            //if (selectedItem.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
+            //{
+            //    currentUser.kredits -= selectedItem.price;
+            //    currentUser.spaceships.Add(selectedItem);
+            //    MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
+            //}
+            //else if (selectedItem.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedItem.price)) 
+            //{
+            //    currentUser.uridium -= selectedItem.price;
+            //    currentUser.spaceships.Add(selectedItem);
+            //    MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("You have not enough money!", "Error");
+            //}
         }
     }
 }

@@ -387,6 +387,25 @@ namespace DatabaseEditor
                             pnlTag[2] = pbx.BackgroundImage;
                             pbx.BackgroundImageChanged += detailsField_ValueChanged;
                             break;
+                        case "List`1":
+                            switch (field.FieldType.GenericTypeArguments.First().Name)
+                            {
+                                case "Image":
+                                    Button btnListImage = new Button();
+                                    btnListImage.Text = "Edit List of " + field.FieldType.GenericTypeArguments.First().Name + "...";
+                                    btnListImage.Top = labName.Bottom + 5;
+                                    btnListImage.Left = 3;
+                                    btnListImage.Width = pnl.Width - 6;
+                                    btnListImage.Click += BtnListImage_Click;
+                                    pnlTag[2] = btnListImage;
+                                    pnl.Controls.Add(btnListImage);
+                                    flpDetails.Controls.Add(pnl);
+                                    break;
+                                default:
+                                    Console.WriteLine(field.FieldType.GenericTypeArguments.First().Name + " type of List is not supported in flpDetails!");
+                                    break;
+                            }
+                            break;
                         default:
                             Console.WriteLine(field.FieldType.Name + " type is not supported in flpDetails!");
                             break;
@@ -408,6 +427,16 @@ namespace DatabaseEditor
             removeBtn.Tag = tag;
             removeBtn.Click += RemoveBtn_Click;
             flpDetails.Controls.Add(removeBtn);
+        }
+
+        private void BtnListImage_Click(object sender, EventArgs e)
+        {
+            object[] tag = (object[])((Control)sender).Parent.Tag;
+            Form frmImageList = new Form();
+            frmImageList.Text = "Image List Editor";
+            FlowLayoutPanel flpImages = new FlowLayoutPanel();
+            frmImageList.Controls.Add(flpImages);
+            frmImageList.ShowDialog();
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)

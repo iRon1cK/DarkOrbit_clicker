@@ -14,6 +14,7 @@ namespace DarkOrbit_clicker.entities
         public long price;
         public Currency currency;
         public Image image;
+        public List<Image> previewAnimationImages = new List<Image>();
         public string description;
 
         public enum Currency

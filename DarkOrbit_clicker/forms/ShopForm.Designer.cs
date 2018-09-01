@@ -41,12 +41,12 @@
             this.lbl_itemPrice = new System.Windows.Forms.Label();
             this.lbl_itemName = new System.Windows.Forms.Label();
             this.pnl_shopItemDescription = new System.Windows.Forms.Panel();
-            this.pctr_image_item_selected = new System.Windows.Forms.PictureBox();
+            this.shop_item_image_selected = new System.Windows.Forms.PictureBox();
             this.lbl_itemDescription = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flp_backShopItems = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_shopItemDescription.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shop_item_image_selected)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,7 +215,7 @@
             this.pnl_shopItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_shopItemDescription.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_shop;
             this.pnl_shopItemDescription.Controls.Add(this.btn_buyItem);
-            this.pnl_shopItemDescription.Controls.Add(this.pctr_image_item_selected);
+            this.pnl_shopItemDescription.Controls.Add(this.shop_item_image_selected);
             this.pnl_shopItemDescription.Controls.Add(this.lbl_itemPrice);
             this.pnl_shopItemDescription.Controls.Add(this.lbl_itemDescription);
             this.pnl_shopItemDescription.Controls.Add(this.lbl_itemName);
@@ -224,14 +224,15 @@
             this.pnl_shopItemDescription.Size = new System.Drawing.Size(290, 576);
             this.pnl_shopItemDescription.TabIndex = 5;
             // 
-            // pctr_image_item_selected
+            // shop_item_image_selected
             // 
-            this.pctr_image_item_selected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctr_image_item_selected.Location = new System.Drawing.Point(45, 20);
-            this.pctr_image_item_selected.Name = "pctr_image_item_selected";
-            this.pctr_image_item_selected.Size = new System.Drawing.Size(200, 200);
-            this.pctr_image_item_selected.TabIndex = 1;
-            this.pctr_image_item_selected.TabStop = false;
+            this.shop_item_image_selected.BackColor = System.Drawing.Color.Transparent;
+            this.shop_item_image_selected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.shop_item_image_selected.Location = new System.Drawing.Point(45, 20);
+            this.shop_item_image_selected.Name = "shop_item_image_selected";
+            this.shop_item_image_selected.Size = new System.Drawing.Size(200, 200);
+            this.shop_item_image_selected.TabIndex = 1;
+            this.shop_item_image_selected.TabStop = false;
             // 
             // lbl_itemDescription
             // 
@@ -297,11 +298,12 @@
             this.Controls.Add(this.flp_backShopItems);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_shopItemDescription);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShopForm";
             this.Text = "Shop";
             this.pnl_shopItemDescription.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctr_image_item_selected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shop_item_image_selected)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -322,7 +324,7 @@
         private System.Windows.Forms.Button btn_buyItem;
         private System.Windows.Forms.Label lbl_itemPrice;
         private System.Windows.Forms.Label lbl_itemName;
-        private System.Windows.Forms.PictureBox pctr_image_item_selected;
+        private System.Windows.Forms.PictureBox shop_item_image_selected;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flp_backShopItems;
     }

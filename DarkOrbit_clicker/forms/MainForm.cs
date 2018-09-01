@@ -28,13 +28,20 @@ namespace DarkOrbit_clicker
         public MainForm()
         {
             LoadData();
-            RegistrationForm registration = new RegistrationForm();
-            registration.ShowDialog();
-
-            if (!RegistrationForm.success)
+            if (!Constants.LOGIN_SKIP)
             {
-                Application.Exit();
-                return;
+                RegistrationForm registration = new RegistrationForm();
+                registration.ShowDialog();
+                
+                if (!RegistrationForm.success)
+                {
+                    Application.Exit();
+                    return;
+                }
+            }
+            else
+            {
+                AuthService.currentUser = AuthService.userList.First();
             }
 
             // CorpSelect corpSelect = new CorpSelect();
