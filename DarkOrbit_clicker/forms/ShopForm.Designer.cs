@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopForm));
             this.btn_designs = new System.Windows.Forms.Button();
             this.btn_drones = new System.Windows.Forms.Button();
             this.btn_ships = new System.Windows.Forms.Button();
@@ -52,8 +53,11 @@
             // 
             // btn_designs
             // 
-            this.btn_designs.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_designs.BackColor = System.Drawing.Color.Transparent;
+            this.btn_designs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_designs.BackgroundImage")));
+            this.btn_designs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_designs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_designs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_designs.Location = new System.Drawing.Point(3, 50);
             this.btn_designs.Name = "btn_designs";
             this.btn_designs.Size = new System.Drawing.Size(194, 41);
@@ -66,8 +70,11 @@
             // 
             // btn_drones
             // 
-            this.btn_drones.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_drones.BackColor = System.Drawing.Color.Transparent;
+            this.btn_drones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_drones.BackgroundImage")));
+            this.btn_drones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_drones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_drones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_drones.Location = new System.Drawing.Point(3, 97);
             this.btn_drones.Name = "btn_drones";
             this.btn_drones.Size = new System.Drawing.Size(194, 41);
@@ -80,8 +87,11 @@
             // 
             // btn_ships
             // 
-            this.btn_ships.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ships.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ships.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.spr_shop_p;
+            this.btn_ships.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_ships.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ships.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ships.Location = new System.Drawing.Point(3, 3);
             this.btn_ships.Name = "btn_ships";
             this.btn_ships.Size = new System.Drawing.Size(194, 41);
@@ -94,8 +104,11 @@
             // 
             // btn_generators
             // 
-            this.btn_generators.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_generators.BackColor = System.Drawing.Color.Transparent;
+            this.btn_generators.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_generators.BackgroundImage")));
+            this.btn_generators.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_generators.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_generators.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generators.Location = new System.Drawing.Point(3, 191);
             this.btn_generators.Name = "btn_generators";
             this.btn_generators.Size = new System.Drawing.Size(194, 41);
@@ -108,8 +121,11 @@
             // 
             // btn_weapoons
             // 
-            this.btn_weapoons.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_weapoons.BackColor = System.Drawing.Color.Transparent;
+            this.btn_weapoons.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_weapoons.BackgroundImage")));
+            this.btn_weapoons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_weapoons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_weapoons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_weapoons.Location = new System.Drawing.Point(3, 144);
             this.btn_weapoons.Name = "btn_weapoons";
             this.btn_weapoons.Size = new System.Drawing.Size(194, 41);
@@ -122,8 +138,11 @@
             // 
             // btn_boosters
             // 
-            this.btn_boosters.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_boosters.BackColor = System.Drawing.Color.Transparent;
+            this.btn_boosters.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_boosters.BackgroundImage")));
+            this.btn_boosters.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_boosters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_boosters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_boosters.Location = new System.Drawing.Point(3, 238);
             this.btn_boosters.Name = "btn_boosters";
             this.btn_boosters.Size = new System.Drawing.Size(194, 41);
@@ -136,8 +155,11 @@
             // 
             // btn_petProtocols
             // 
-            this.btn_petProtocols.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_petProtocols.BackColor = System.Drawing.Color.Transparent;
+            this.btn_petProtocols.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_petProtocols.BackgroundImage")));
+            this.btn_petProtocols.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_petProtocols.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_petProtocols.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_petProtocols.Location = new System.Drawing.Point(3, 332);
             this.btn_petProtocols.Name = "btn_petProtocols";
             this.btn_petProtocols.Size = new System.Drawing.Size(194, 41);
@@ -150,8 +172,11 @@
             // 
             // btn_pet
             // 
-            this.btn_pet.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_pet.BackColor = System.Drawing.Color.Transparent;
+            this.btn_pet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pet.BackgroundImage")));
+            this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_pet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_pet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pet.Location = new System.Drawing.Point(3, 285);
             this.btn_pet.Name = "btn_pet";
             this.btn_pet.Size = new System.Drawing.Size(194, 41);
@@ -164,8 +189,11 @@
             // 
             // btn_ammo
             // 
-            this.btn_ammo.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ammo.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ammo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ammo.BackgroundImage")));
+            this.btn_ammo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_ammo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ammo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ammo.Location = new System.Drawing.Point(3, 379);
             this.btn_ammo.Name = "btn_ammo";
             this.btn_ammo.Size = new System.Drawing.Size(194, 43);
@@ -178,13 +206,19 @@
             // 
             // btn_buyItem
             // 
-            this.btn_buyItem.Location = new System.Drawing.Point(92, 368);
+            this.btn_buyItem.BackColor = System.Drawing.Color.Transparent;
+            this.btn_buyItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buyItem.BackgroundImage")));
+            this.btn_buyItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_buyItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buyItem.Location = new System.Drawing.Point(56, 373);
             this.btn_buyItem.Name = "btn_buyItem";
-            this.btn_buyItem.Size = new System.Drawing.Size(108, 45);
+            this.btn_buyItem.Size = new System.Drawing.Size(179, 54);
             this.btn_buyItem.TabIndex = 1;
             this.btn_buyItem.Text = "BUY";
-            this.btn_buyItem.UseVisualStyleBackColor = true;
+            this.btn_buyItem.UseVisualStyleBackColor = false;
             this.btn_buyItem.Click += new System.EventHandler(this.btn_buyItem_Click);
+            this.btn_buyItem.MouseEnter += new System.EventHandler(this.btn_buyItem_MouseEnter);
+            this.btn_buyItem.MouseLeave += new System.EventHandler(this.btn_buyItem_MouseLeave);
             // 
             // lbl_itemPrice
             // 
