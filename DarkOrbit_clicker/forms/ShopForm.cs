@@ -224,24 +224,24 @@ namespace DarkOrbit_clicker
         
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
-            //UserEntity currentUser = AuthService.currentUser;
-            //if (selectedShip.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
-            //{
-            //    currentUser.kredits -= selectedShip.price;
-            //    currentUser.spaceships.Add(selectedShip);
-            //    MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            //}
-            //else if (selectedShip.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
-            //{
-            //    currentUser.uridium -= selectedShip.price;
-            //    currentUser.spaceships.Add(selectedShip);
-            //    MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("You have not enough money!", "Error");
-            //}
-        }
+           UserEntity currentUser = AuthService.currentUser;
+            if (selectedItem.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
+            {
+                    currentUser.kredits -= selectedItem.price;
+                   currentUser.lasers.Add(selectedItem);
+                   MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
+            }
+               else if (selectedItem.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedItem.price)) 
+                {
+                    currentUser.uridium -= selectedItem.price;
+                 currentUser.SpaceshipEntity.lasers.Add(selectedItem);
+                   MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
+                }
+               else
+               {
+                   MessageBox.Show("You have not enough money!", "Error");
+              }
+            }
 
         private void btn_buyItem_MouseEnter(object sender, EventArgs e)
         {
