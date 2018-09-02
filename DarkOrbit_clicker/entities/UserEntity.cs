@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkOrbit_clicker.entities;
 
 namespace DarkOrbit_clicker
 {
@@ -19,6 +20,7 @@ namespace DarkOrbit_clicker
         public Corp corporation = Corp.NotSelected;
         public SpaceshipEntity currentSpaceship;
         public List<SpaceshipEntity> spaceships = new List<SpaceshipEntity>();
+        public List<ShopItem> inventory = new List<ShopItem>();
         
         public enum Corp
         {
