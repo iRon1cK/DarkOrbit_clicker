@@ -139,6 +139,7 @@
             // lbl_kredits
             // 
             this.lbl_kredits.AutoSize = true;
+            this.lbl_kredits.ForeColor = System.Drawing.Color.Red;
             this.lbl_kredits.Location = new System.Drawing.Point(705, 209);
             this.lbl_kredits.Name = "lbl_kredits";
             this.lbl_kredits.Size = new System.Drawing.Size(22, 13);
@@ -148,7 +149,7 @@
             // lbl_uridium
             // 
             this.lbl_uridium.AutoSize = true;
-            this.lbl_uridium.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_uridium.ForeColor = System.Drawing.Color.Red;
             this.lbl_uridium.Location = new System.Drawing.Point(582, 209);
             this.lbl_uridium.Name = "lbl_uridium";
             this.lbl_uridium.Size = new System.Drawing.Size(26, 13);

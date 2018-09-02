@@ -23,6 +23,7 @@ namespace DarkOrbit_clicker
 
         public ShopForm(MainForm main)
         {
+
             mainWindow = main;
             InitializeComponent();
 
@@ -200,7 +201,7 @@ namespace DarkOrbit_clicker
                 }
             }
         }
-
+        // Метод для проверки достатка денег.
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
             if (selectedItem.currency == ShopItem.Currency.Kredits && (AuthService.currentUser.kredits >= selectedItem.price))
@@ -220,24 +221,49 @@ namespace DarkOrbit_clicker
             selectedItem = (ShopItem)((Control)sender).Tag;
             updateSelecedItemInfo();
         }
-       
-        
+        // Метод для покупки вещей в магазине по нажатию на кнопку купить.
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
            UserEntity currentUser = AuthService.currentUser;
-            if (selectedItem.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
+            if (currentUser.inventory == null)
+            {
+                currentUser.inventory = new List<ShopItem>();
+            }
+            if (selectedItem.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedItem.price) &&
+                (currentUser.currentSpaceship != selectedItem) && !(selectedItem is SpaceshipEntity))
             {
                     currentUser.kredits -= selectedItem.price;
-                   currentUser.lasers.Add(selectedItem);
-                   MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
+              currentUser.inventory.Add(selectedItem);
+                MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success");
+                mainWindow.RefreshInfo();
             }
-               else if (selectedItem.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedItem.price)) 
+               else if (selectedItem.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedItem.price) &&
+                (currentUser.currentSpaceship != selectedItem) && !(selectedItem is SpaceshipEntity)) 
                 {
                     currentUser.uridium -= selectedItem.price;
-                 currentUser.SpaceshipEntity.lasers.Add(selectedItem);
-                   MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success");
-                }
-               else
+                 currentUser.inventory.Add(selectedItem);
+                   MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success");
+                mainWindow.RefreshInfo();
+            }
+            else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Uridium &&
+                (currentUser.uridium >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
+            {
+                currentUser.kredits -= selectedItem.price;
+                //кастовать
+               // currentUser.spaceships.Add(ShopItem)sender;
+                MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
+                mainWindow.RefreshInfo();
+            }
+            else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Kredits &&
+                (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
+            {
+                currentUser.kredits -= selectedItem.price;
+                //кастовать
+                //currentUser.spaceships.Add(selectedItem);
+                MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
+                mainWindow.RefreshInfo();
+            }
+            else
                {
                    MessageBox.Show("You have not enough money!", "Error");
               }
