@@ -224,54 +224,41 @@ namespace DarkOrbit_clicker
         // Метод для покупки вещей в магазине по нажатию на кнопку купить.
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
-           UserEntity currentUser = AuthService.currentUser;
-            if (currentUser.inventory == null)
+            UserEntity currentUser = AuthService.currentUser;
+            if (enoughMoney())
             {
-                currentUser.inventory = new List<ShopItem>();
-            }
-            if (selectedItem.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedItem.price) &&
-                (currentUser.currentSpaceship != selectedItem) && !(selectedItem is SpaceshipEntity))
-            {
-                    currentUser.kredits -= selectedItem.price;
-              currentUser.inventory.Add(selectedItem);
-                MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success");
-                mainWindow.RefreshInfo();
-            }
-               else if (selectedItem.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedItem.price) &&
-                (currentUser.currentSpaceship != selectedItem) && !(selectedItem is SpaceshipEntity)) 
+                if (selectedItem is SpaceshipEntity)
+
                 {
-                    currentUser.uridium -= selectedItem.price;
-                 currentUser.inventory.Add(selectedItem);
-                   MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success");
-                mainWindow.RefreshInfo();
-            }
-            else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Uridium &&
-                (currentUser.uridium >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
-            {
-                SpaceshipEntity selectedItemShip = (SpaceshipEntity)selectedItem;
-                currentUser.uridium -= selectedItem.price;
-                currentUser.spaceships.Add(selectedItemShip);
-                MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
-                mainWindow.RefreshInfo();
-            }
-            else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Kredits &&
-                (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
-            {
-                
-                currentUser.kredits -= selectedItem.price;
-                currentUser.spaceships.Add((SpaceshipEntity)selectedItem);
-                MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
-                mainWindow.RefreshInfo();
-            }
-            else if (selectedItem is SpaceshipEntity && currentUser.spaceships.Find(s => s.name == selectedItem.name) != null)
-            {
-                MessageBox.Show("Sorry , but you already have this ship!", "Error");
+                    if (AuthService.currentUser.spaceships.Find(s => s.name == selectedItem.name) == null)
+                    {
+                        if (selectedItem.currency == ShopItem.Currency.Kredits)
+                            currentUser.kredits -= selectedItem.price;
+                        else
+                            currentUser.uridium -= selectedItem.price;
+                        currentUser.spaceships.Add((SpaceshipEntity)selectedItem);
+                        MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You’ve already bought this spaceship!", "Error!");
+                    }
+                }
+                else
+                {
+                    if (selectedItem.currency == ShopItem.Currency.Kredits)
+                        currentUser.kredits -= selectedItem.price;
+                    else
+                        currentUser.uridium -= selectedItem.price;
+                    currentUser.inventory.Add(selectedItem);
+                    MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success!");
+                }
             }
             else
-               {
-                   MessageBox.Show("You have not enough money!", "Error");
-              }
+            {
+                MessageBox.Show("You have not enough money!", "Error!");
             }
+        }
 
         private void btn_buyItem_MouseEnter(object sender, EventArgs e)
         {
