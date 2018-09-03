@@ -23,6 +23,7 @@ namespace DarkOrbit_clicker
 
         public ShopForm(MainForm main)
         {
+
             mainWindow = main;
             InitializeComponent();
 
@@ -200,7 +201,7 @@ namespace DarkOrbit_clicker
                 }
             }
         }
-
+        // Метод для проверки достатка денег.
         private bool enoughMoney() // Проверка дополнительных условий для покупки предмета.
         {
             if (selectedItem.currency == ShopItem.Currency.Kredits && (AuthService.currentUser.kredits >= selectedItem.price))
@@ -220,27 +221,43 @@ namespace DarkOrbit_clicker
             selectedItem = (ShopItem)((Control)sender).Tag;
             updateSelecedItemInfo();
         }
-       
-        
+        // Метод для покупки вещей в магазине по нажатию на кнопку купить.
         private void btn_buyItem_Click(object sender, EventArgs e)  // Метод и условия для покупки корабля по нажатию на кнопку.
         {
-            //UserEntity currentUser = AuthService.currentUser;
-            //if (selectedShip.currency == ShopItem.Currency.Kredits && (currentUser.kredits >= selectedShip.price) && (currentUser.currentSpaceship != selectedShip))
-            //{
-            //    currentUser.kredits -= selectedShip.price;
-            //    currentUser.spaceships.Add(selectedShip);
-            //    MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            //}
-            //else if (selectedShip.currency == ShopItem.Currency.Uridium && (currentUser.uridium >= selectedShip.price)) 
-            //{
-            //    currentUser.uridium -= selectedShip.price;
-            //    currentUser.spaceships.Add(selectedShip);
-            //    MessageBox.Show("Spaceship " + selectedShip.name + " successfully bought!", "Success");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("You have not enough money!", "Error");
-            //}
+            UserEntity currentUser = AuthService.currentUser;
+            if (enoughMoney())
+            {
+                if (selectedItem is SpaceshipEntity)
+
+                {
+                    if (AuthService.currentUser.spaceships.Find(s => s.name == selectedItem.name) == null)
+                    {
+                        if (selectedItem.currency == ShopItem.Currency.Kredits)
+                            currentUser.kredits -= selectedItem.price;
+                        else
+                            currentUser.uridium -= selectedItem.price;
+                        currentUser.spaceships.Add((SpaceshipEntity)selectedItem);
+                        MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You’ve already bought this spaceship!", "Error!");
+                    }
+                }
+                else
+                {
+                    if (selectedItem.currency == ShopItem.Currency.Kredits)
+                        currentUser.kredits -= selectedItem.price;
+                    else
+                        currentUser.uridium -= selectedItem.price;
+                    currentUser.inventory.Add(selectedItem);
+                    MessageBox.Show("Item " + selectedItem.name + " successfully bought!", "Success!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have not enough money!", "Error!");
+            }
         }
 
         private void btn_buyItem_MouseEnter(object sender, EventArgs e)
