@@ -248,20 +248,24 @@ namespace DarkOrbit_clicker
             else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Uridium &&
                 (currentUser.uridium >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
             {
-                currentUser.kredits -= selectedItem.price;
-                //кастовать
-               // currentUser.spaceships.Add(ShopItem)sender;
+                SpaceshipEntity selectedItemShip = (SpaceshipEntity)selectedItem;
+                currentUser.uridium -= selectedItem.price;
+                currentUser.spaceships.Add(selectedItemShip);
                 MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
                 mainWindow.RefreshInfo();
             }
             else if (currentUser.spaceships.Find(s => s.name == selectedItem.name) == null && selectedItem.currency == ShopItem.Currency.Kredits &&
                 (currentUser.kredits >= selectedItem.price) && (currentUser.currentSpaceship != selectedItem))
             {
+                
                 currentUser.kredits -= selectedItem.price;
-                //кастовать
-                //currentUser.spaceships.Add(selectedItem);
+                currentUser.spaceships.Add((SpaceshipEntity)selectedItem);
                 MessageBox.Show("Ship " + selectedItem.name + " successfully bought!", "Success");
                 mainWindow.RefreshInfo();
+            }
+            else if (selectedItem is SpaceshipEntity && currentUser.spaceships.Find(s => s.name == selectedItem.name) != null)
+            {
+                MessageBox.Show("Sorry , but you already have this ship!", "Error");
             }
             else
                {
