@@ -143,6 +143,16 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drone_slot {
+            get {
+                object obj = ResourceManager.GetObject("drone_slot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap header_background_02 {
             get {
                 object obj = ResourceManager.GetObject("header_background_02", resourceCulture);
