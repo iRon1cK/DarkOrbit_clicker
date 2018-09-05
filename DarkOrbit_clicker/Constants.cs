@@ -22,7 +22,7 @@ namespace DarkOrbit_clicker
         public const int ANIMATION_ROTATIONS_PER_MINUTE = 30; //max 64 images/sec
 
         //=============Development skips=============
-        public static bool LOGIN_SKIP = true;
+        public static bool LOGIN_SKIP = false;  //true for skip
 
         public static string SUBKEY = "Software\\DarkOrbit_clicker";
     }

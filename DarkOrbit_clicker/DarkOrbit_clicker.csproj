@@ -241,5 +241,20 @@
   <ItemGroup>
     <None Include="Resources\btn_big_p.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login place.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corners.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
