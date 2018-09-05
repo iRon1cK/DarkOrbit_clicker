@@ -220,5 +220,10 @@ namespace DarkOrbit_clicker
         {
             EnterFullscreenMode(false);
         }
+
+        private void btn_start_Click(object sender, EventArgs e)
+        {
+            InsertFormIntoControl(pnlContent, new MapSelectionForm());
+        }
     }
 }
