@@ -106,11 +106,9 @@
             // 
             // pnl_mapDescription
             // 
-            this.pnl_mapDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_mapDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_mapDescription.Controls.Add(this.lbl_mapDescription);
-            this.pnl_mapDescription.Location = new System.Drawing.Point(26, 381);
+            this.pnl_mapDescription.Location = new System.Drawing.Point(441, 211);
             this.pnl_mapDescription.Name = "pnl_mapDescription";
             this.pnl_mapDescription.Size = new System.Drawing.Size(268, 219);
             this.pnl_mapDescription.TabIndex = 10;
@@ -133,7 +131,7 @@
             this.btn_map1.Text = "1-1";
             this.btn_map1.UseVisualStyleBackColor = true;
             // 
-            // MapSelection
+            // MapSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +147,7 @@
             this.Controls.Add(this.btn_map2);
             this.Controls.Add(this.btn_map1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MapSelection";
+            this.Name = "MapSelectionForm";
             this.Text = "MapSelection";
             this.pnl_mapDescription.ResumeLayout(false);
             this.pnl_mapDescription.PerformLayout();

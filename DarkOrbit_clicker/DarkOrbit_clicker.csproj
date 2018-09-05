@@ -229,5 +229,17 @@
   <ItemGroup>
     <None Include="Resources\clicked_icon.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drone slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_big_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_big_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_big_p.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
