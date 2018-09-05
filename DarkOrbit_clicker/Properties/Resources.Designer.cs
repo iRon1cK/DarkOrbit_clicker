@@ -103,6 +103,26 @@ namespace DarkOrbit_clicker.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_register0 {
+            get {
+                object obj = ResourceManager.GetObject("bg_register0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_register1 {
+            get {
+                object obj = ResourceManager.GetObject("bg_register1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_shop {
             get {
                 object obj = ResourceManager.GetObject("bg_shop", resourceCulture);
@@ -136,6 +156,16 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap btn_big_p {
             get {
                 object obj = ResourceManager.GetObject("btn_big_p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_login {
+            get {
+                object obj = ResourceManager.GetObject("button_login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,26 @@ namespace DarkOrbit_clicker.Properties {
         internal static System.Drawing.Bitmap header_background_02 {
             get {
                 object obj = ResourceManager.GetObject("header_background_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_checkbox {
+            get {
+                object obj = ResourceManager.GetObject("img_checkbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_place {
+            get {
+                object obj = ResourceManager.GetObject("login_place", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
