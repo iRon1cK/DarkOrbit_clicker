@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CorpSelectForm));
             this.pnl_VRU = new System.Windows.Forms.Panel();
             this.btn_acceptVRU = new System.Windows.Forms.Button();
             this.pnl_EIC = new System.Windows.Forms.Panel();
@@ -46,7 +47,7 @@
             // 
             this.pnl_VRU.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_character_vru;
             this.pnl_VRU.Controls.Add(this.btn_acceptVRU);
-            this.pnl_VRU.Location = new System.Drawing.Point(463, 12);
+            this.pnl_VRU.Location = new System.Drawing.Point(504, 12);
             this.pnl_VRU.Name = "pnl_VRU";
             this.pnl_VRU.Size = new System.Drawing.Size(278, 438);
             this.pnl_VRU.TabIndex = 1;
@@ -54,19 +55,27 @@
             // 
             // btn_acceptVRU
             // 
-            this.btn_acceptVRU.Location = new System.Drawing.Point(94, 383);
+            this.btn_acceptVRU.BackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptVRU.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.corp_select_P;
+            this.btn_acceptVRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_acceptVRU.FlatAppearance.BorderSize = 0;
+            this.btn_acceptVRU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptVRU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptVRU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acceptVRU.ForeColor = System.Drawing.Color.Red;
+            this.btn_acceptVRU.Location = new System.Drawing.Point(46, 370);
             this.btn_acceptVRU.Name = "btn_acceptVRU";
-            this.btn_acceptVRU.Size = new System.Drawing.Size(100, 35);
+            this.btn_acceptVRU.Size = new System.Drawing.Size(185, 65);
             this.btn_acceptVRU.TabIndex = 1;
             this.btn_acceptVRU.Text = "ACCEPT";
-            this.btn_acceptVRU.UseVisualStyleBackColor = true;
+            this.btn_acceptVRU.UseVisualStyleBackColor = false;
             this.btn_acceptVRU.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
             // pnl_EIC
             // 
             this.pnl_EIC.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.Земля;
             this.pnl_EIC.Controls.Add(this.btn_acceptEIC);
-            this.pnl_EIC.Location = new System.Drawing.Point(862, 12);
+            this.pnl_EIC.Location = new System.Drawing.Point(893, 12);
             this.pnl_EIC.Name = "pnl_EIC";
             this.pnl_EIC.Size = new System.Drawing.Size(278, 438);
             this.pnl_EIC.TabIndex = 1;
@@ -74,18 +83,26 @@
             // 
             // btn_acceptEIC
             // 
-            this.btn_acceptEIC.Location = new System.Drawing.Point(94, 383);
+            this.btn_acceptEIC.BackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptEIC.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.corp_select_P;
+            this.btn_acceptEIC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_acceptEIC.FlatAppearance.BorderSize = 0;
+            this.btn_acceptEIC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptEIC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptEIC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acceptEIC.ForeColor = System.Drawing.Color.Red;
+            this.btn_acceptEIC.Location = new System.Drawing.Point(48, 370);
             this.btn_acceptEIC.Name = "btn_acceptEIC";
-            this.btn_acceptEIC.Size = new System.Drawing.Size(100, 35);
+            this.btn_acceptEIC.Size = new System.Drawing.Size(185, 65);
             this.btn_acceptEIC.TabIndex = 2;
             this.btn_acceptEIC.Text = "ACCEPT";
-            this.btn_acceptEIC.UseVisualStyleBackColor = true;
+            this.btn_acceptEIC.UseVisualStyleBackColor = false;
             this.btn_acceptEIC.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
             // pnl_companyDescription
             // 
             this.pnl_companyDescription.Controls.Add(this.lbl_companyDescription);
-            this.pnl_companyDescription.Location = new System.Drawing.Point(151, 469);
+            this.pnl_companyDescription.Location = new System.Drawing.Point(259, 474);
             this.pnl_companyDescription.Name = "pnl_companyDescription";
             this.pnl_companyDescription.Size = new System.Drawing.Size(778, 131);
             this.pnl_companyDescription.TabIndex = 2;
@@ -93,6 +110,9 @@
             // lbl_companyDescription
             // 
             this.lbl_companyDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_companyDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_companyDescription.ForeColor = System.Drawing.Color.Red;
+            this.lbl_companyDescription.Image = ((System.Drawing.Image)(resources.GetObject("lbl_companyDescription.Image")));
             this.lbl_companyDescription.Location = new System.Drawing.Point(0, 0);
             this.lbl_companyDescription.Name = "lbl_companyDescription";
             this.lbl_companyDescription.Size = new System.Drawing.Size(778, 131);
@@ -104,7 +124,7 @@
             // 
             this.pnl_MMO.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.bg_character_mmo;
             this.pnl_MMO.Controls.Add(this.btn_acceptMMO);
-            this.pnl_MMO.Location = new System.Drawing.Point(74, 12);
+            this.pnl_MMO.Location = new System.Drawing.Point(113, 12);
             this.pnl_MMO.Name = "pnl_MMO";
             this.pnl_MMO.Size = new System.Drawing.Size(278, 438);
             this.pnl_MMO.TabIndex = 0;
@@ -112,15 +132,23 @@
             // 
             // btn_acceptMMO
             // 
-            this.btn_acceptMMO.Location = new System.Drawing.Point(84, 383);
+            this.btn_acceptMMO.BackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptMMO.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.corp_select_P;
+            this.btn_acceptMMO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_acceptMMO.FlatAppearance.BorderSize = 0;
+            this.btn_acceptMMO.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptMMO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_acceptMMO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acceptMMO.ForeColor = System.Drawing.Color.Red;
+            this.btn_acceptMMO.Location = new System.Drawing.Point(46, 370);
             this.btn_acceptMMO.Name = "btn_acceptMMO";
-            this.btn_acceptMMO.Size = new System.Drawing.Size(100, 35);
+            this.btn_acceptMMO.Size = new System.Drawing.Size(185, 65);
             this.btn_acceptMMO.TabIndex = 0;
             this.btn_acceptMMO.Text = "ACCEPT";
-            this.btn_acceptMMO.UseVisualStyleBackColor = true;
+            this.btn_acceptMMO.UseVisualStyleBackColor = false;
             this.btn_acceptMMO.Click += new System.EventHandler(this.btn_acceptCorp_Click);
             // 
-            // CorpSelect_form
+            // CorpSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +160,7 @@
             this.Controls.Add(this.pnl_MMO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "CorpSelect_form";
+            this.Name = "CorpSelectForm";
             this.RightToLeftLayout = true;
             this.Text = "CorpSelection";
             this.pnl_VRU.ResumeLayout(false);

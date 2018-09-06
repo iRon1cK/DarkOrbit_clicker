@@ -28,21 +28,26 @@ namespace DarkOrbit_clicker
         private void panel1_MouseEnter(object sender, EventArgs e)
         {
             lbl_companyDescription.Text = "This is Mars.You have permanent bonus 10% for your all damage.";
+            lbl_companyDescription.Image = Properties.Resources.mmo_descript_bg;
         }
 
         private void panel2_MouseEnter(object sender, EventArgs e)
         {
             lbl_companyDescription.Text = "This is Venus.You have permanent bonus 15% for your health.";
+            lbl_companyDescription.Image = Properties.Resources.vru_descript_bg;
         }
 
         private void panel3_MouseEnter(object sender, EventArgs e)
         {
             lbl_companyDescription.Text = "This is Earth.You have permanent bonus 15% for your shield.";
+            lbl_companyDescription.Image = Properties.Resources.eic_descript_bg;
         }
 
         private void btn_acceptCorp_Click(object sender, EventArgs e)
         {
             Button buttonClicked = (Button)sender;
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Properties.Resources.corp_select_clicked;
             UserEntity.Corp corp = (UserEntity.Corp)buttonClicked.Tag;
 
             if (MessageBox.Show("Are you sure you want to choose " + corp + "?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)

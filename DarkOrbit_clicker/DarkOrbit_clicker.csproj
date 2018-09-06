@@ -256,5 +256,26 @@
   <ItemGroup>
     <None Include="Resources\corners.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corp_select_A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corp_select_P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corp_select_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_corp_select_vru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vru_descript_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corp_select_bg_eic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmo_descript_bg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
