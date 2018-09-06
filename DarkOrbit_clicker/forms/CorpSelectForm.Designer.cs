@@ -70,6 +70,8 @@
             this.btn_acceptVRU.Text = "ACCEPT";
             this.btn_acceptVRU.UseVisualStyleBackColor = false;
             this.btn_acceptVRU.Click += new System.EventHandler(this.btn_acceptCorp_Click);
+            this.btn_acceptVRU.MouseEnter += new System.EventHandler(this.corpSelect_MouseEnter);
+            this.btn_acceptVRU.MouseLeave += new System.EventHandler(this.corpSelect_MouseLeave);
             // 
             // pnl_EIC
             // 
@@ -98,6 +100,8 @@
             this.btn_acceptEIC.Text = "ACCEPT";
             this.btn_acceptEIC.UseVisualStyleBackColor = false;
             this.btn_acceptEIC.Click += new System.EventHandler(this.btn_acceptCorp_Click);
+            this.btn_acceptEIC.MouseEnter += new System.EventHandler(this.corpSelect_MouseEnter);
+            this.btn_acceptEIC.MouseLeave += new System.EventHandler(this.corpSelect_MouseLeave);
             // 
             // pnl_companyDescription
             // 
@@ -147,6 +151,8 @@
             this.btn_acceptMMO.Text = "ACCEPT";
             this.btn_acceptMMO.UseVisualStyleBackColor = false;
             this.btn_acceptMMO.Click += new System.EventHandler(this.btn_acceptCorp_Click);
+            this.btn_acceptMMO.MouseEnter += new System.EventHandler(this.corpSelect_MouseEnter);
+            this.btn_acceptMMO.MouseLeave += new System.EventHandler(this.corpSelect_MouseLeave);
             // 
             // CorpSelectForm
             // 

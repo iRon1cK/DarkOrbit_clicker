@@ -46,8 +46,6 @@ namespace DarkOrbit_clicker
         private void btn_acceptCorp_Click(object sender, EventArgs e)
         {
             Button buttonClicked = (Button)sender;
-            Button btn = (Button)sender;
-            btn.BackgroundImage = Properties.Resources.corp_select_clicked;
             UserEntity.Corp corp = (UserEntity.Corp)buttonClicked.Tag;
 
             if (MessageBox.Show("Are you sure you want to choose " + corp + "?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -63,6 +61,18 @@ namespace DarkOrbit_clicker
                 authForm.Success();
                 this.Close();
             }
+        }
+
+        private void corpSelect_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Properties.Resources.corp_select_A;
+        }
+
+        private void corpSelect_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Properties.Resources.corp_select_P;
         }
     }
 }

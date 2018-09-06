@@ -148,7 +148,7 @@
             this.lbl_error.AutoSize = true;
             this.lbl_error.BackColor = System.Drawing.Color.Transparent;
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(15, 99);
+            this.lbl_error.Location = new System.Drawing.Point(386, 414);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(0, 13);
             this.lbl_error.TabIndex = 0;
