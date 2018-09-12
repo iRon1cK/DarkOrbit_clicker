@@ -147,7 +147,7 @@ namespace DarkOrbit_clicker
             lbl_name.Text = "Name: " + AuthService.currentUser.name;
             if (AuthService.currentUser.currentSpaceship != null)
                 {
-                pictureBox1.BackgroundImage = AuthService.currentUser.currentSpaceship.image;
+                pnl_ship.BackgroundImage = AuthService.currentUser.currentSpaceship.image;
                 }
         }
 

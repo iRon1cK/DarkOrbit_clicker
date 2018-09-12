@@ -31,9 +31,14 @@
             this.pnlContent = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.p_backBarStats = new System.Windows.Forms.Panel();
+            this.btn_start = new System.Windows.Forms.Button();
+            this.pnl_ship = new System.Windows.Forms.Panel();
+            this.btn_faq = new System.Windows.Forms.Button();
+            this.btn_pilotSkills = new System.Windows.Forms.Button();
+            this.btn_quests = new System.Windows.Forms.Button();
+            this.btn_pilotInfo = new System.Windows.Forms.Button();
             this.btn_achievements = new System.Windows.Forms.Button();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_fscr = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_level = new System.Windows.Forms.Label();
@@ -47,14 +52,7 @@
             this.btn_skillTree = new System.Windows.Forms.Button();
             this.btn_hangar = new System.Windows.Forms.Button();
             this.btn_shop = new System.Windows.Forms.Button();
-            this.btn_start = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_pilotInfo = new System.Windows.Forms.Button();
-            this.btn_quests = new System.Windows.Forms.Button();
-            this.btn_pilotSkills = new System.Windows.Forms.Button();
-            this.btn_faq = new System.Windows.Forms.Button();
-            this.p_backBarStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.p_backBarStats.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -92,13 +90,14 @@
             this.p_backBarStats.AutoSize = true;
             this.p_backBarStats.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.header_background_02;
             this.p_backBarStats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.p_backBarStats.Controls.Add(this.btn_start);
+            this.p_backBarStats.Controls.Add(this.pnl_ship);
             this.p_backBarStats.Controls.Add(this.btn_faq);
             this.p_backBarStats.Controls.Add(this.btn_pilotSkills);
             this.p_backBarStats.Controls.Add(this.btn_quests);
             this.p_backBarStats.Controls.Add(this.btn_pilotInfo);
             this.p_backBarStats.Controls.Add(this.btn_achievements);
             this.p_backBarStats.Controls.Add(this.lbl_name);
-            this.p_backBarStats.Controls.Add(this.pictureBox1);
             this.p_backBarStats.Controls.Add(this.btn_fscr);
             this.p_backBarStats.Controls.Add(this.btn_exit);
             this.p_backBarStats.Controls.Add(this.lbl_level);
@@ -112,13 +111,99 @@
             this.p_backBarStats.Controls.Add(this.btn_skillTree);
             this.p_backBarStats.Controls.Add(this.btn_hangar);
             this.p_backBarStats.Controls.Add(this.btn_shop);
-            this.p_backBarStats.Controls.Add(this.btn_start);
             this.p_backBarStats.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p_backBarStats.Location = new System.Drawing.Point(210, 0);
             this.p_backBarStats.Margin = new System.Windows.Forms.Padding(0);
             this.p_backBarStats.Name = "p_backBarStats";
             this.p_backBarStats.Size = new System.Drawing.Size(860, 235);
             this.p_backBarStats.TabIndex = 2;
+            // 
+            // btn_start
+            // 
+            this.btn_start.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.spr_START_pass;
+            this.btn_start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_start.FlatAppearance.BorderSize = 0;
+            this.btn_start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start.Location = new System.Drawing.Point(336, 126);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(190, 48);
+            this.btn_start.TabIndex = 0;
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_start_Click);
+            // 
+            // pnl_ship
+            // 
+            this.pnl_ship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_ship.Location = new System.Drawing.Point(384, 40);
+            this.pnl_ship.Name = "pnl_ship";
+            this.pnl_ship.Size = new System.Drawing.Size(100, 100);
+            this.pnl_ship.TabIndex = 19;
+            // 
+            // btn_faq
+            // 
+            this.btn_faq.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_faq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_faq.FlatAppearance.BorderSize = 0;
+            this.btn_faq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_faq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_faq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_faq.ForeColor = System.Drawing.Color.Red;
+            this.btn_faq.Location = new System.Drawing.Point(618, 35);
+            this.btn_faq.Name = "btn_faq";
+            this.btn_faq.Size = new System.Drawing.Size(111, 32);
+            this.btn_faq.TabIndex = 18;
+            this.btn_faq.Text = "FAQ";
+            this.btn_faq.UseVisualStyleBackColor = true;
+            // 
+            // btn_pilotSkills
+            // 
+            this.btn_pilotSkills.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.btn_big_p;
+            this.btn_pilotSkills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_pilotSkills.FlatAppearance.BorderSize = 0;
+            this.btn_pilotSkills.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_pilotSkills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_pilotSkills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pilotSkills.ForeColor = System.Drawing.Color.Red;
+            this.btn_pilotSkills.Location = new System.Drawing.Point(136, 22);
+            this.btn_pilotSkills.Name = "btn_pilotSkills";
+            this.btn_pilotSkills.Size = new System.Drawing.Size(127, 58);
+            this.btn_pilotSkills.TabIndex = 17;
+            this.btn_pilotSkills.Text = "PILOT SKILLS";
+            this.btn_pilotSkills.UseVisualStyleBackColor = true;
+            // 
+            // btn_quests
+            // 
+            this.btn_quests.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
+            this.btn_quests.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_quests.FlatAppearance.BorderSize = 0;
+            this.btn_quests.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_quests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_quests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_quests.ForeColor = System.Drawing.Color.Red;
+            this.btn_quests.Location = new System.Drawing.Point(618, 88);
+            this.btn_quests.Name = "btn_quests";
+            this.btn_quests.Size = new System.Drawing.Size(111, 32);
+            this.btn_quests.TabIndex = 16;
+            this.btn_quests.Text = "QUESTS";
+            this.btn_quests.UseVisualStyleBackColor = true;
+            // 
+            // btn_pilotInfo
+            // 
+            this.btn_pilotInfo.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.btn_big_p;
+            this.btn_pilotInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_pilotInfo.FlatAppearance.BorderSize = 0;
+            this.btn_pilotInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_pilotInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_pilotInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pilotInfo.ForeColor = System.Drawing.Color.Red;
+            this.btn_pilotInfo.Location = new System.Drawing.Point(65, 75);
+            this.btn_pilotInfo.Name = "btn_pilotInfo";
+            this.btn_pilotInfo.Size = new System.Drawing.Size(127, 58);
+            this.btn_pilotInfo.TabIndex = 15;
+            this.btn_pilotInfo.Text = "PILOT INFO";
+            this.btn_pilotInfo.UseVisualStyleBackColor = true;
             // 
             // btn_achievements
             // 
@@ -144,15 +229,6 @@
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
             this.lbl_name.TabIndex = 15;
             this.lbl_name.Text = "Name";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(390, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 78);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_fscr
             // 
@@ -325,21 +401,6 @@
             this.btn_shop.UseVisualStyleBackColor = true;
             this.btn_shop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_shop_MouseClick);
             // 
-            // btn_start
-            // 
-            this.btn_start.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.spr_START_pass;
-            this.btn_start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_start.FlatAppearance.BorderSize = 0;
-            this.btn_start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_start.Location = new System.Drawing.Point(336, 126);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(190, 48);
-            this.btn_start.TabIndex = 0;
-            this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_start_Click);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -357,70 +418,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 445);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // btn_pilotInfo
-            // 
-            this.btn_pilotInfo.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.btn_big_p;
-            this.btn_pilotInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_pilotInfo.FlatAppearance.BorderSize = 0;
-            this.btn_pilotInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_pilotInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_pilotInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pilotInfo.ForeColor = System.Drawing.Color.Red;
-            this.btn_pilotInfo.Location = new System.Drawing.Point(65, 75);
-            this.btn_pilotInfo.Name = "btn_pilotInfo";
-            this.btn_pilotInfo.Size = new System.Drawing.Size(127, 58);
-            this.btn_pilotInfo.TabIndex = 15;
-            this.btn_pilotInfo.Text = "PILOT INFO";
-            this.btn_pilotInfo.UseVisualStyleBackColor = true;
-            // 
-            // btn_quests
-            // 
-            this.btn_quests.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
-            this.btn_quests.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_quests.FlatAppearance.BorderSize = 0;
-            this.btn_quests.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_quests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_quests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_quests.ForeColor = System.Drawing.Color.Red;
-            this.btn_quests.Location = new System.Drawing.Point(618, 88);
-            this.btn_quests.Name = "btn_quests";
-            this.btn_quests.Size = new System.Drawing.Size(111, 32);
-            this.btn_quests.TabIndex = 16;
-            this.btn_quests.Text = "QUESTS";
-            this.btn_quests.UseVisualStyleBackColor = true;
-            // 
-            // btn_pilotSkills
-            // 
-            this.btn_pilotSkills.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.btn_big_p;
-            this.btn_pilotSkills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_pilotSkills.FlatAppearance.BorderSize = 0;
-            this.btn_pilotSkills.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_pilotSkills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_pilotSkills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pilotSkills.ForeColor = System.Drawing.Color.Red;
-            this.btn_pilotSkills.Location = new System.Drawing.Point(136, 22);
-            this.btn_pilotSkills.Name = "btn_pilotSkills";
-            this.btn_pilotSkills.Size = new System.Drawing.Size(127, 58);
-            this.btn_pilotSkills.TabIndex = 17;
-            this.btn_pilotSkills.Text = "PILOT SKILLS";
-            this.btn_pilotSkills.UseVisualStyleBackColor = true;
-            // 
-            // btn_faq
-            // 
-            this.btn_faq.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.main_btn_p;
-            this.btn_faq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_faq.FlatAppearance.BorderSize = 0;
-            this.btn_faq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_faq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_faq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_faq.ForeColor = System.Drawing.Color.Red;
-            this.btn_faq.Location = new System.Drawing.Point(618, 35);
-            this.btn_faq.Name = "btn_faq";
-            this.btn_faq.Size = new System.Drawing.Size(111, 32);
-            this.btn_faq.TabIndex = 18;
-            this.btn_faq.Text = "FAQ";
-            this.btn_faq.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -442,9 +439,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.p_backBarStats.ResumeLayout(false);
             this.p_backBarStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -475,8 +469,8 @@
         private System.Windows.Forms.Button btn_quests;
         private System.Windows.Forms.Button btn_pilotInfo;
         private System.Windows.Forms.Button btn_faq;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Panel pnl_ship;
     }
 }
 

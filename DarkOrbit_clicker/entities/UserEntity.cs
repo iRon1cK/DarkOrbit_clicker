@@ -11,8 +11,8 @@ namespace DarkOrbit_clicker
     public class UserEntity // Основные параметры пользователя.
     {
         public string name;
-        public long kredits = 1000000;
-        public long uridium = 1000000;
+        public long kredits = 1000;
+        public long uridium = 0;
         public long expirience = 0;
         public long honor = 0;
         public int level = 1;
