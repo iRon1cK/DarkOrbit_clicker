@@ -30,6 +30,8 @@
         {
             this.pnlContent = new System.Windows.Forms.Panel();
             this.p_backBarStats = new System.Windows.Forms.Panel();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_fscr = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_level = new System.Windows.Forms.Label();
@@ -47,6 +49,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.p_backBarStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +69,8 @@
             this.p_backBarStats.AutoSize = true;
             this.p_backBarStats.BackgroundImage = global::DarkOrbit_clicker.Properties.Resources.header_background_02;
             this.p_backBarStats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.p_backBarStats.Controls.Add(this.lbl_name);
+            this.p_backBarStats.Controls.Add(this.pictureBox1);
             this.p_backBarStats.Controls.Add(this.btn_fscr);
             this.p_backBarStats.Controls.Add(this.btn_exit);
             this.p_backBarStats.Controls.Add(this.lbl_level);
@@ -86,6 +91,24 @@
             this.p_backBarStats.Name = "p_backBarStats";
             this.p_backBarStats.Size = new System.Drawing.Size(860, 235);
             this.p_backBarStats.TabIndex = 2;
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Location = new System.Drawing.Point(90, 4);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(35, 13);
+            this.lbl_name.TabIndex = 15;
+            this.lbl_name.Text = "Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(390, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 78);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_fscr
             // 
@@ -308,6 +331,7 @@
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.p_backBarStats.ResumeLayout(false);
             this.p_backBarStats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -335,6 +359,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_fscr;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_name;
     }
 }
 
