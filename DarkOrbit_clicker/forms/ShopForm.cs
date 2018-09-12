@@ -237,7 +237,9 @@ namespace DarkOrbit_clicker
                         else
                             currentUser.uridium -= selectedItem.price;
                         currentUser.spaceships.Add((SpaceshipEntity)selectedItem);
+                        AuthService.currentUser.currentSpaceship = ((SpaceshipEntity)selectedItem);
                         MessageBox.Show("Spaceship " + selectedItem.name + " successfully bought!", "Success!");
+                        mainWindow.RefreshInfo();
                     }
                     else
                     {

@@ -144,6 +144,11 @@ namespace DarkOrbit_clicker
             lbl_hon.Text = "Honor: " + AuthService.currentUser.honor;
             lbl_uridium.Text = "Uridium: " + AuthService.currentUser.uridium;
             lbl_kredits.Text = "Kredits: " + AuthService.currentUser.kredits;
+            lbl_name.Text = "Name: " + AuthService.currentUser.name;
+            if (AuthService.currentUser.currentSpaceship != null)
+                {
+                pictureBox1.BackgroundImage = AuthService.currentUser.currentSpaceship.image;
+                }
         }
 
         // В метод отправляется объект вызывающий данное событие и аргументы с которыми был вызов.
